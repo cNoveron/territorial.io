@@ -8032,7 +8032,7 @@
         function m(F) {
             dz.zt(A, F)
         }
-        var A, z, B, C, D, H;
+        var A, z, B, C, D, webSocket;
         this.bi = function (F, L, G) {
             A = F;
             z = L;
@@ -8040,17 +8040,17 @@
             C = [];
             D = new FileReader;
             D.addEventListener("loadend", l);
-            H = new WebSocket(o5[0] + G + o5[1 + a02]);
-            H.onopen = k;
-            H.onmessage = y;
-            H.onclose = m;
-            H.onerror = u
+            webSocket = new WebSocket(o5[0] + G + o5[1 + a02]);
+            webSocket.onopen = k;
+            webSocket.onmessage = y;
+            webSocket.onclose = m;
+            webSocket.onerror = u
         };
         this.a32 = function () {
-            return H.readyState === H.CONNECTING
+            return webSocket.readyState === webSocket.CONNECTING
         };
         this.uJ = function () {
-            return H.readyState === H.OPEN
+            return webSocket.readyState === webSocket.OPEN
         };
         this.zj = function () {
             return this.a32() || this.uJ()
@@ -8059,16 +8059,16 @@
             z = F
         };
         this.send = function (F) {
-            this.uJ() && H.send(F)
+            this.uJ() && webSocket.send(F)
         };
         this.close = function (F) {
-            this.zj() && (H.close(F), this.ke())
+            this.zj() && (webSocket.close(F), this.ke())
         };
         this.ke = function () {
-            H.onopen = g;
-            H.onmessage = g;
-            H.onclose = g;
-            H.onerror = g;
+            webSocket.onopen = g;
+            webSocket.onmessage = g;
+            webSocket.onclose = g;
+            webSocket.onerror = g;
             D.removeEventListener("loadend", l)
         }
     }
