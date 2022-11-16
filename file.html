@@ -2521,8 +2521,29 @@
                 var E = u(F);
                 var K = m[F].lE.width;
                 if (H >= E - G && H <= E + B + G) {
-                    if (D >= I - L && D <= I + B + L) return m[F].oq || (m[F].ok = !0, m[F].oq = !0, 0 === m[F].id ? di ? e1.f5(ap, m[F].cF) : iS.p4(m[F].cF === b1 ? ap : m[F].cF) : di ? e1.f7(ap, m[F].id) : iS.p5(m[F].id)), !0;
-                    if (0 === m[F].id && D >= I + K - B - L && D <= I + K + L) return di ? f3(ap, m[F].cF, eA.kr()) : iS.ks(eA.kr(), m[F].cF === b1 ? ap : m[F].cF), !0
+                    if (D >= I - L && D <= I + B + L) 
+                        return m[F].oq || (
+                            m[F].ok = !0, 
+                            m[F].oq = !0, 
+                            0 === m[F].id 
+                                ? di 
+                                    ? e1.f5(ap, m[F].cF) 
+                                    : iS.p4(m[F].cF === b1 
+                                        ? ap 
+                                        : m[F].cF) 
+                                : di 
+                                    ? e1.f7(ap, m[F].id) 
+                                    : iS.p5(m[F].id)
+                        ), !0;
+                    if (0 === m[F].id && D >= I + K - B - L && D <= I + K + L) 
+                        return di 
+                            ? f3(ap, m[F].cF, eA.kr()) 
+                            : iS.ks(
+                                eA.kr(), 
+                                m[F].cF === b1 
+                                    ? ap 
+                                    : m[F].cF
+                            ), !0
                 }
             }
             return !1
