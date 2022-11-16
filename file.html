@@ -3095,7 +3095,7 @@
         }
 
         function u() {
-            8 === jI.r3() && (L = -1);
+            8 === jI.getState() && (L = -1);
             if (0 !== L) X = (new Date).getTime(), clearInterval(Q), Q = -1;
             else {
                 var O = m[1] / 864E3;
@@ -4149,7 +4149,7 @@
             if (!this.kc) return !1;
             l -= (fu - this.bu) / 2;
             u -= (c4 - this.cp) / 2;
-            if (0 > l || l > this.bu || 0 > u || u > this.cp) return this.kc = !1, 0 === jI.r3() && jK.c7(0, !0), bx.by = !0;
+            if (0 > l || l > this.bu || 0 > u || u > this.cp) return this.kc = !1, 0 === jI.getState() && jK.c7(0, !0), bx.by = !0;
             if (u < .3 * this.cp) var m = 1;
             else u < .85 * this.cp ? (m = (0 === this.t1 ? 14.1 : 3) * (u - .3 * this.cp) / (.55 * this.cp), m = Math.floor(1 + m * m)) : m = 0 === this.t1 ? 200 : 10;
             this.tG[this.t1] = l < this.bu / 2 ? -m : m;
@@ -4280,7 +4280,7 @@
         };
         this.c0 = function (L, G) {
             if (!this.kc) return !1;
-            if (L < g || G < k || L > g + D || G > k + l) bx.by = !0, this.kc = !1, document.body.removeChild(F), 0 === jI.r3() && jK.c7(0, !0);
+            if (L < g || G < k || L > g + D || G > k + l) bx.by = !0, this.kc = !1, document.body.removeChild(F), 0 === jI.getState() && jK.c7(0, !0);
             return !0
         };
         this.c9 = function () {
@@ -4331,7 +4331,7 @@
             }
         };
         this.kc = function () {
-            return !(7 === jI.r3() && r)
+            return !(7 === jI.getState() && r)
         };
         this.c0 = function (z, B, C) {
             if (!m || !this.kc()) return !1;
@@ -4488,7 +4488,7 @@
         };
         this.lA = function (u, m, A) {
             var z = -1;
-            0 === jI.r3() ? z = this.oQ(u, m, 0, 2) : 3 === jI.r3() ? z = this.oQ(u, m, 3, 1) : 5 === jI.r3() && (z = this.oQ(u, m, 5, 2));
+            0 === jI.getState() ? z = this.oQ(u, m, 0, 2) : 3 === jI.getState() ? z = this.oQ(u, m, 3, 1) : 5 === jI.getState() && (z = this.oQ(u, m, 5, 2));
             k !== z && (k = z, A && (bx.by = !0));
             return -1 !== z ? (jF.oV(), !0) : !1
         };
@@ -4537,7 +4537,7 @@
             var l = (c4 - this.cp) / 2;
             k -= (fu - this.bu) / 2;
             y -= l;
-            if (0 > k || 0 > y || k >= this.bu - 1 || y >= this.cp - 1) return this.kc = !1, 0 === jI.r3() && jK.c7(0, !0), bx.by = !0, !1;
+            if (0 > k || 0 > y || k >= this.bu - 1 || y >= this.cp - 1) return this.kc = !1, 0 === jI.getState() && jK.c7(0, !0), bx.by = !0, !1;
             if (k < this.eo || y < this.eo || k >= this.bu - this.eo || y >= this.cp - this.eo) return !0;
             if (k < this.eo + this.u1) return y < this.eo + this.u1 && 0 !== this.mx && (this.mx = 0, bx.by = !0), !0;
             if (k < 2 * this.eo + this.u1) return !0;
@@ -4655,10 +4655,10 @@
             return J > P && J < P + z && M > Q && M < Q + B ? (jD.bi(), jG.lA(J, M, !1), bx.by = !0) : !1
         };
         this.qj = function (J) {
-            6 !== jI.r3() || K || (G = bx.gI, K = !0, iS.uO(J))
+            6 !== jI.getState() || K || (G = bx.gI, K = !0, iS.uO(J))
         };
         this.d7 = function () {
-            6 === jI.r3() && (K ? bx.gI > G + 2E4 && jJ.uU(3250) : bx.gI > G + 2E4 && k(), l += .07 * u * (16 > l ? 5 + l : 84 < l ? 105 - l : 17), 100 < l ? (l = 100, u = -1) : 0 > l && (l = 0, u = 1), D = "rgba(0," + Math.floor(190 - 1.9 * l) + "," + Math.floor(120 - 1.2 * l) + "," + (.4 + .004 * l) + ")", H = "rgba(0," + Math.floor(1.9 * l) + "," + Math.floor(1.2 * l) + "," + (.8 - .004 * l) + ")", bx.by = !0)
+            6 === jI.getState() && (K ? bx.gI > G + 2E4 && jJ.uU(3250) : bx.gI > G + 2E4 && k(), l += .07 * u * (16 > l ? 5 + l : 84 < l ? 105 - l : 17), 100 < l ? (l = 100, u = -1) : 0 > l && (l = 0, u = 1), D = "rgba(0," + Math.floor(190 - 1.9 * l) + "," + Math.floor(120 - 1.2 * l) + "," + (.4 + .004 * l) + ")", H = "rgba(0," + Math.floor(1.9 * l) + "," + Math.floor(1.2 * l) + "," + (.8 - .004 * l) + ")", bx.by = !0)
         };
         this.c9 = function () {
             var J = Math.floor((fu - z) / 2),
@@ -4711,7 +4711,7 @@
         this.setState = function (y) {
             g = y
         };
-        this.r3 = function () {
+        this.getState = function () {
             return g
         };
         this.ue = function () {
@@ -4843,7 +4843,7 @@
             var l = (c4 - this.cp) / 2;
             g -= (fu - this.bu) / 2;
             k -= l;
-            if (0 > g || 0 > k || g >= this.bu - 1 || k >= this.cp - 1) return 0 === y && (this.kc = !1, 0 === jI.r3() && jK.c7(0, !0), bx.by = !0), !1;
+            if (0 > g || 0 > k || g >= this.bu - 1 || k >= this.cp - 1) return 0 === y && (this.kc = !1, 0 === jI.getState() && jK.c7(0, !0), bx.by = !0), !1;
             l = Math.floor(this.bu / this.mm);
             g = al(g, l) + this.mm * al(k, l);
             g = 0 > g ? 0 : g >= a6.mq ? a6.mq - 1 : g;
@@ -4875,7 +4875,7 @@
 
     function jk() {
         function g() {
-            var m = jI.r3();
+            var m = jI.getState();
             0 === m ? jD.sk() : 6 === m ? dz.uz(y) : 7 === m ? (jR.sk(), dz.close(dz.uv, 3240)) : 8 === m && (jA(), jD.sk());
             jI.setState(3);
             jG.qp();
@@ -4932,7 +4932,7 @@
         };
         this.bi = function (m, A) {
             y = A;
-            var z = jI.r3();
+            var z = jI.getState();
             if (6 === z) {
                 if (4211 === A) {
                     jL.bi(0, 0);
@@ -4952,7 +4952,7 @@
         };
         this.uU = function (m) {
             y = m;
-            8 === jI.r3() ? dv.m2(k(m)) : g()
+            8 === jI.getState() ? dv.m2(k(m)) : g()
         };
         this.lJ = function () {
             jG.tp[2].md = k(y)
@@ -5024,7 +5024,7 @@
         this.v9 = this.v8 = this.v7 = 0;
         var g, k, y, l;
         this.bi = function (u) {
-            if (7 === jI.r3()) {
+            if (7 === jI.getState()) {
                 g = u;
                 k = 0;
                 y = bx.gI + 4500;
@@ -5043,7 +5043,7 @@
             0 < l && bx.gI > y && (l--, y += 4500, 0 === bx.vG && 0 === bx.vH && dz.qh(dz.jB, 5))
         };
         this.vI = function () {
-            10 === jI.r3() && (k++, 2 <= k && (jP.vJ(g), g = null))
+            10 === jI.getState() && (k++, 2 <= k && (jP.vJ(g), g = null))
         }
     }
 
@@ -5069,7 +5069,7 @@
         }
 
         function y() {
-            if (7 === jI.r3()) {
+            if (7 === jI.getState()) {
                 for (var O = -1, T = F.length - 1; 0 <= T; T--)
                     if (null === F[T].lE) {
                         O = T;
@@ -6900,7 +6900,7 @@
     }
 
     function a08(g) {
-        400 > bx.gI || (8 !== jI.r3() && jI.tj(g) ? bx.by = !0 : "Escape" === g.key ? 1 <= fG ? gN ? (gN = !gN, bx.by = !0) : hW.kc ? hW.ke() : fW.lO() : 7 === jI.r3() ? (jR.sk(), dz.uz(3240), jD.bi(), bx.by = !0) : 2 === jI.r3() ? dj.v0() : 3 === jI.r3() && jJ.v0(0, 0) : "ArrowLeft" === g.key ? gS.a0L(3) : "ArrowUp" === g.key ? gS.a0L(0) : "ArrowRight" === g.key ? gS.a0L(1) : "ArrowDown" === g.key ? gS.a0L(2) : "h" === g.key && 1 <= fG && (gN = !gN, bx.by = !0))
+        400 > bx.gI || (8 !== jI.getState() && jI.tj(g) ? bx.by = !0 : "Escape" === g.key ? 1 <= fG ? gN ? (gN = !gN, bx.by = !0) : hW.kc ? hW.ke() : fW.lO() : 7 === jI.getState() ? (jR.sk(), dz.uz(3240), jD.bi(), bx.by = !0) : 2 === jI.getState() ? dj.v0() : 3 === jI.getState() && jJ.v0(0, 0) : "ArrowLeft" === g.key ? gS.a0L(3) : "ArrowUp" === g.key ? gS.a0L(0) : "ArrowRight" === g.key ? gS.a0L(1) : "ArrowDown" === g.key ? gS.a0L(2) : "h" === g.key && 1 <= fG && (gN = !gN, bx.by = !0))
     }
 
     function a07() {
@@ -7022,7 +7022,7 @@
             jN.a0Y()
         };
         this.bi = function () {
-            7 !== jI.r3() && (this.a0l = 8 !== jI.r3(), this.aB = 0, this.a0e = 1, this.a0j = [jM.bs(mP).a0m[0], jM.bs(mP).a0n[0]], this.pu = [jM.bs(mP).a0o[3],
+            7 !== jI.getState() && (this.a0l = 8 !== jI.getState(), this.aB = 0, this.a0e = 1, this.a0j = [jM.bs(mP).a0m[0], jM.bs(mP).a0n[0]], this.pu = [jM.bs(mP).a0o[3],
                 jM.bs(mP).a0o[4], jM.bs(mP).a0o[5], jM.bs(mP).a0o[6]
             ], this.a0f = jM.bs(mP).a0o[7], this.a0g = jM.bs(mP).a0o[8], this.a0h = jM.bs(mP).a0o[9], this.a0i = jM.bs(mP).a0o[10], this.a0l ? this.qc = setTimeout(g, 0) : this.d7())
         };
@@ -7036,7 +7036,7 @@
                 this.aB++;
                 if (this.a0l) return this.qc = setTimeout(g, 0), !1
             }
-            l = this.a0l ? 8 === jI.r3() ? 20 : 40 : 1E6;
+            l = this.a0l ? 8 === jI.getState() ? 20 : 40 : 1E6;
             l = aT - this.a0e - 1 < l ? aT - this.a0e - 1 : l;
             l = this.a0e + l;
             for (var u, m, A = this.a0e; A < l; A++)
@@ -7051,10 +7051,10 @@
             A = this.a0e - this.a0g;
             A = 1 > A ? 1 : A;
             oh.putImageData(w6, 0, 0, 1, A, aS - 2, l - A);
-            8 !== jI.r3() && (bx.by = !0);
+            8 !== jI.getState() && (bx.by = !0);
             this.a0e = l;
             if (this.a0e >= aT - 1) return this.wA(), !1;
-            this.a0l && (this.qc = setTimeout(g, 8 === jI.r3() ? 100 : 0));
+            this.a0l && (this.qc = setTimeout(g, 8 === jI.getState() ? 100 : 0));
             return !0
         };
         this.a0s = function (l, u, m) {
@@ -7838,7 +7838,7 @@
         function k() {
             m = 0;
             A += 700 > A ? 200 : 0;
-            bp.bq() && (l() || u) && (u = !1, o7(), tQ.bi(), jG.bi(), jK.lJ(), ui.bi(), jI.lJ(), jH.lJ(), jF.lJ(), jE.lJ(), uc.lJ(), c6.lJ(), a6.bi(), 1 <= fG ? (e6.lJ(!1), e8.lJ(), dx.lJ(), gO.lJ(), eA.lJ(), dv.lJ(), fW.lJ(), eB.lJ(), e9.lJ(), bv.lJ(), hV.kR(), hW.lJ(), dw.lJ(), eF.lJ(), eC.lJ(), gO.qH()) : (0 === jI.r3() ? jK.c7(0, !0) : 2 === jI.r3() ? dj.lJ() : 3 === jI.r3() && jJ.lJ(), jI.ug(), jI.uj()), bx.by = !0)
+            bp.bq() && (l() || u) && (u = !1, o7(), tQ.bi(), jG.bi(), jK.lJ(), ui.bi(), jI.lJ(), jH.lJ(), jF.lJ(), jE.lJ(), uc.lJ(), c6.lJ(), a6.bi(), 1 <= fG ? (e6.lJ(!1), e8.lJ(), dx.lJ(), gO.lJ(), eA.lJ(), dv.lJ(), fW.lJ(), eB.lJ(), e9.lJ(), bv.lJ(), hV.kR(), hW.lJ(), dw.lJ(), eF.lJ(), eC.lJ(), gO.qH()) : (0 === jI.getState() ? jK.c7(0, !0) : 2 === jI.getState() ? dj.lJ() : 3 === jI.getState() && jJ.lJ(), jI.ug(), jI.uj()), bx.by = !0)
         }
 
         function y(z) {
@@ -8795,7 +8795,7 @@
                 if (0 === A)
                     if (A = k(m, 2), 0 === A)
                         if (0 === k(m, 1)) {
-                            if (0 === u && 8 !== jI.r3() && !(4 > y)) {
+                            if (0 === u && 8 !== jI.getState() && !(4 > y)) {
                                 tQ.bk(0, g(k(m, 5), m));
                                 tQ.bk(1, "[" + g(k(m, 3), m) + "]");
                                 var z = k(m, 12),
@@ -8805,7 +8805,7 @@
                                 jF.ql(C)
                             }
                         } else {
-                            if (8 !== jI.r3())
+                            if (8 !== jI.getState())
                                 if (3 > y) dz.zr(u, 3208);
                                 else {
                                     z = k(m, 1);
@@ -8825,7 +8825,7 @@
                                 }
                         } else if (1 === A)
                     if (u !== dz.uv) dz.close(u, 3239);
-                    else if (6 === jI.r3() && jR.bi(), 7 !== jI.r3()) dz.close(u, 3251);
+                    else if (6 === jI.getState() && jR.bi(), 7 !== jI.getState()) dz.close(u, 3251);
                 else {
                     z = [0, 0, 0, 0];
                     B = k(m, 6);
@@ -8844,7 +8844,7 @@
                     });
                     jR.tR(z, D)
                 } else 2 !== A && 3 !== A || eH.bi(m);
-                else 1 === A && (A = jI.r3(), 8 !== A ? 10 === A && dz.zr(u, 3243) : u !== dz.jB ? dz.zr(u, 3244) : 0 === k(m, 1) ? bx.a48.a4I(m) : (A = k(m, 2), 0 === A ? 3 !== y ? dz.zr(dz.jB, 3230) : (A = k(m, 9), z = k(m, 7), 0 !== ex[A] && 0 !== ex[ap] && (z %= a6.a7, dv.m5(A, ap, z), dw.mH(A, 1, z))) : 1 === A ? 2 !== y ? dz.zr(dz.jB, 3235) : (A = k(m, 9), 0 !== ex[A] && 0 !== ex[ap] && (dv.kw(50, A) || dv.kw(52, A) || dv.kx(A, 1))) : 3 !== y ? dz.zr(dz.jB, 3236) : (A = k(m, 9), z = k(m, 9), 0 === ex[A] || 0 === ex[z] || 0 === ex[ap] || dv.mJ(50, A, z) || (dw.mH(A, 3, 96), dw.mH(z, 4, 96), dv.mI(A, z)))))
+                else 1 === A && (A = jI.getState(), 8 !== A ? 10 === A && dz.zr(u, 3243) : u !== dz.jB ? dz.zr(u, 3244) : 0 === k(m, 1) ? bx.a48.a4I(m) : (A = k(m, 2), 0 === A ? 3 !== y ? dz.zr(dz.jB, 3230) : (A = k(m, 9), z = k(m, 7), 0 !== ex[A] && 0 !== ex[ap] && (z %= a6.a7, dv.m5(A, ap, z), dw.mH(A, 1, z))) : 1 === A ? 2 !== y ? dz.zr(dz.jB, 3235) : (A = k(m, 9), 0 !== ex[A] && 0 !== ex[ap] && (dv.kw(50, A) || dv.kw(52, A) || dv.kx(A, 1))) : 3 !== y ? dz.zr(dz.jB, 3236) : (A = k(m, 9), z = k(m, 9), 0 === ex[A] || 0 === ex[z] || 0 === ex[ap] || dv.mJ(50, A, z) || (dw.mH(A, 3, 96), dw.mH(z, 4, 96), dv.mI(A, z)))))
             }
         };
         this.vJ = function (u) {
