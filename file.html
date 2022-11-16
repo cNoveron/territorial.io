@@ -2328,7 +2328,7 @@
     }
 
     function o9() {
-        oA.addEventListener("mousedown", oB);
+        oA.addEventListener("mousedown", onMouseDown);
         oA.addEventListener("mousemove", oC);
         oA.addEventListener("mouseup", oD);
         oA.addEventListener("mouseleave", oE);
@@ -2349,9 +2349,13 @@
         o0 = 1 > o0 ? 1 : o0
     }
 
-    function oB(g) {
+    function onMouseDown(g) {
+        console.log('hey')
         g.preventDefault();
-        o2 || (dz.oM(dz.jB), oN(Math.floor(g.clientX), Math.floor(g.clientY)))
+        o2 || (
+            dz.oM(dz.jB), 
+            oN(Math.floor(g.clientX), Math.floor(g.clientY))
+        )
     }
 
     function oG(g) {
