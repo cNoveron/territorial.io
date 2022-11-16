@@ -2953,7 +2953,11 @@
         };
         this.kr = function () {
             var I = Math.floor(1E3 * D);
-            return 0 >= I ? 1 : 1E3 < I ? 1E3 : I
+            return 0 >= I 
+                ? 1 
+                : 1E3 < I 
+                    ? 1E3 
+                    : I
         };
         this.oQ = function (I, E) {
             return this.kc() && I > m && I < m + u && E > this.f2
