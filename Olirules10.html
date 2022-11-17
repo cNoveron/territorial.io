@@ -487,7 +487,7 @@
             (xzu690.font = d[c].font),
             (xzu690.textBaseline = xzu326),
             (xzu690.textAlign = xzu329),
-            (xzu690.fillStyle = xzu315),
+            (xzu690.fillStyle = white),
             xzu690.fillText(
               d[c].str,
               0.5 * a * xzu205.get(13).width,
@@ -2075,10 +2075,10 @@
     function a() {
       var k = g.getContext("2d");
       k.clearRect(0, 0, b, b);
-      k.fillStyle = xzu289;
+      k.fillStyle = black05;
       k.fillRect(0, 0, b, b);
-      0 == h && ((k.fillStyle = xzu305), k.fillRect(0, 0, b, b));
-      k.fillStyle = xzu315;
+      0 == h && ((k.fillStyle = white03), k.fillRect(0, 0, b, b));
+      k.fillStyle = white;
       k.fillRect(0, 0, b, 1);
       k.fillRect(0, 0, 1, b);
       k.fillRect(0, b - 1, b, 1);
@@ -2107,11 +2107,11 @@
     }
     function c(k, f) {
       xzu690.setTransform(1, 0, 0, 1, xzu347, xzu185.y - k * l * xzu347 - k * b);
-      xzu690.fillStyle = xzu289;
+      xzu690.fillStyle = black05;
       xzu690.fillRect(0, 0, 4 * b, b);
       h == k + 1 &&
-        f == xzu315 &&
-        ((xzu690.fillStyle = xzu305), xzu690.fillRect(0, 0, 4 * b, b));
+        f == white &&
+        ((xzu690.fillStyle = white03), xzu690.fillRect(0, 0, 4 * b, b));
       xzu690.fillStyle = f;
       xzu690.fillRect(0, 0, 4 * b, 1);
       xzu690.fillRect(0, 0, 1, b);
@@ -2183,14 +2183,14 @@
       if (this.isSelected) {
         var k = Math.floor(5.5 * b);
         xzu690.setTransform(1, 0, 0, 1, xzu347, xzu185.y);
-        xzu690.fillStyle = xzu289;
+        xzu690.fillStyle = black05;
         xzu690.fillRect(0, 0, k, b);
         0 == h
-          ? ((xzu690.fillStyle = xzu305), xzu690.fillRect(0, 0, 4 * b, b))
+          ? ((xzu690.fillStyle = white03), xzu690.fillRect(0, 0, 4 * b, b))
           : 1 == h &&
-            ((xzu690.fillStyle = xzu305),
+            ((xzu690.fillStyle = white03),
             xzu690.fillRect(4 * b, 0, Math.floor(1.5 * b), b));
-        xzu690.fillStyle = xzu315;
+        xzu690.fillStyle = white;
         xzu690.fillRect(0, 0, k, 1);
         xzu690.fillRect(0, 0, 1, b);
         xzu690.fillRect(4 * b, 0, 1, b);
@@ -2206,8 +2206,8 @@
           xzu185.y + 0.3 * b,
           k
         );
-        c(1, switchStateMouseMoveSurrenderPossibleDrawCross.surrenderPossible(xzu161) ? xzu315 : xzu295);
-        2 <= xzu717.filled && c(2, xzu315);
+        c(1, switchStateMouseMoveSurrenderPossibleDrawCross.surrenderPossible(xzu161) ? white : grey);
+        2 <= xzu717.filled && c(2, white);
         xzu690.setTransform(1, 0, 0, 1, 0, 0);
       } else xzu690.drawImage(g, xzu347, xzu185.y);
     };
@@ -2217,7 +2217,7 @@
     this.drawCross = function (k, f, n) {
       xzu690.setTransform(1, 0, 0, 1, k, f);
       xzu690.lineWidth = 2;
-      xzu690.strokeStyle = xzu315;
+      xzu690.strokeStyle = white;
       xzu690.beginPath();
       xzu690.moveTo(0, 0);
       xzu690.lineTo(n, n);
@@ -2271,7 +2271,7 @@
       this.zto1324();
       xzu164 && this.addState(0, 18);
       var f = "Map: " + mapsData.get(selected_mapIndex).name;
-      a(300, f, 6, 0, xzu315, xzu290);
+      a(300, f, 6, 0, white, black075);
     };
     this.zto1324 = function () {
       c = Math.floor((xzu706 ? 0.0405 : 0.0345) * xzu696);
@@ -2342,19 +2342,19 @@
             n,
             f,
             "rgb(0,255,0)",
-            xzu290
+            black075
           );
       else if (1 == n)
         xzu184.add(f, 1),
-          a(360, "You were erased by " + xzu664[f] + ".", n, f, xzu315, xzu290),
+          a(360, "You were erased by " + xzu664[f] + ".", n, f, white, black075),
           setPositionSetCamera.setDeathCamera(f, 2700, !0, 0);
       else if (2 == n)
         xzu184.add(f, 2),
-          a(0, "Congratulations! You won the game.", n, f, xzu315, xzu290),
+          a(0, "Congratulations! You won the game.", n, f, white, black075),
           setPositionSetCamera.setDeathCamera(f, 2700, !0, 0);
       else if (3 == n)
         xzu184.add(f, 2),
-          a(0, xzu664[f] + " won the game.", n, f, xzu315, xzu290),
+          a(0, xzu664[f] + " won the game.", n, f, white, black075),
           setPositionSetCamera.setDeathCamera(f, 2700, !0, 0);
       else if (4 == n) {
         xzu147--;
@@ -2374,11 +2374,11 @@
                 " other players left the game.",
               4,
               f,
-              xzu315,
-              xzu290
+              white,
+              black075
             ),
             (h = []));
-        } else a(180, xzu664[f] + " left the game.", 4, f, xzu315, xzu290);
+        } else a(180, xzu664[f] + " left the game.", 4, f, white, black075);
       } else if (5 == n) {
         if (5 <= d.length)
           for (r = p = 0; r < d.length; r++)
@@ -2386,7 +2386,7 @@
               d.splice(r, 1);
               break;
             }
-        a(180, xzu664[f] + " is attacking you!", n, f, "rgb(255,50,50)", xzu290);
+        a(180, xzu664[f] + " is attacking you!", n, f, "rgb(255,50,50)", black075);
       } else
         8 == n
           ? a(
@@ -2395,12 +2395,12 @@
               n,
               0,
               "rgb(255,255,0)",
-              xzu290
+              black075
             )
           : 17 == n
-          ? a(0, "Claim Victory!", n, 0, xzu315, xzu302)
+          ? a(0, "Claim Victory!", n, 0, white, xzu302)
           : 18 == n
-          ? a(255, "Choose your start position!", n, 0, xzu315, xzu290)
+          ? a(255, "Choose your start position!", n, 0, white, black075)
           : 19 == n
           ? a(
               140,
@@ -2408,29 +2408,29 @@
               n,
               f,
               "rgb(255,180,255)",
-              xzu290
+              black075
             )
           : 21 == n
-          ? a(220, "You surrendered!", n, 0, xzu315, "rgba(160,0,0,0.75)")
+          ? a(220, "You surrendered!", n, 0, white, "rgba(160,0,0,0.75)")
           : 22 == n &&
             a(
               5 < xzu146 ? 80 : 220,
               xzu664[f] + " surrendered!",
               n,
               f,
-              xzu315,
-              xzu290
+              white,
+              black075
             );
     };
     this.sendEmoji = function (f, n, p) {
       f == xzu161
-        ? a(175, " Message to " + xzu664[n] + ": ", 1e3 + p, n, xzu315, xzu290)
+        ? a(175, " Message to " + xzu664[n] + ": ", 1e3 + p, n, white, black075)
         : this.receiveEmoji(f, p);
     };
     this.receiveEmoji = function (f, n) {
       var p,
         r = 0;
-      a(175, xzu664[f] + ": ", 1e3 + n, f, "rgb(200,255,210)", xzu290);
+      a(175, xzu664[f] + ": ", 1e3 + n, f, "rgb(200,255,210)", black075);
       for (p = 0; p < d.length; p++)
         1e3 <= d[p].id &&
           d[p].player == f &&
@@ -2443,10 +2443,10 @@
             "Congratulations! Your alliance won the game.",
             40,
             0,
-            xzu315,
-            xzu290
+            white,
+            black075
           )
-        : a(0, "Your alliance was defeated!", 41, 0, xzu315, xzu290);
+        : a(0, "Your alliance was defeated!", 41, 0, white, black075);
       xzu184.addText(512 < xzu722.q ? "Team Red" : "Team Blue", 2);
       setPositionSetCamera.setMapCamera(2700);
     };
@@ -2458,22 +2458,22 @@
         f[0].name + " [" + n + "] vs " + f[1].name + " [" + p + "]",
         65,
         0,
-        xzu288,
+        black,
         "rgba(100,255,255,0.75)"
       );
     };
     this.addEloEndMsg = function (f, n, p, r) {
       var t = (f[0].elo / 10).toFixed(1),
         q = (f[1].elo / 10).toFixed(1);
-      a(0, f[0].name + ": " + t + " -> " + n, 66, 0, xzu315, r[0]);
-      a(0, f[1].name + ": " + q + " -> " + p, 66, 1, xzu315, r[1]);
+      a(0, f[0].name + ": " + t + " -> " + n, 66, 0, white, r[0]);
+      a(0, f[1].name + ": " + q + " -> " + p, 66, 1, white, r[1]);
     };
     this.addClanMsg = function (f) {
-      a(0, "[" + f + "] won this contest!", 45, 0, xzu288, xzu320);
+      a(0, "[" + f + "] won this contest!", 45, 0, black, white075);
     };
     this.addBalanceWarning = function () {
       100 <= xzu672[xzu161] ||
-        a(80, "Your balance is too low!", 9, 0, "rgb(255,255,0)", xzu290);
+        a(80, "Your balance is too low!", 9, 0, "rgb(255,255,0)", black075);
     };
     this.addSupport = function (f, n) {
       a(
@@ -2488,7 +2488,7 @@
         30,
         n,
         "rgb(10,220,10)",
-        xzu290
+        black075
       );
     };
     this.receiveSupport = function (f, n) {
@@ -2503,7 +2503,7 @@
           ".",
         31,
         n,
-        xzu315,
+        white,
         "rgba(0,100,0,0.75)"
       );
     };
@@ -2523,8 +2523,8 @@
               " other players were erased.",
             7,
             f,
-            xzu315,
-            xzu290
+            white,
+            black075
           ),
           (m = []));
       } else
@@ -2533,8 +2533,8 @@
           xzu664[f] + " was erased by " + xzu664[n] + ".",
           7,
           n,
-          xzu315,
-          xzu290
+          white,
+          black075
         );
     };
     this.calculate = function (f) {
@@ -2555,7 +2555,7 @@
                 xzu664[xzu678[f]] + " joined the game.",
                 1,
                 xzu678[f],
-                xzu288,
+                black,
                 "rgba(210,255,210,0.75)"
               );
               break a;
@@ -2568,7 +2568,7 @@
                 "The weakest player of this round: " + xzu664[xzu678[f]],
                 1,
                 xzu678[f],
-                xzu288,
+                black,
                 "rgba(255,210,210,0.75)"
               );
               break;
@@ -2637,11 +2637,11 @@
       var a = xzu349,
         d = Math.floor(xzu698 - this.h - xzu349);
       xzu690.setTransform(1, 0, 0, 1, a, d);
-      xzu690.fillStyle = xzu290;
+      xzu690.fillStyle = black075;
       xzu690.fillRect(0, 0, this.w, this.h);
       xzu690.textBaseline = xzu326;
       xzu690.textAlign = xzu329;
-      xzu690.strokeStyle = xzu315;
+      xzu690.strokeStyle = white;
       xzu690.font = xzu332 + this.fontSize + xzu336;
       xzu690.strokeRect(0, 0, this.w, this.h);
       for (var c = this.strs.length - 1; 0 <= c; c--)
@@ -2656,9 +2656,9 @@
           (xzu690.fillStyle = this.colors[c]),
           xzu690.fillRect(0, 0, this.w1, this.h1),
           this.index == c &&
-            ((xzu690.fillStyle = xzu317),
+            ((xzu690.fillStyle = white04),
             xzu690.fillRect(0, 0, this.w1, this.h1)),
-          (xzu690.fillStyle = xzu315),
+          (xzu690.fillStyle = white),
           xzu690.fillText(this.strs[c], this.w1 / 2, 0.54 * this.h1),
           xzu690.strokeRect(0, 0, this.w1, this.h1);
       xzu690.setTransform(1, 0, 0, 1, 0, 0);
@@ -2724,11 +2724,11 @@
       xzu690.translate(xzu697 - m, Math.floor(0.5 * (xzu698 + e)));
       xzu690.rotate(-Math.PI / 2);
       xzu690.fillStyle =
-        7 == xzu198.getState() && xzu201.isContest() ? xzu322 : xzu315;
+        7 == xzu198.getState() && xzu201.isContest() ? xzu322 : white;
       xzu690.fillRect(0, 0, e, m);
-      xzu690.strokeStyle = xzu288;
+      xzu690.strokeStyle = black;
       xzu690.strokeRect(0, 0, e, m + 10);
-      xzu690.fillStyle = xzu288;
+      xzu690.fillStyle = black;
       xzu690.font = h;
       xzu690.textBaseline = xzu326;
       xzu690.textAlign = xzu329;
@@ -2925,26 +2925,25 @@
       xzu690.setTransform(1, 0, 0, 1, 0, 0);
     };
   }
-  var xzu286 = "rgba(0,0,0,0.7)",
-    xzu287 = "rgba(0,0,0,0.5)",
-    xzu288 = "rgb(0,0,0)",
-    xzu289 = "rgba(0,0,0,0.5)",
-    xzu290 = "rgba(0,0,0,0.75)",
-    xzu291 = "rgba(0,0,0,0.6)",
-    xzu292 = "rgba(0,0,0,0.85)",
-    xzu293 = "rgb(255,255,255)",
-    xzu294 = "rgba(0,255,255,0.4)",
-    xzu295 = "rgb(128,128,128)",
-    xzu296 = "rgba(0,255,0,0.6)",
-    xzu297 = "rgba(0,255,0,0.5)",
-    xzu298 = "rgba(0,200,0,0.5)",
-    xzu299 = "rgba(0,100,0,0.75)",
+  var black07 = "rgba(0,0,0,0.7)",
+    black05 = "rgba(0,0,0,0.5)",
+    black = "rgb(0,0,0)",
+    black075 = "rgba(0,0,0,0.75)",
+    black06 = "rgba(0,0,0,0.6)",
+    black085 = "rgba(0,0,0,0.85)",
+    white = "rgb(255,255,255)",
+    cyan04 = "rgba(0,255,255,0.4)",
+    grey = "rgb(128,128,128)",
+    green06 = "rgba(0,255,0,0.6)",
+    green05 = "rgba(0,255,0,0.5)",
+    green200_05 = "rgba(0,200,0,0.5)",
+    green100_075 = "rgba(0,100,0,0.75)",
     xzu300 = "rgba(0,255,160,0.4)",
     xzu301 = "rgb(128,255,128)",
     xzu302 = "rgba(0,0,200,0.75)",
     xzu303 = "rgba(255,255,150,0.2)",
-    xzu304 = "rgba(0,255,0,0.3)",
-    xzu305 = "rgba(255,255,255,0.3)",
+    green03 = "rgba(0,255,0,0.3)",
+    white03 = "rgba(255,255,255,0.3)",
     xzu306 = "rgba(0,40,90,0.75)",
     xzu307 = "rgba(255,128,0,0.5)",
     xzu308 = "rgba(120,0,0,0.5)",
@@ -2952,19 +2951,17 @@
     xzu310 = "rgba(255,100,100,0.8)",
     xzu311 = "rgba(130,30,20,0.7)",
     xzu312 = "rgb(255,160,160)",
-    xzu313 = "rgb(255,0,0)",
-    xzu314 = "rgba(0,0,0,0)",
-    xzu315 = "rgb(255,255,255)",
-    xzu316 = "rgba(255,255,255,0.6)",
-    xzu317 = "rgba(255,255,255,0.4)",
-    xzu318 = "rgba(255,255,255,0.25)",
-    xzu319 = "rgba(255,255,255,0.85)",
-    xzu320 = "rgba(255,255,255,0.75)",
+    red = "rgb(255,0,0)",
+    white06 = "rgba(255,255,255,0.6)",
+    white04 = "rgba(255,255,255,0.4)",
+    white025 = "rgba(255,255,255,0.25)",
+    white085 = "rgba(255,255,255,0.85)",
+    white075 = "rgba(255,255,255,0.75)",
     xzu321 = "rgb(255,120,100)",
     xzu322 = "rgb(255,220,100)",
-    xzu323 = "rgba(80,80,0,0.75)",
+    yellow80_075 = "rgba(80,80,0,0.75)",
     xzu324 = [
-      xzu315,
+      white,
       "rgb(0,255,0)",
       "rgb(255,220,0)",
       "rgb(0,255,255)",
@@ -2976,8 +2973,8 @@
       "rgb(255,128,128)",
       "rgb(16,16,128)",
       "rgb(160,160,255)",
-      xzu288,
-      xzu315,
+      black,
+      white,
     ],
     xzu326 = "middle",
     xzu327 = "top",
@@ -3131,7 +3128,7 @@
       : xzu186.wheel(d, c, 2 * b) && (xzu720.requestRepaint = !0);
   }
   function zto1022(a, d, c) {
-    a.fillStyle = xzu315;
+    a.fillStyle = white;
     a.fillRect(0, 0, d, 1);
     a.fillRect(0, c - 1, d, 1);
     a.fillRect(0, 0, 1, c);
@@ -3164,7 +3161,7 @@
         Math.floor(k - g / 2 - f),
         Math.floor(0.57 * m)
       );
-      b[l].context.fillStyle = xzu316;
+      b[l].context.fillStyle = white06;
       b[l].context.fillRect(
         Math.floor(k - g - f),
         m - h,
@@ -3172,8 +3169,8 @@
         h
       );
       0 == b[l].id &&
-        ((b[l].context.strokeStyle = b[l].cancelled ? xzu295 : xzu312),
-        (b[l].context.fillStyle = xzu315),
+        ((b[l].context.strokeStyle = b[l].cancelled ? grey : xzu312),
+        (b[l].context.fillStyle = white),
         b[l].context.fillRect(k - m, 0, 1, m),
         (f = Math.floor(m / 12)),
         (b[l].context.lineWidth = 3 > f ? 3 : f),
@@ -3373,15 +3370,15 @@
       y.clearRect(0, 0, b[0].width + t, l + t);
       y.translate(Math.floor(t / 2), Math.floor(t / 2));
       y.lineWidth = t;
-      y.fillStyle = 3 == b[0].index ? xzu319 : xzu290;
+      y.fillStyle = 3 == b[0].index ? white085 : black075;
       c();
       y.fill();
-      y.strokeStyle = 3 == b[0].index ? xzu288 : xzu315;
+      y.strokeStyle = 3 == b[0].index ? black : white;
       c();
       y.stroke();
       y.textAlign = xzu329;
       y.textBaseline = xzu326;
-      y.fillStyle = 3 == b[0].index ? xzu288 : xzu315;
+      y.fillStyle = 3 == b[0].index ? black : white;
       y.font = k[0];
       y.fillText(
         p[b[0].index],
@@ -3505,12 +3502,12 @@
     function d() {
       l.clearRect(0, 0, g, xzu185.h);
       var t = Math.floor(f * (g - 2 * m));
-      l.fillStyle = xzu290;
+      l.fillStyle = black075;
       l.fillRect(0, 0, m, xzu185.h);
       l.fillRect(m + t, 0, g - m - t, xzu185.h);
       l.fillStyle = a();
       l.fillRect(m, 0, t, xzu185.h);
-      l.fillStyle = xzu315;
+      l.fillStyle = white;
       l.fillRect(0, 0, g, 1);
       l.fillRect(0, xzu185.h - 1, g, 1);
       l.fillRect(0, 0, 1, xzu185.h);
@@ -3686,13 +3683,13 @@
         f--
       )
         d[f].clearRect(0, 0, c, c),
-          (d[f].fillStyle = xzu286),
+          (d[f].fillStyle = black07),
           d[f].beginPath(),
           d[f].arc(c / 2, c / 2, c / 2 - k, 0, 2 * Math.PI),
           d[f].fill(),
           (d[f].lineWidth = k),
-          (d[f].fillStyle = xzu293),
-          (d[f].strokeStyle = xzu293),
+          (d[f].fillStyle = white),
+          (d[f].strokeStyle = white),
           d[f].beginPath(),
           d[f].arc(c / 2, c / 2, c / 2 - k, 0, 2 * Math.PI),
           d[f].stroke(),
@@ -4210,10 +4207,10 @@
       -1 != r && (this.mousePressed = !1);
     };
     this.draw = function () {
-      xzu690.fillStyle = xzu317;
+      xzu690.fillStyle = white04;
       for (var C = p; C >= n; C--) b(C);
       v && 0 == n && ((xzu690.fillStyle = xzu309), b(0));
-      -1 != r && ((xzu690.fillStyle = xzu316), b(r));
+      -1 != r && ((xzu690.fillStyle = white06), b(r));
       if (-1 != r) {
         xzu690.font = q;
         xzu690.textBaseline = xzu328;
@@ -4238,15 +4235,15 @@
         var V = xzu698 - Math.floor(f * Math.pow(e[r], z)),
           R = Math.floor(1.1 * t),
           T = V > xzu698 - R && 0 == r ? xzu698 - R : V;
-        xzu690.fillStyle = xzu290;
+        xzu690.fillStyle = black075;
         xzu690.fillRect(xzu697 - S - t, T - R, S + t, R);
         xzu690.fillRect(K - Q, xzu698 - R, O + t, R);
-        xzu690.fillStyle = xzu315;
+        xzu690.fillStyle = white;
         xzu690.textAlign = xzu331;
         xzu690.fillText(I, Math.floor(xzu697 - 0.5 * t), T);
         xzu690.textAlign = xzu329;
         xzu690.fillText(C, K, xzu698);
-        xzu690.strokeStyle = xzu318;
+        xzu690.strokeStyle = white025;
         xzu690.lineWidth = 1;
         xzu690.beginPath();
         xzu690.moveTo(0, V);
@@ -4261,14 +4258,14 @@
       e.clearRect(0, 0, c, xzu188.h);
       e.fillStyle = l ? k : f;
       e.fillRect(0, 0, c, xzu188.h);
-      e.fillStyle = xzu315;
+      e.fillStyle = white;
       e.fillText(xzu183.createString(h), Math.floor(c / 2), n);
-      e.fillStyle = xzu316;
+      e.fillStyle = white06;
       var p = Math.floor(((xzu209.getTimer() - 1) * xzu188.h) / 9),
         r = Math.floor(1 + 0.13 * xzu188.h);
       e.fillRect(0, p, r, xzu188.h - p);
       e.fillRect(c - r, p, r, xzu188.h - p);
-      e.fillStyle = xzu315;
+      e.fillStyle = white;
       e.fillRect(0, 0, c, 1);
       e.fillRect(0, 0, 1, xzu188.h);
       e.fillRect(0, xzu188.h - 1, c, 1);
@@ -4335,7 +4332,7 @@
       var E = Math.floor(0.2 * v);
       k.setTransform(1, 0, 0, 1, Math.floor(0.2 * v), Math.floor(0.2 * v));
       k.lineWidth = 2;
-      k.strokeStyle = xzu315;
+      k.strokeStyle = white;
       k.beginPath();
       k.moveTo(0, 0);
       k.lineTo(E, E);
@@ -4343,12 +4340,12 @@
       k.lineTo(E, 0);
       k.stroke();
       k.setTransform(1, 0, 0, 1, 0, 0);
-      k.fillStyle = xzu292;
+      k.fillStyle = black085;
       k.fillRect(0, v, p, xzu438 - v);
-      c(xzu443[xzu161], xzu304);
+      c(xzu443[xzu161], green03);
       0 != xzu443[xzu161] && c(0, xzu303);
-      -1 != T && c(T, xzu305);
-      k.fillStyle = xzu293;
+      -1 != T && c(T, white03);
+      k.fillStyle = white;
       k.fillRect(0, v, p, 1);
       k.fillRect(0, 0, p, xzu348);
       k.fillRect(0, 0, xzu348, xzu438);
@@ -4393,7 +4390,7 @@
           ? xzu325[1 + (E % 2) * 2]
           : E < xzu146
           ? xzu325[1 + 2 * xzu721.ids[E]]
-          : xzu293);
+          : white);
     }
     function c(E, L) {
       k.fillStyle = L;
@@ -4607,16 +4604,16 @@
     function a() {
       g.clearRect(0, 0, xzu190.w, xzu190.h);
       0 >= xzu681
-        ? ((g.fillStyle = xzu290),
+        ? ((g.fillStyle = black075),
           g.fillRect(0, 0, xzu190.w, xzu190.h),
-          (g.fillStyle = xzu296),
+          (g.fillStyle = green06),
           g.fillRect(
             0,
             xzu190.h - h - 1,
             Math.floor((0 < z ? z : Math.sqrt(q[4] / q[3])) * xzu190.w),
             h
           ))
-        : ((g.fillStyle = xzu442[0] == xzu161 ? xzu299 : xzu311),
+        : ((g.fillStyle = xzu442[0] == xzu161 ? green100_075 : xzu311),
           g.fillRect(0, 0, xzu190.w, xzu190.h),
           (g.fillStyle = xzu310),
           g.fillRect(
@@ -4625,7 +4622,7 @@
             Math.floor(zto1304(xzu681 * xzu190.w, 1e4)),
             h
           ));
-      g.fillStyle = xzu315;
+      g.fillStyle = white;
       g.fillRect(0, 0, xzu190.w, 1);
       g.fillRect(0, 0, 1, xzu190.h);
       g.fillRect(xzu190.w - 1, 0, 1, xzu190.h);
@@ -4644,7 +4641,7 @@
           xzu672[xzu161] >= xzu209.getMaxInterest(xzu161)
             ? ((g.fillStyle = xzu321),
               g.fillText(d(C), xzu190.w - k, I),
-              (g.fillStyle = xzu315))
+              (g.fillStyle = white))
             : g.fillText(d(C), xzu190.w - k, I);
         } else x++;
     }
@@ -4842,17 +4839,17 @@
         n = f.getContext("2d", { alpha: !0 });
         n.clearRect(0, 0, f.width, f.height);
         n.setTransform(1, 0, 0, 1, Math.floor(t / 2), Math.floor(t / 2));
-        n.fillStyle = xzu290;
+        n.fillStyle = black075;
         n.fillRect(0, 0, c, b);
         n.lineJoin = "bevel";
         n.lineWidth = t;
-        n.strokeStyle = xzu315;
-        n.shadowColor = xzu315;
+        n.strokeStyle = white;
+        n.shadowColor = white;
         n.shadowBlur = t;
         n.shadowOffsetX = Math.floor(t / 2);
         n.shadowOffsetY = Math.floor(t / 2);
         n.strokeRect(0, 0, c, b);
-        n.shadowColor = xzu314;
+        n.shadowColor = black;
         n.shadowBlur = 0;
         n.shadowOffsetX = 0;
         n.shadowOffsetY = 0;
@@ -4870,7 +4867,7 @@
         );
         r = Math.floor(l * b);
         n.lineWidth = Math.floor(1 + b / 80);
-        n.strokeStyle = xzu315;
+        n.strokeStyle = white;
         n.beginPath();
         n.moveTo(0, 0);
         n.lineTo(r, r);
@@ -5184,9 +5181,9 @@
           (xzu697 - this.w) / 2,
           (xzu698 - this.h) / 2
         );
-        xzu690.fillStyle = xzu292;
+        xzu690.fillStyle = black085;
         xzu690.fillRect(0, 0, this.w, this.h);
-        xzu690.fillStyle = xzu315;
+        xzu690.fillStyle = white;
         xzu690.beginPath();
         xzu690.moveTo(this.w / 4, 0);
         xzu690.lineTo(this.w / 2 - a, 0);
@@ -5230,7 +5227,7 @@
       xzu690.textBaseline = xzu326;
       for (var a, d = this.objs[this.selected][1] - 1; 0 <= d; d--)
         (xzu690.fillStyle =
-          d == this.objs[this.selected][2] ? "rgb(255,255,155)" : xzu315),
+          d == this.objs[this.selected][2] ? "rgb(255,255,155)" : white),
           (xzu690.textAlign = xzu331),
           (a = Math.floor(
             this.top0 * this.h +
@@ -5282,7 +5279,7 @@
         p.href = n;
         p.style.font = q;
         p.style.textAlign = "center";
-        p.style.color = xzu315;
+        p.style.color = white;
         p.style.position = "absolute";
         p.style.padding = "0px";
         p.style.margin = "0px";
@@ -5312,10 +5309,10 @@
       this.isVisible &&
         ((xzu690.imageSmoothingEnabled = !0),
         xzu690.setTransform(1, 0, 0, 1, a, d),
-        (xzu690.fillStyle = xzu290),
+        (xzu690.fillStyle = black075),
         xzu690.fillRect(0, 0, f, b),
         (xzu690.lineWidth = xzu350),
-        (xzu690.strokeStyle = xzu315),
+        (xzu690.strokeStyle = white),
         xzu690.strokeRect(0, 0, f, b),
         xzu690.setTransform(c, 0, 0, c, a + (f - l) / 2, d + m),
         xzu690.drawImage(xzu205.get(21), 0, 0),
@@ -5437,19 +5434,19 @@
         ((xzu690.fillStyle = xzu196.get(19).colorBg),
         xzu690.fillRect(g, e, c, b),
         (xzu690.lineWidth = 3),
-        (xzu690.strokeStyle = xzu315),
+        (xzu690.strokeStyle = white),
         xzu690.strokeRect(g, e, c, b),
         (xzu690.textAlign = xzu329),
         (xzu690.textBaseline = xzu326),
         (xzu690.font = xzu196.get(18).font),
-        (xzu690.fillStyle = xzu315),
+        (xzu690.fillStyle = white),
         xzu690.fillText(d, Math.floor(g + c / 2), Math.floor(e + b / 2)),
         p &&
           ((xzu690.fillStyle = xzu196.get(19).colorBg),
           xzu690.fillRect(g, n, c, b),
-          (xzu690.strokeStyle = xzu313),
+          (xzu690.strokeStyle = red),
           xzu690.strokeRect(g, n, c, b),
-          (xzu690.fillStyle = xzu313),
+          (xzu690.fillStyle = red),
           xzu690.fillText(f, Math.floor(g + c / 2), Math.floor(n + b / 2))));
     };
   }
@@ -5527,7 +5524,7 @@
           c
         );
         xzu690.lineWidth = 3;
-        xzu690.strokeStyle = xzu315;
+        xzu690.strokeStyle = white;
         xzu690.strokeRect(
           Math.floor(a[n].x + (a[n].w - d) / 2),
           a[n].y + m - g - c,
@@ -5538,7 +5535,7 @@
         xzu690.textAlign = xzu329;
         xzu690.textBaseline = xzu326;
         xzu690.font = xzu196.get(19).font;
-        xzu690.fillStyle = xzu315;
+        xzu690.fillStyle = white;
         xzu690.fillText(
           a[n].txt,
           Math.floor(a[n].x + a[n].w / 2 - 0.2 * e),
@@ -5643,7 +5640,7 @@
           M = J + F;
           f.fillStyle = T[H];
           f.fillRect(y, Math.floor(z + M * O - K), B, B);
-          f.strokeStyle = xzu315;
+          f.strokeStyle = white;
           f.strokeRect(y, Math.floor(z + M * O - K), B, B);
         }
     }
@@ -5817,10 +5814,10 @@
     };
     this.refresh = function () {
       f.clearRect(0, 0, h, l);
-      f.fillStyle = xzu287;
+      f.fillStyle = black05;
       d();
       f.fill();
-      f.strokeStyle = xzu315;
+      f.strokeStyle = white;
       f.beginPath();
       f.moveTo(p, 2 * u);
       f.lineTo(p, l - 2 * u);
@@ -5828,7 +5825,7 @@
       f.fillStyle = xzu307;
       c();
       f.fill();
-      f.strokeStyle = xzu315;
+      f.strokeStyle = white;
       c();
       f.stroke();
       f.lineWidth = q;
@@ -5837,7 +5834,7 @@
       D += w.length;
       b(x, D, 1);
       f.lineWidth = t;
-      f.strokeStyle = xzu315;
+      f.strokeStyle = white;
       d();
       f.stroke();
     };
@@ -5982,7 +5979,7 @@
         }
         void 0 == k &&
           21 == f &&
-          ((xzu690.fillStyle = xzu294),
+          ((xzu690.fillStyle = cyan04),
           xzu690.fillRect(p, r, Math.floor((t * xzu201.getProgress()) / 100), q));
         f == e && ((xzu690.fillStyle = h), xzu690.fillRect(p, r, t, q));
         xzu690.lineWidth = 3;
@@ -6009,7 +6006,7 @@
     var b, g, e, m, h, l, k;
     this.init = function () {
       e = -1;
-      m = xzu315;
+      m = white;
       h = "rgba(255,255,255,0.16)";
       b = Array(35);
       l = Array(2);
@@ -6202,7 +6199,7 @@
         h: b[0].h,
         txt: b[4].txt,
         font: b[0].font,
-        colorBg: xzu291,
+        colorBg: black06,
         fontSize: b[0].fontSize,
         selectable: !0,
       };
@@ -6733,10 +6730,10 @@
         (xzu697 - this.w) / 2,
         (xzu698 - this.h) / 2
       );
-      xzu690.fillStyle = xzu290;
+      xzu690.fillStyle = black075;
       xzu690.fillRect(0, 0, this.w, this.h);
       xzu690.lineWidth = xzu350;
-      xzu690.strokeStyle = xzu315;
+      xzu690.strokeStyle = white;
       xzu690.strokeRect(-1, -1, this.w + 2, this.h + 2);
       xzu690.font = xzu332 + Math.floor(0.8 * this.wBox) + xzu336;
       xzu690.textBaseline = xzu326;
@@ -6771,7 +6768,7 @@
         this.gap + 0.565 * this.wBox + d * (this.gap + this.wBox)
       );
       xzu690.lineWidth = d == this.indexSelected ? 3 + xzu350 : xzu350;
-      xzu690.strokeStyle = xzu315;
+      xzu690.strokeStyle = white;
       xzu690.strokeRect(
         this.gap,
         this.gap + d * (this.gap + this.wBox),
@@ -6799,7 +6796,7 @@
         Math.floor((this.colors[this.indexSelected][d] * this.wSlider) / 255),
         this.hSlider
       );
-      xzu690.strokeStyle = xzu315;
+      xzu690.strokeStyle = white;
       xzu690.strokeRect(
         2 * this.gap + this.wBox,
         this.gap + d * (this.gap + this.hSlider),
@@ -6860,19 +6857,19 @@
       var l = "Connection: " + xzu190.percentageToString(d, 1),
         k = Math.floor(0.5 * (xzu698 - c)),
         f = d / 100;
-      xzu690.fillStyle = xzu287;
+      xzu690.fillStyle = black05;
       a(k, 3, 1);
       xzu690.fill();
       xzu690.fillStyle = xzu300;
       a(k, 3, f);
       xzu690.fill();
-      xzu690.strokeStyle = xzu315;
+      xzu690.strokeStyle = white;
       a(k, 3, 1);
       xzu690.stroke();
       xzu690.textAlign = xzu329;
       xzu690.textBaseline = xzu326;
       xzu690.font = e;
-      xzu690.fillStyle = xzu315;
+      xzu690.fillStyle = white;
       xzu690.fillText(l, Math.floor(0.5 * xzu697), Math.floor(k + 0.58 * c));
     };
   }
@@ -6986,8 +6983,8 @@
           xzu690.scale(c, c);
           xzu690.drawImage(xzu733, 0, 0);
           xzu690.restore();
-        } else (xzu690.fillStyle = xzu288), xzu690.fillRect(0, 0, xzu694, xzu695);
-        xzu690.fillStyle = xzu287;
+        } else (xzu690.fillStyle = black), xzu690.fillRect(0, 0, xzu694, xzu695);
+        xzu690.fillStyle = black05;
         xzu690.fillRect(0, 0, xzu694, xzu695);
         xzu187.draw();
         xzu182.draw();
@@ -7010,7 +7007,7 @@
         xzu690.textAlign = xzu331;
         xzu690.textBaseline = xzu327;
         xzu690.font = d;
-        xzu690.fillStyle = xzu315;
+        xzu690.fillStyle = white;
         xzu690.fillText(xzu691, xzu697 - xzu347, xzu347);
         xzu727.draw();
         xzu723.draw();
@@ -7088,10 +7085,10 @@
       var a = (xzu697 - this.w) / 2,
         d = (xzu698 - this.h) / 2;
       xzu690.setTransform(1, 0, 0, 1, a, d);
-      xzu690.fillStyle = xzu290;
+      xzu690.fillStyle = black075;
       xzu690.fillRect(0, 0, this.w, this.h);
       xzu690.lineWidth = xzu350;
-      xzu690.strokeStyle = xzu315;
+      xzu690.strokeStyle = white;
       xzu690.strokeRect(-1, -1, this.w + 2, this.h + 2);
       for (
         var c = Math.floor(this.w / this.rows),
@@ -7109,7 +7106,7 @@
           Math.floor(d + zto1304(g, this.rows) * c)
         ),
           xzu715.arrSelected[g] &&
-            ((xzu690.fillStyle = xzu297), xzu690.fillRect(0, 0, c, c)),
+            ((xzu690.fillStyle = green05), xzu690.fillRect(0, 0, c, c)),
           xzu690.setTransform(
             b,
             0,
@@ -7226,8 +7223,8 @@
       d[g].input.value = "";
       d[g].input.style.textAlign = 0 == g ? "center" : "left";
       d[g].input.style.backgroundColor = c;
-      d[g].input.style.border = "3px solid " + xzu315;
-      d[g].input.style.color = xzu315;
+      d[g].input.style.border = "3px solid " + white;
+      d[g].input.style.color = white;
       d[g].input.style.position = "absolute";
       d[g].input.readOnly = 3 == g;
       d[g].input.addEventListener("input", function () {
@@ -7307,8 +7304,8 @@
         else if (!u || xzu739)
           (q = u),
             xzu226.wrapPackageSkipJoin(q),
-            (xzu196.get(16).colorBg = q ? xzu291 : xzu308),
-            (xzu196.get(17).colorBg = q ? xzu297 : xzu291),
+            (xzu196.get(16).colorBg = q ? black06 : xzu308),
+            (xzu196.get(17).colorBg = q ? green05 : black06),
             (xzu720.requestRepaint = !0);
     }
     var g, e, m, h, l, k, f, n, p, r, t, q;
@@ -7340,8 +7337,8 @@
     this.zto1324 = function () {
       a();
       xzu196.get(21).txt = "Progress: " + k + "%";
-      xzu196.get(16).colorBg = q ? xzu291 : xzu308;
-      xzu196.get(17).colorBg = q ? xzu297 : xzu291;
+      xzu196.get(16).colorBg = q ? black06 : xzu308;
+      xzu196.get(17).colorBg = q ? green05 : black06;
     };
     this.getProgress = function () {
       return k;
@@ -7429,7 +7426,7 @@
       xzu196.drawLobby();
       xzu690.textBaseline = xzu326;
       xzu690.font = xzu196.get(19).font;
-      xzu690.fillStyle = xzu315;
+      xzu690.fillStyle = white;
       for (var u, y = 0; 4 > y; y++)
         (xzu690.textAlign = xzu330),
           xzu690.fillText(
@@ -7676,7 +7673,7 @@
         xzu690.imageSmoothingEnabled = !0;
         for (var a = this.s - 1; 0 <= a; a--)
           4 > a &&
-            ((xzu690.fillStyle = this.objs[a].sel ? xzu299 : xzu290),
+            ((xzu690.fillStyle = this.objs[a].sel ? green100_075 : black075),
             xzu690.fillRect(this.objs[a].x, this.objs[a].y, this.w, this.w)),
             0 == a
               ? this.drawSymb(a, xzu205.get(15))
@@ -7697,7 +7694,7 @@
                 this.drawSymb(a, xzu205.get(14 + a))),
             xzu690.setTransform(1, 0, 0, 1, 0, 0),
             (xzu690.lineWidth = xzu350),
-            (xzu690.strokeStyle = xzu315),
+            (xzu690.strokeStyle = white),
             xzu690.strokeRect(this.objs[a].x, this.objs[a].y, this.w, this.w);
         xzu690.imageSmoothingEnabled = !1;
       }
@@ -10588,7 +10585,7 @@
         (this.canvas.height = this.w),
         (this.context = this.canvas.getContext("2d", { alpha: !0 })),
         (this.context.lineWidth = 2),
-        (this.context.strokeStyle = xzu293),
+        (this.context.strokeStyle = white),
         this.refreshAll());
     };
     this.isPlayerVictorious = function () {
@@ -10631,9 +10628,9 @@
     this.refreshAll = function () {
       this.requestRefresh = !1;
       this.context.clearRect(0, 0, this.w, this.w);
-      this.context.fillStyle = xzu289;
+      this.context.fillStyle = black05;
       this.context.fillRect(0, 0, this.w, this.w);
-      this.context.fillStyle = xzu293;
+      this.context.fillStyle = white;
       this.context.fillRect(0, 0, this.w, 2);
       this.context.fillRect(0, 0, 2, this.w);
       this.context.fillRect(this.w - 2, 0, 2, this.w);
@@ -11284,7 +11281,7 @@
       var a = zto1304(xzu697 - this.w, 2),
         d = zto1304(xzu698 - this.h, 2);
       xzu690.setTransform(1, 0, 0, 1, a, d);
-      xzu690.fillStyle = xzu290;
+      xzu690.fillStyle = black075;
       xzu690.fillRect(0, 0, this.w, this.h);
       this.drawButtons();
       xzu690.strokeRect(0, 0, this.w, this.h);
@@ -11304,12 +11301,12 @@
       xzu690.lineWidth = this.lineWidth;
       xzu690.textBaseline = xzu326;
       xzu690.textAlign = xzu329;
-      xzu690.strokeStyle = xzu315;
+      xzu690.strokeStyle = white;
       xzu690.font = xzu332 + this.fontSize1 + xzu336;
       var a = this.w / this.strs.length;
-      xzu690.fillStyle = xzu298;
+      xzu690.fillStyle = green200_05;
       xzu690.fillRect(this.index * a, this.h - this.h1, a, this.h1);
-      xzu690.fillStyle = xzu315;
+      xzu690.fillStyle = white;
       for (var d = this.strs.length - 1; 0 <= d; d--)
         xzu690.strokeRect(d * a, this.h - this.h1, a, this.h1),
           xzu690.fillText(this.strs[d], (d + 0.5) * a, this.h - 0.46 * this.h1);
@@ -11440,7 +11437,7 @@
         g = Math.floor(b),
         e = a[g];
       e += (b - g) * (a[g < xzu717.filled - 1 ? g + 1 : g] - e);
-      xzu690.strokeStyle = xzu317;
+      xzu690.strokeStyle = white04;
       0.04 < this.crossX &&
         this.drawLine(
           0,
@@ -11468,7 +11465,7 @@
       a = Math.floor(
         this.crossX * xzu720.getInterval() * xzu720.getCalculations()
       );
-      xzu690.fillStyle = xzu315;
+      xzu690.fillStyle = white;
       xzu690.fillText(
         1 == c
           ? xzu190.percentageToString(e / 100, 2)
