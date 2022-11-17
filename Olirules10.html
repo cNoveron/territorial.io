@@ -856,7 +856,7 @@
   }
 
   function zto932() {
-    function a() {
+    function unkknown_returnsBool() {
       b = 3;
       a: {
         for (var h = 40; 1 <= h; h--) {
@@ -872,7 +872,7 @@
               xzu219.random() * (xzu669[m] - xzu667[m] + 1),
               xzu219.value(100)
             );
-          var l = d(xzu206.coordToPoint(g, e));
+          var l = ifIsLandIfIsNeutral_ifExistsReturn2_returns012(xzu206.coordToPoint(g, e));
           if (1 != l) break a;
         }
         l = 1;
@@ -882,7 +882,7 @@
       l = c(1, 1);
       return 0 == l ? !1 : 2 == l ? !0 : 2 == c(54, 4);
     }
-    function d(h) {
+    function ifIsLandIfIsNeutral_ifExistsReturn2_returns012(h) {
       if (
         xzu206.isLand(h) &&
         (xzu206.isNeutral(h) ||
@@ -917,7 +917,7 @@
             : q <= 2 * r + t
             ? ((g = k + q - r - t), (e = p))
             : ((g = k), (e = f + q - 2 * r - t)),
-          (k = d(xzu206.coordToPoint(g, e))),
+          (k = ifIsLandIfIsNeutral_ifExistsReturn2_returns012(xzu206.coordToPoint(g, e))),
           1 != k)
         )
           return k;
@@ -927,7 +927,7 @@
     this.calcuate = function (h) {
       m = h;
       0 != xzu675[m].length &&
-        a() &&
+        unkknown_returnsBool() &&
         ((h = zto1304(strengths.getIStrengthShip() * xzu672[m], 100)),
         60 <= h && zto1099(m, xzu218.getCStart(), xzu206.coordToPoint(g, e), h));
     };
