@@ -1177,7 +1177,7 @@
         xzu186.setZoomY(k + w * (p - k), xzu698 / 2);
         xzu210.zoom(z, (v * z - xzu394) / (1 - z), (B * z - xzu395) / (1 - z));
         setCamHWXY_setMapXY.calculatePreRendering();
-        1 <= g && ((u = !1), (xzu714.pixelInWindowChanged = !0));
+        1 <= g && ((u = !1), (camAndPixelsObserver.pixelInWindowChanged = !0));
         xzu720.requestRepaint = !0;
       }
     };
@@ -1579,7 +1579,7 @@
         xzu189.repaint(!0),
         xzu190.repaint(!0),
         (xzu720.requestRepaint = !0),
-        xzu714.renderAll(),
+        camAndPixelsObserver.renderAll(),
         zto878(0));
     };
   }
@@ -1587,7 +1587,7 @@
     this.add = function (a, d, c) {
       0 != xzu665[a] &&
         xzu177.findStartPosition(a, d, c) &&
-        ((xzu720.requestRepaint = !0), (xzu714.atLeastOnePixelChanged = !0));
+        ((xzu720.requestRepaint = !0), (camAndPixelsObserver.atLeastOnePixelChanged = !0));
     };
     this.calculate = function () {
       xzu164 = !1;
@@ -1605,8 +1605,8 @@
             xzu669[xzu161] + 5
           ),
           xzu225.init(),
-          (xzu714.pixelInWindowChanged = !0),
-          xzu714.render())
+          (camAndPixelsObserver.pixelInWindowChanged = !0),
+          camAndPixelsObserver.render())
         : xzu191.show(!1, !1);
       playerStateManager.removeState(18);
       xzu210.endFreePositioning();
@@ -1661,7 +1661,7 @@
     xzu717.init();
     zto1282();
     xzu214.adaptRasterC();
-    xzu714.init();
+    camAndPixelsObserver.init();
     xzu209.init();
     zto915();
     PixelQualifierAndSquareDrawer.init(b);
@@ -2144,7 +2144,7 @@
         ? (playerStateManager.moveDown(),
           xzu152 &&
             (setTimeout(function () {
-              xzu714.renderAll();
+              camAndPixelsObserver.renderAll();
             }, 0),
             zto878(0)))
         : (playerStateManager.moveUp(), (h = -1), a(), xzu152 && zto878(1));
@@ -4982,7 +4982,7 @@
           (xzu672[d] += g)));
     }
   }
-  function zto1101() {
+  function CamAndPixelsObserver() {
     this.atLeastOnePixelChanged =
       this.pixelInWindowChanged =
       this.camMoveDetection =
@@ -8099,10 +8099,10 @@
       c(q);
     }
     function c(q) {
-      if (!xzu714.pixelInWindowChanged) {
+      if (!camAndPixelsObserver.pixelInWindowChanged) {
         var u = PixelQualifierAndSquareDrawer.getX(q);
         q = PixelQualifierAndSquareDrawer.getY(q);
-        xzu714.pixelInWindowChanged =
+        camAndPixelsObserver.pixelInWindowChanged =
           u >= setCamHWXY_setMapXY.camC[0] &&
           u <= setCamHWXY_setMapXY.camC[2] &&
           q >= setCamHWXY_setMapXY.camC[1] &&
@@ -9404,7 +9404,7 @@
     setCamHWXY_setMapXY,
     xzu712,
     xzu713,
-    xzu714,
+    camAndPixelsObserver,
     xzu715,
     xzu716,
     xzu717,
@@ -9479,7 +9479,7 @@
     setCamHWXY_setMapXY = new SetCamHWXY_setMapXY();
     xzu712 = new zto1319();
     xzu712.calculate();
-    xzu714 = new zto1101();
+    camAndPixelsObserver = new CamAndPixelsObserver();
     xzu715 = new zto1006();
     xzu716 = new zto1345();
     xzu717 = new zto1347();
@@ -11744,7 +11744,7 @@
             Math.floor(1 + (xzu720.time - this.time) / this.interval)),
           2 == xzu154 || switchStateMouseMoveSurrenderPossibleDrawCross.isSelected
             ? zto923()
-            : (zto924(), this.calculations++, xzu714.render()),
+            : (zto924(), this.calculations++, camAndPixelsObserver.render()),
           this.index++)
         : (switchStateMouseMoveSurrenderPossibleDrawCross.isSelected
             ? zto927()
@@ -11772,8 +11772,8 @@
         xzu224.unwrapPackageAttack(a),
           xzu190.calculateFreeSpawn(d),
           19 == d && xzu168.calculate(),
-          xzu714.atLeastOnePixelChanged &&
-            (xzu210.endFreePositioning(), xzu210.repaint(), xzu714.renderAll());
+          camAndPixelsObserver.atLeastOnePixelChanged &&
+            (xzu210.endFreePositioning(), xzu210.repaint(), camAndPixelsObserver.renderAll());
       else if ((this.packs.push(a), this.packsSync.push(d), 2 == xzu154)) {
         for (var c = 0; c < this.packs.length; c++)
           xzu224.unwrapPackageAttack(this.packs[c]);
@@ -11801,14 +11801,14 @@
     };
     this.calculateProcessing = function () {
       if (this.calculations != 7 * this.syncs)
-        zto924(), this.calculations++, xzu714.render();
+        zto924(), this.calculations++, camAndPixelsObserver.render();
       else {
         for (var a = !1; this.syncProcessPackage(); )
           if (((a = !0), zto924(), this.calculations++, 1 < this.packs.length))
             for (var d = this.cycle - 2; 0 <= d; d--)
               zto924(), this.calculations++;
           else break;
-        a ? xzu714.render() : (zto923(), xzu714.renderAll());
+        a ? camAndPixelsObserver.render() : (zto923(), camAndPixelsObserver.renderAll());
       }
     };
     this.syncProcessPackage = function () {
@@ -12079,7 +12079,7 @@
       this.camC[1] = Math.floor(this.camY);
       this.camC[2] = Math.floor(this.camC[0] + this.camW + 1);
       this.camC[3] = Math.floor(this.camC[1] + this.camH + 1);
-      xzu714.camMoveDetection = !0;
+      camAndPixelsObserver.camMoveDetection = !0;
     };
   }
   function zto1382() {
