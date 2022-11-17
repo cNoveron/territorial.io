@@ -415,17 +415,17 @@
       for (var c = 1; 0 <= c; c--) d[c] && this.setName(c, d[c].str);
     };
     this.setName = function (c, b) {
-      d[c] = { str: b, font: xzu332 + 10 + xzu336 };
+      d[c] = { str: b, font: css_bold + 10 + css_px_Arial };
       this.refresh(c);
     };
     this.refresh = function (c) {
       if (xzu205.loaded() && d[c]) {
         var b = d[c].str,
           g = Math.floor(0.15 * a * xzu205.get(13).height),
-          e = xzu332 + g + xzu336,
+          e = css_bold + g + css_px_Arial,
           m = xzu184.measureText(b, e),
           h = 0.8 * a * xzu205.get(13).width;
-        m > h && ((g = Math.floor((g * h) / m)), (e = xzu332 + g + xzu336));
+        m > h && ((g = Math.floor((g * h) / m)), (e = css_bold + g + css_px_Arial));
         d[c] = { str: b, font: e };
         xzu720.requestRepaint = !0;
       }
@@ -485,8 +485,8 @@
               xzu698 - xzu354.w - a * xzu205.get(13).height - 2 * xzu349
             ),
             (xzu690.font = d[c].font),
-            (xzu690.textBaseline = xzu326),
-            (xzu690.textAlign = xzu329),
+            (xzu690.textBaseline = css_middle),
+            (xzu690.textAlign = css_center),
             (xzu690.fillStyle = white),
             xzu690.fillText(
               d[c].str,
@@ -2136,7 +2136,7 @@
       g = document.createElement("canvas");
       g.width = b;
       g.height = b;
-      e = xzu332 + Math.floor((xzu706 ? 0.5 : 0.45) * b) + xzu336;
+      e = css_bold + Math.floor((xzu706 ? 0.5 : 0.45) * b) + css_px_Arial;
       a();
     };
     this.switchState = function () {
@@ -2197,8 +2197,8 @@
         xzu690.fillRect(0, b - 1, k, 1);
         xzu690.fillRect(k - 1, 0, 1, b);
         xzu690.font = e;
-        xzu690.textBaseline = xzu326;
-        xzu690.textAlign = xzu329;
+        xzu690.textBaseline = css_middle;
+        xzu690.textAlign = css_center;
         xzu690.fillText(m[0], 2 * b, 0.54 * b);
         k = 0.4 * b;
         switchStateMouseMoveSurrenderPossibleDrawCross.drawCross(
@@ -2238,8 +2238,8 @@
       z.height = c;
       var B = z.getContext("2d", { alpha: !0 });
       B.font = playerStateManager.font;
-      B.textBaseline = xzu326;
-      B.textAlign = xzu330;
+      B.textBaseline = css_middle;
+      B.textAlign = css_left;
       B.clearRect(0, 0, v, c);
       B.fillStyle = q;
       B.fillRect(0, 0, v, c);
@@ -2277,7 +2277,7 @@
       c = Math.floor((xzu706 ? 0.0405 : 0.0345) * xzu696);
       c = 10 > c ? 10 : c;
       this.fontSize = Math.floor((2 * c) / 3);
-      this.font = xzu332 + this.fontSize + xzu336;
+      this.font = css_bold + this.fontSize + css_px_Arial;
       b = xzu706 && xzu694 < xzu695 ? xzu347 : 0;
       g = Math.floor(c / 5);
       this.moveUp();
@@ -2639,10 +2639,10 @@
       xzu690.setTransform(1, 0, 0, 1, a, d);
       xzu690.fillStyle = black075;
       xzu690.fillRect(0, 0, this.w, this.h);
-      xzu690.textBaseline = xzu326;
-      xzu690.textAlign = xzu329;
+      xzu690.textBaseline = css_middle;
+      xzu690.textAlign = css_center;
       xzu690.strokeStyle = white;
-      xzu690.font = xzu332 + this.fontSize + xzu336;
+      xzu690.font = css_bold + this.fontSize + css_px_Arial;
       xzu690.strokeRect(0, 0, this.w, this.h);
       for (var c = this.strs.length - 1; 0 <= c; c--)
         xzu690.setTransform(
@@ -2687,7 +2687,7 @@
     this.zto1324 = function () {
       e = Math.floor((xzu706 ? (xzu695 > xzu694 ? 0.38 : 0.64) : 0.5) * xzu695);
       m = Math.floor(0.065 * e);
-      h = xzu332 + Math.floor(0.97 * m) + xzu337;
+      h = css_bold + Math.floor(0.97 * m) + css_px_ArialBlack;
     };
     this.calculate = function () {
       this.setTime() && (xzu720.requestRepaint = !0);
@@ -2730,8 +2730,8 @@
       xzu690.strokeRect(0, 0, e, m + 10);
       xzu690.fillStyle = black;
       xzu690.font = h;
-      xzu690.textBaseline = xzu326;
-      xzu690.textAlign = xzu329;
+      xzu690.textBaseline = css_middle;
+      xzu690.textAlign = css_center;
       xzu690.fillText(c, Math.floor(e / 2), Math.floor(0.57 * m));
       xzu690.restore();
     };
@@ -2976,19 +2976,19 @@
       black,
       white,
     ],
-    xzu326 = "middle",
-    xzu327 = "top",
-    xzu328 = "bottom",
-    xzu329 = "center",
-    xzu330 = "left",
-    xzu331 = "right",
-    xzu332 = "bold ",
-    xzu333 = "lighter ",
-    xzu334 = "italic ",
-    xzu335 = "normal ",
-    xzu336 = "px Arial",
-    xzu337 = "px Arial Black",
-    xzu338 = [xzu332, xzu334 + xzu332, xzu332, xzu332, xzu333, xzu333],
+    css_middle = "middle",
+    css_top = "top",
+    css_bottom = "bottom",
+    css_center = "center",
+    css_left = "left",
+    css_right = "right",
+    css_bold = "bold ",
+    css_lighter = "lighter ",
+    css_italic = "italic ",
+    css_normal = "normal ",
+    css_px_Arial = "px Arial",
+    css_px_ArialBlack = "px Arial Black",
+    xzu338 = [css_bold, css_italic + css_bold, css_bold, css_bold, css_lighter, css_lighter],
     xzu339 = "https://play.google.com/store/apps/details?id=territorial.io",
     xzu340 = "https://apps.apple.com/app/id1581110913",
     xzu341 = "https://www.youtube.com/watch?v=37rUqu7exjU",
@@ -3211,8 +3211,8 @@
       l.canvas.height = m;
       l.context = l.canvas.getContext("2d", { alpha: !0 });
       l.context.font = e;
-      l.context.textBaseline = xzu326;
-      l.context.textAlign = xzu329;
+      l.context.textBaseline = css_middle;
+      l.context.textAlign = css_center;
     }
     function c(l) {
       return Math.floor(
@@ -3376,8 +3376,8 @@
       y.strokeStyle = 3 == b[0].index ? black : white;
       c();
       y.stroke();
-      y.textAlign = xzu329;
-      y.textBaseline = xzu326;
+      y.textAlign = css_center;
+      y.textBaseline = css_middle;
       y.fillStyle = 3 == b[0].index ? black : white;
       y.font = k[0];
       y.fillText(
@@ -3427,8 +3427,8 @@
       l = Math.floor((xzu706 ? 0.11 : 0.08) * xzu696);
       f[0] = Math.floor(0.85 * n[0] * l);
       f[1] = Math.floor(0.85 * n[1] * l);
-      k[0] = xzu332 + f[0] + xzu336;
-      k[1] = xzu332 + f[1] + xzu336;
+      k[0] = css_bold + f[0] + css_px_Arial;
+      k[1] = css_bold + f[1] + css_px_Arial;
       for (B = r.length - 1; 0 <= B; B--)
         r[B] = this.measureText(p[B] + "000", k[0]);
       t = Math.floor(1 + 0.05 * l);
@@ -3574,14 +3574,14 @@
           (g += 12 - (g % 12)),
           (this.h = Math.floor(g / 12)));
       m = Math.floor((3 * this.h) / 2);
-      p = xzu332 + Math.floor(0.5 * this.h) + xzu336;
+      p = css_bold + Math.floor(0.5 * this.h) + css_px_Arial;
       h = document.createElement("canvas");
       h.width = g;
       h.height = this.h;
       l = h.getContext("2d");
       l.font = p;
-      l.textBaseline = xzu326;
-      l.textAlign = xzu329;
+      l.textBaseline = css_middle;
+      l.textAlign = css_center;
       this.refreshLocation();
       d();
     };
@@ -4164,7 +4164,7 @@
       h = Math.floor(0.15 * xzu695);
       t = Math.floor(0.13 * h);
       t = 10 > t ? 10 : t;
-      q = xzu332 + t + xzu336;
+      q = css_bold + t + css_px_Arial;
       a();
     };
     this.connectionEstablished = function () {
@@ -4213,7 +4213,7 @@
       -1 != r && ((xzu690.fillStyle = white06), b(r));
       if (-1 != r) {
         xzu690.font = q;
-        xzu690.textBaseline = xzu328;
+        xzu690.textBaseline = css_bottom;
         C = new Date();
         C.setTime(u.getTime() - 864e5 * r);
         var I = new Intl.DateTimeFormat("en-US", { month: "long" }).format(C);
@@ -4239,9 +4239,9 @@
         xzu690.fillRect(xzu697 - S - t, T - R, S + t, R);
         xzu690.fillRect(K - Q, xzu698 - R, O + t, R);
         xzu690.fillStyle = white;
-        xzu690.textAlign = xzu331;
+        xzu690.textAlign = css_right;
         xzu690.fillText(I, Math.floor(xzu697 - 0.5 * t), T);
-        xzu690.textAlign = xzu329;
+        xzu690.textAlign = css_center;
         xzu690.fillText(C, K, xzu698);
         xzu690.strokeStyle = white025;
         xzu690.lineWidth = 1;
@@ -4285,7 +4285,7 @@
     this.zto1324 = function () {
       c = Math.floor((xzu706 ? 0.45 : 0.333) * xzu696);
       this.h = Math.floor(0.5 + 0.13 * c);
-      d = xzu332 + Math.floor(0.9 * this.h) + xzu336;
+      d = css_bold + Math.floor(0.9 * this.h) + css_px_Arial;
       n = Math.floor(0.58 * this.h);
       xzu734.font = d;
       c = Math.floor(xzu734.measureText("02 000 000 000").width);
@@ -4295,8 +4295,8 @@
       g.height = this.h;
       e = g.getContext("2d", { alpha: !0 });
       e.font = d;
-      e.textBaseline = xzu326;
-      e.textAlign = xzu329;
+      e.textBaseline = css_middle;
+      e.textAlign = css_center;
       a();
     };
     this.refreshLocation = function () {
@@ -4352,20 +4352,20 @@
       k.fillRect(p - xzu348, 0, xzu348, xzu438);
       k.fillRect(0, xzu438 - xzu348, p, xzu348);
       k.font = xzu439;
-      k.textBaseline = xzu326;
-      k.textAlign = xzu329;
+      k.textBaseline = css_middle;
+      k.textAlign = css_center;
       k.fillText(S, Math.floor(p / 2), Math.floor(u + xzu441 / 2));
       var L = xzu443[xzu161] < h - 1 ? 1 : 2;
       k.font = xzu440;
-      k.textAlign = xzu330;
+      k.textAlign = css_left;
       for (E = h - L; 0 <= E; E--) d(xzu442[E]), b(E, E, xzu442[E]);
-      k.textAlign = xzu331;
+      k.textAlign = css_right;
       for (E = h - L; 0 <= E; E--) d(xzu442[E]), g(E, xzu442[E]);
       2 == L &&
         (d(xzu161),
-        (k.textAlign = xzu330),
+        (k.textAlign = css_left),
         b(h - 1, xzu443[xzu161], xzu161),
-        (k.textAlign = xzu331),
+        (k.textAlign = css_right),
         g(h - 1, xzu161));
       E = (0.7 * z) / xzu205.get(4).height;
       k.setTransform(
@@ -4401,7 +4401,7 @@
     }
     function b(E, L, P) {
       k.fillText(Q[L], B, Math.floor(u + xzu441 + (E + 0.5) * z));
-      1 == xzu677[P] && (k.font = xzu334 + xzu440);
+      1 == xzu677[P] && (k.font = css_italic + xzu440);
       k.fillText(
         I[P] == P ? xzu664[P] : C[I[P] % xzu150],
         w,
@@ -4496,8 +4496,8 @@
       y = 0 * xzu438;
       v = Math.floor(0.45 * u + xzu441);
       z = (xzu438 - xzu441 - 2 * u - y) / h;
-      xzu439 = xzu332 + Math.floor(0.5 * xzu441) + xzu336;
-      xzu440 = Math.floor(0.6 * z) + xzu336;
+      xzu439 = css_bold + Math.floor(0.5 * xzu441) + css_px_Arial;
+      xzu440 = Math.floor(0.6 * z) + css_px_Arial;
       k.font = xzu440;
       B = Math.floor(k.measureText("555").width);
       w = Math.floor(k.measureText("555600.00").width);
@@ -4630,12 +4630,12 @@
       g.fillRect(0, xzu190.h - h - 1, xzu190.w, 1);
       for (var x = 0, C = 0; C < t.length; C++)
         if (u[C]) {
-          g.textAlign = xzu330;
+          g.textAlign = css_left;
           var I = Math.floor(
             ((l - h + 2 * f) * (C - x + 1)) / (t.length + 1) - 0.7 * f
           );
           g.fillText(t[C], k, I);
-          g.textAlign = xzu331;
+          g.textAlign = css_right;
           5 == C &&
           0 != xzu665[xzu161] &&
           xzu672[xzu161] >= xzu209.getMaxInterest(xzu161)
@@ -4712,13 +4712,13 @@
       l = this.h;
       this.h -= Math.floor((w * (this.h - 2 * h)) / t.length);
       p = Math.floor((0.55 * (l - h)) / t.length);
-      n = xzu332 + p + xzu336;
+      n = css_bold + p + css_px_Arial;
       b = document.createElement("canvas");
       b.width = this.w;
       b.height = this.h;
       g = b.getContext("2d", { alpha: !0 });
       g.font = n;
-      g.textBaseline = xzu326;
+      g.textBaseline = css_middle;
       g.lineWidth = 1;
       xzu164 ? this.moveUp() : this.moveDown();
       this.refreshLocation();
@@ -5094,16 +5094,16 @@
       this.objs[0] &&
         this.objs[1] &&
         ((this.objs[0][4] =
-          xzu332 + Math.floor((0.4 * this.h) / this.objs[0][1]) + xzu336),
+          css_bold + Math.floor((0.4 * this.h) / this.objs[0][1]) + css_px_Arial),
         (this.objs[1][4] =
-          xzu332 + Math.floor((0.6 * this.h) / this.objs[1][1]) + xzu336));
+          css_bold + Math.floor((0.6 * this.h) / this.objs[1][1]) + css_px_Arial));
     };
     this.getWbasedOnRatio = function (a, d, c, b) {
       return c < d * b ? Math.floor(a * c) : Math.floor(d * a * b);
     };
     this.addList = function (a, d, c, b, g, e) {
       var m = d.length;
-      g = xzu332 + Math.floor((g * this.h) / m) + xzu336;
+      g = css_bold + Math.floor((g * this.h) / m) + css_px_Arial;
       this.trimNames(d, g, e * this.w);
       b = [[], m, -1, b, g];
       for (e = 0; e < m; e++)
@@ -5224,11 +5224,11 @@
     };
     this.drawText = function () {
       xzu690.font = this.objs[this.selected][4];
-      xzu690.textBaseline = xzu326;
+      xzu690.textBaseline = css_middle;
       for (var a, d = this.objs[this.selected][1] - 1; 0 <= d; d--)
         (xzu690.fillStyle =
           d == this.objs[this.selected][2] ? "rgb(255,255,155)" : white),
-          (xzu690.textAlign = xzu331),
+          (xzu690.textAlign = css_right),
           (a = Math.floor(
             this.top0 * this.h +
               (d * (1 - 2 * this.top0) * this.h) /
@@ -5242,7 +5242,7 @@
             a
           ),
           xzu690.fillText(d + 1 + ".", Math.floor(this.left0 * this.w), a),
-          (xzu690.textAlign = xzu330),
+          (xzu690.textAlign = css_left),
           xzu690.fillText(
             this.objs[this.selected][0][d].name,
             Math.floor(this.left1 * this.w),
@@ -5267,7 +5267,7 @@
         m = Math.floor(0.6 * g);
         h = Math.floor(2.5 * m);
         b = g + e + 3 * m;
-        var q = xzu332 + e + xzu336;
+        var q = css_bold + e + css_px_Arial;
         k = xzu184.measureText(n, q);
         f = (k > l ? k : l) + 2 * h;
         a = Math.floor((xzu697 - f) / 2);
@@ -5436,8 +5436,8 @@
         (xzu690.lineWidth = 3),
         (xzu690.strokeStyle = white),
         xzu690.strokeRect(g, e, c, b),
-        (xzu690.textAlign = xzu329),
-        (xzu690.textBaseline = xzu326),
+        (xzu690.textAlign = css_center),
+        (xzu690.textBaseline = css_middle),
         (xzu690.font = xzu196.get(18).font),
         (xzu690.fillStyle = white),
         xzu690.fillText(d, Math.floor(g + c / 2), Math.floor(e + b / 2)),
@@ -5532,8 +5532,8 @@
           c
         );
         xzu690.strokeRect(a[n].x, a[n].y, a[n].w, m);
-        xzu690.textAlign = xzu329;
-        xzu690.textBaseline = xzu326;
+        xzu690.textAlign = css_center;
+        xzu690.textBaseline = css_middle;
         xzu690.font = xzu196.get(19).font;
         xzu690.fillStyle = white;
         xzu690.fillText(
@@ -5620,7 +5620,7 @@
       for (var M, J = 0; J < D.length; J++)
         if (((M = Math.floor(z + (J + F) * O - K)), M > -O && M < (S + 1) * O)) {
           f.fillStyle = xzu324[D[J].idColor];
-          1 == D[J].idColor && (f.font = xzu334 + I + xzu336);
+          1 == D[J].idColor && (f.font = css_italic + I + css_px_Arial);
           if (2 == D[J].idColor || 5 == D[J].idColor) {
             var N = M,
               U = (0.65 * O) / xzu205.get(4).height;
@@ -5755,15 +5755,15 @@
       S = Math.floor(l / (0.09 * h));
       O = l / S;
       I = Math.floor(0.6 * O);
-      C = I + xzu336;
+      C = I + css_px_Arial;
       B = Math.floor(0.45 * O);
       K = 0;
       v = 2 * y + B;
       z = y;
       A = 0;
       f.font = C;
-      f.textBaseline = xzu327;
-      f.textAlign = xzu330;
+      f.textBaseline = css_top;
+      f.textAlign = css_left;
     };
     this.deinit = function () {
       w = x = f = k = null;
@@ -5949,8 +5949,8 @@
         xzu690.lineWidth = 3;
         xzu690.strokeStyle = m;
         xzu690.strokeRect(n, p, r, t);
-        xzu690.textAlign = xzu329;
-        xzu690.textBaseline = xzu326;
+        xzu690.textAlign = css_center;
+        xzu690.textBaseline = css_middle;
         xzu690.font = l[0];
         xzu690.fillStyle = m;
         xzu690.fillText(
@@ -5993,8 +5993,8 @@
         p = f.y,
         r = f.w,
         t = f.h;
-      xzu690.textAlign = xzu329;
-      xzu690.textBaseline = xzu326;
+      xzu690.textAlign = css_center;
+      xzu690.textBaseline = css_middle;
       xzu690.font = f.font;
       xzu690.fillStyle = m;
       xzu690.fillText(
@@ -6013,7 +6013,7 @@
       var f = Math.floor((xzu706 ? 0.16 : 0.11) * xzu696),
         n = Math.floor((xzu706 && xzu694 < xzu695 ? 4.7 : 5) * f),
         p = Math.floor(0.31 * f),
-        r = xzu332 + p + xzu337;
+        r = css_bold + p + css_px_ArialBlack;
       b[0] = {
         x: 0,
         y: 0,
@@ -6038,14 +6038,14 @@
       };
       var t = Math.floor(0.4 * b[0].h),
         q = Math.floor(0.42 * t),
-        u = xzu332 + q + xzu337,
+        u = css_bold + q + css_px_ArialBlack,
         y = Math.floor(0.3 * t),
-        v = xzu332 + y + xzu337;
+        v = css_bold + y + css_px_ArialBlack;
       g = Math.floor(0.025 * n);
       n = Math.floor(0.5 * n - 0.5 * g);
       f = Math.floor(n / 4);
       p = Math.floor(0.35 * f);
-      r = xzu332 + p + xzu337;
+      r = css_bold + p + css_px_ArialBlack;
       b[1] = {
         x: 0,
         y: 0,
@@ -6059,7 +6059,7 @@
       };
       f = Math.floor(n / 4);
       p = Math.floor(0.35 * f);
-      r = xzu332 + p + xzu337;
+      r = css_bold + p + css_px_ArialBlack;
       b[2] = {
         x: 0,
         y: 0,
@@ -6356,8 +6356,8 @@
         colorBg: "rgba(180,130,10,0.6)",
         selectable: !0,
       };
-      l[0] = xzu332 + Math.floor(0.35 * b[28].h) + xzu337;
-      l[1] = xzu332 + Math.floor(0.2 * b[28].h) + xzu337;
+      l[0] = css_bold + Math.floor(0.35 * b[28].h) + css_px_ArialBlack;
+      l[1] = css_bold + Math.floor(0.2 * b[28].h) + css_px_ArialBlack;
       b[30] = void 0;
       b[31] = {
         x: 0,
@@ -6735,9 +6735,9 @@
       xzu690.lineWidth = xzu350;
       xzu690.strokeStyle = white;
       xzu690.strokeRect(-1, -1, this.w + 2, this.h + 2);
-      xzu690.font = xzu332 + Math.floor(0.8 * this.wBox) + xzu336;
-      xzu690.textBaseline = xzu326;
-      xzu690.textAlign = xzu329;
+      xzu690.font = css_bold + Math.floor(0.8 * this.wBox) + css_px_Arial;
+      xzu690.textBaseline = css_middle;
+      xzu690.textAlign = css_center;
       this.drawBox(0);
       this.drawBox(1);
       xzu690.lineWidth = xzu350;
@@ -6826,7 +6826,7 @@
       c = Math.floor((xzu706 ? 0.048 : 0.038) * xzu696);
       b = Math.floor((xzu694 > xzu695 ? 0.3 : 0.5) * xzu694);
       m = Math.floor(0.5 * c);
-      e = xzu335 + m + xzu337;
+      e = css_normal + m + css_px_ArialBlack;
       2 == g && xzu699
         ? xzu226.wrapPackageSingleplayer()
         : (xzu222.isFree()
@@ -6866,8 +6866,8 @@
       xzu690.strokeStyle = white;
       a(k, 3, 1);
       xzu690.stroke();
-      xzu690.textAlign = xzu329;
-      xzu690.textBaseline = xzu326;
+      xzu690.textAlign = css_center;
+      xzu690.textBaseline = css_middle;
       xzu690.font = e;
       xzu690.fillStyle = white;
       xzu690.fillText(l, Math.floor(0.5 * xzu697), Math.floor(k + 0.58 * c));
@@ -6884,7 +6884,7 @@
       xzu204.init(600);
     };
     this.zto1324 = function () {
-      d = xzu332 + Math.floor((xzu706 ? 0.026 : 0.018) * xzu696) + xzu336;
+      d = css_bold + Math.floor((xzu706 ? 0.026 : 0.018) * xzu696) + css_px_Arial;
     };
     this.setState = function (newState) {
       state = newState;
@@ -7004,8 +7004,8 @@
           xzu690.restore();
           xzu690.globalAlpha = 1;
         }
-        xzu690.textAlign = xzu331;
-        xzu690.textBaseline = xzu327;
+        xzu690.textAlign = css_right;
+        xzu690.textBaseline = css_top;
         xzu690.font = d;
         xzu690.fillStyle = white;
         xzu690.fillText(xzu691, xzu697 - xzu347, xzu347);
@@ -7242,7 +7242,7 @@
     };
     this.zto1324 = function () {
       var g = Math.floor(0.25 * xzu196.get(0).h);
-      d[0].input.style.font = xzu332 + g + xzu336;
+      d[0].input.style.font = css_bold + g + css_px_Arial;
       d[0].input.style.padding = Math.floor(0.3 * g) + "px 5px";
       d[0].input.style.width = xzu196.get(0).w - 13 + "px";
     };
@@ -7424,11 +7424,11 @@
     this.draw = function () {
       xzu195.draw();
       xzu196.drawLobby();
-      xzu690.textBaseline = xzu326;
+      xzu690.textBaseline = css_middle;
       xzu690.font = xzu196.get(19).font;
       xzu690.fillStyle = white;
       for (var u, y = 0; 4 > y; y++)
-        (xzu690.textAlign = xzu330),
+        (xzu690.textAlign = css_left),
           xzu690.fillText(
             g[y],
             Math.floor(xzu196.get(19).x + 0.06 * xzu196.get(19).w),
@@ -7439,7 +7439,7 @@
                 0.1 * xzu196.get(19).fontSize
             )
           ),
-          (xzu690.textAlign = xzu331),
+          (xzu690.textAlign = css_right),
           (u = e[y].toString()),
           xzu690.fillText(
             u,
@@ -8587,8 +8587,8 @@
       Q.width = xzu697;
       Q.height = xzu698;
       K = Q.getContext("2d", { alpha: !0 });
-      K.textAlign = xzu329;
-      K.textBaseline = xzu326;
+      K.textAlign = css_center;
+      K.textBaseline = css_middle;
       K.imageSmoothingEnabled = !0;
     }
     function d() {
@@ -8621,7 +8621,7 @@
         ) {
           H = Math.floor((xzu697 * (n[J] + r[J] / 2 - A)) / (D - A));
           M = Math.floor((xzu698 * (p[J] + t[J] / 2 - G)) / (F - G) - 0.1 * N);
-          K.font = xzu338[xzu677[J]] + N + xzu336;
+          K.font = xzu338[xzu677[J]] + N + css_px_Arial;
           U = K;
           var Y = N;
           var X = J;
@@ -8695,7 +8695,7 @@
           else 0 == xzu443[J] && c(H, M, N, 0, 0);
           U = Math.floor(z * N);
           U < w ||
-            ((K.font = xzu332 + U + xzu336),
+            ((K.font = css_bold + U + css_px_Arial),
             K.fillText(
               xzu183.createString(xzu672[J]),
               H,
@@ -8839,9 +8839,9 @@
       O = 1;
       V = 0;
       var A;
-      K.font = xzu332 + Math.floor(100 * z) + xzu336;
+      K.font = css_bold + Math.floor(100 * z) + css_px_Arial;
       var G = 80 / Math.floor(K.measureText(xzu183.createString(xzu156)).width);
-      K.font = xzu332 + 100 + xzu336;
+      K.font = css_bold + 100 + css_px_Arial;
       for (A = xzu150 - 1; 0 <= A; A--)
         (u[A] = 100 / Math.floor(K.measureText(xzu664[A]).width)),
           (q[A] = G < u[A] ? G : u[A]),
@@ -11262,12 +11262,12 @@
       2 > this.index
         ? (this.w2 = xzu184.measureText(
             xzu183.createString(xzu717.max[this.index]),
-            xzu332 + this.fontSize0 + xzu336
+            css_bold + this.fontSize0 + css_px_Arial
           ))
         : 2 == this.index &&
           (this.w2 = xzu184.measureText(
             xzu190.percentageToString(6, 2),
-            xzu332 + this.fontSize0 + xzu336
+            css_bold + this.fontSize0 + css_px_Arial
           ));
       this.w3 = this.w - 2 * this.w0 - this.w2 - this.w1;
     };
@@ -11285,8 +11285,8 @@
       xzu690.fillRect(0, 0, this.w, this.h);
       this.drawButtons();
       xzu690.strokeRect(0, 0, this.w, this.h);
-      xzu690.textAlign = xzu331;
-      xzu690.font = xzu332 + this.fontSize0 + xzu336;
+      xzu690.textAlign = css_right;
+      xzu690.font = css_bold + this.fontSize0 + css_px_Arial;
       0 == this.index
         ? this.drawHelper0(xzu717.territory, a, d)
         : 1 == this.index
@@ -11299,10 +11299,10 @@
     };
     this.drawButtons = function () {
       xzu690.lineWidth = this.lineWidth;
-      xzu690.textBaseline = xzu326;
-      xzu690.textAlign = xzu329;
+      xzu690.textBaseline = css_middle;
+      xzu690.textAlign = css_center;
       xzu690.strokeStyle = white;
-      xzu690.font = xzu332 + this.fontSize1 + xzu336;
+      xzu690.font = css_bold + this.fontSize1 + css_px_Arial;
       var a = this.w / this.strs.length;
       xzu690.fillStyle = green200_05;
       xzu690.fillRect(this.index * a, this.h - this.h1, a, this.h1);
@@ -11361,13 +11361,13 @@
     this.drawLeftNumbers = function (a, d) {
       var c;
       xzu690.setTransform(1, 0, 0, 1, a + 0.34 * this.w, d + 2 * this.h0);
-      xzu690.textAlign = xzu331;
+      xzu690.textAlign = css_right;
       var b = this.h - 4 * this.h0 - this.h1,
         g = zto1304(xzu717.values.length, 2);
       for (c = g - 1; 0 <= c; c--)
         xzu690.fillText(xzu717.valuesStr[c], 0, (c * b) / (g - 1));
       xzu690.setTransform(1, 0, 0, 1, a + 0.39 * this.w, d + 2 * this.h0);
-      xzu690.textAlign = xzu330;
+      xzu690.textAlign = css_left;
       c = xzu717.values[1];
       xzu690.fillText(
         xzu190.percentageToString(xzu717.values[0] / (10 * (1 > c ? 1 : c)), 1),
@@ -11387,7 +11387,7 @@
     };
     this.drawRightNumbers = function (a, d) {
       xzu690.setTransform(1, 0, 0, 1, a + 0.74 * this.w, d + 2 * this.h0);
-      xzu690.textAlign = xzu331;
+      xzu690.textAlign = css_right;
       for (
         var c = this.h - 4 * this.h0 - this.h1,
           b = zto1304(xzu717.values.length, 2),
@@ -11473,13 +11473,13 @@
         -this.w0,
         this.h2 - d * Math.pow(e, c)
       );
-      xzu690.textAlign = xzu329;
+      xzu690.textAlign = css_center;
       xzu690.fillText(
         xzu190.getTimer(a),
         (b * this.w3) / (xzu717.filled - 1),
         this.h2 + this.fontSize0 - (xzu706 ? 2 : 0)
       );
-      xzu690.textAlign = xzu331;
+      xzu690.textAlign = css_right;
       return (d * Math.pow(e, c)) / this.h2;
     };
     this.drawLine = function (a, d, c, b) {
