@@ -779,7 +779,7 @@
     attacker.calcuate();
     xzu173.calcuate();
     newAttackClearAttack.calculate();
-    xzu175.calculate();
+    setPositionNewAttackClearAttack.calculate();
     zto1246();
     xzu189.calculate();
     xzu210.calculate();
@@ -794,7 +794,7 @@
     xzu212.check();
   }
   function zto925() {
-    xzu176.calculate();
+    setPositionSetCamera.calculate();
     xzu191.calculate();
     xzu184.calculate();
     xzu225.calculate();
@@ -1025,7 +1025,7 @@
           : (zto1204(h), zto1247(), xzu152 && xzu164 && xzu168.calculate()));
     };
   }
-  function zto945() {
+  function SetPositionNewAttackClearAttack() {
     var a, d, c, b, g, e, m, h, l;
     this.init = function () {
       a = 1;
@@ -1078,7 +1078,7 @@
       return k;
     };
   }
-  function zto947() {
+  function SetPositionSetCamera() {
     function a(v) {
       t = xzu720.time;
       q = 33;
@@ -1598,7 +1598,7 @@
           (xzu717.values[8] = xzu672[xzu161]),
           xzu185.setVisible(),
           xzu190.moveDown(),
-          xzu176.instant(
+          setPositionSetCamera.instant(
             xzu666[xzu161] - 5,
             xzu667[xzu161] - 5,
             xzu668[xzu161] + 5,
@@ -1686,7 +1686,7 @@
     xzu179.init();
     xzu191.init();
     attacker.init();
-    xzu175.init();
+    setPositionNewAttackClearAttack.init();
     newAttackClearAttack.init();
     xzu173.init();
     zto881();
@@ -1700,7 +1700,7 @@
     (xzu152 && xzu164) || zto878(1);
   }
   function zto978() {
-    xzu176.setStartPosition();
+    setPositionSetCamera.setStartPosition();
     0 == xzu665[xzu161] && xzu191.show(!1, !0);
     xzu210.repaint();
   }
@@ -1716,8 +1716,8 @@
     xzu172,
     xzu173,
     attacker,
-    xzu175,
-    xzu176,
+    setPositionNewAttackClearAttack,
+    setPositionSetCamera,
     xzu177,
     encoderDecoder,
     xzu179,
@@ -1775,8 +1775,8 @@
     xzu172 = new zto932();
     xzu173 = new zto937();
     attacker = new Attacker();
-    xzu175 = new zto945();
-    xzu176 = new zto947();
+    setPositionNewAttackClearAttack = new SetPositionNewAttackClearAttack();
+    setPositionSetCamera = new SetPositionSetCamera();
     xzu177 = new zto954();
     encoderDecoder = new EncoderDecoder();
     xzu179 = new zto981();
@@ -2321,7 +2321,7 @@
               66 == d[r].id ||
               22 == d[r].id ||
               1e3 <= d[r].id
-                ? xzu176.setDeathCamera(d[r].player, 800, !1, 0)
+                ? setPositionSetCamera.setDeathCamera(d[r].player, 800, !1, 0)
                 : 17 == d[r].id && xzu726.endGame(-1),
               !0
             );
@@ -2347,15 +2347,15 @@
       else if (1 == n)
         xzu184.add(f, 1),
           a(360, "You were erased by " + xzu664[f] + ".", n, f, xzu315, xzu290),
-          xzu176.setDeathCamera(f, 2700, !0, 0);
+          setPositionSetCamera.setDeathCamera(f, 2700, !0, 0);
       else if (2 == n)
         xzu184.add(f, 2),
           a(0, "Congratulations! You won the game.", n, f, xzu315, xzu290),
-          xzu176.setDeathCamera(f, 2700, !0, 0);
+          setPositionSetCamera.setDeathCamera(f, 2700, !0, 0);
       else if (3 == n)
         xzu184.add(f, 2),
           a(0, xzu664[f] + " won the game.", n, f, xzu315, xzu290),
-          xzu176.setDeathCamera(f, 2700, !0, 0);
+          setPositionSetCamera.setDeathCamera(f, 2700, !0, 0);
       else if (4 == n) {
         xzu147--;
         xzu149--;
@@ -2448,7 +2448,7 @@
           )
         : a(0, "Your alliance was defeated!", 41, 0, xzu315, xzu290);
       xzu184.addText(512 < xzu722.q ? "Team Red" : "Team Blue", 2);
-      xzu176.setMapCamera(2700);
+      setPositionSetCamera.setMapCamera(2700);
     };
     this.addEloStartMsg = function (f) {
       var n = (f[0].elo / 10).toFixed(1),
@@ -3721,11 +3721,11 @@
         return l < g + 1.25 * c
           ? this.wheel(Math.floor(xzu697 / 2), Math.floor(xzu698 / 2), -380)
           : this.wheel(Math.floor(xzu697 / 2), Math.floor(xzu698 / 2), 380);
-      xzu176.end() && ((this.grMouseMoving = !0), (e = h), (m = l));
+      setPositionSetCamera.end() && ((this.grMouseMoving = !0), (e = h), (m = l));
       return !1;
     };
     this.mouseMove = function (h, l) {
-      if (!xzu176.end()) return !0;
+      if (!setPositionSetCamera.end()) return !0;
       var k = xzu394,
         f = xzu395,
         n = e - h,
@@ -3739,7 +3739,7 @@
       return k != xzu394 || f != xzu395;
     };
     this.wheel = function (h, l, k) {
-      if (!xzu176.end()) return !0;
+      if (!setPositionSetCamera.end()) return !0;
       if (0 < k) (k = 450 / (450 + k)), (k = 0.5 > k ? 0.5 : k);
       else if (0 > k) (k = (450 - k) / 450), (k = 2 < k ? 2 : k);
       else return !1;
@@ -4579,7 +4579,7 @@
         if (-1 != P) {
           var A = xzu442[P];
           P == h - 1 && xzu443[xzu161] >= h - 1 && (A = xzu161);
-          0 != xzu665[A] && xzu176.setDeathCamera(A, 800, !1, 0);
+          0 != xzu665[A] && setPositionSetCamera.setDeathCamera(A, 800, !1, 0);
         }
         return !0;
       }
@@ -4952,7 +4952,7 @@
   }
   function zto1099(a, d, c, b) {
     if (b <= xzu160 || !getsStrengthsClearsErasesEnemyPlayersAddsShip.isFree(a)) return !1;
-    d = xzu175.newAttack(a, d, c);
+    d = setPositionNewAttackClearAttack.newAttack(a, d, c);
     if (0 == d) return !1;
     c = zto1304(3 * xzu672[a], 128);
     b >= zto1304(xzu672[a], 2) && (b -= c);
@@ -10391,7 +10391,7 @@
     }
     function d() {
       if (-1 != b)
-        if (0 != xzu154 && xzu176.end()) {
+        if (0 != xzu154 && setPositionSetCamera.end()) {
           for (var h = !1, l = 3; 0 <= l; l--)
             g[l] &&
               ((h = !0),
@@ -10409,7 +10409,7 @@
       m;
     this.activate = function (h) {
       0 != xzu154 &&
-        xzu176.end() &&
+        setPositionSetCamera.end() &&
         (c || a(), (g[h] = !0), -1 == b && ((b = setInterval(d, 20)), d()));
     };
     this.deactivate = function (h) {
@@ -10786,7 +10786,7 @@
   }
   function zto1327() {
     function a(p) {
-      xzu175.clearAttack(d, n);
+      setPositionNewAttackClearAttack.clearAttack(d, n);
       p ? (xzu672[d] += c) : d == xzu161 && (xzu717.values[14] += c);
       getsStrengthsClearsErasesEnemyPlayersAddsShip.removeIndex(d, f);
     }
@@ -10825,7 +10825,7 @@
               : p + xzu18[l > m ? 2 : 0]),
           (e = PixelQualifierAndSquareDrawer.getX(b)),
           (m = PixelQualifierAndSquareDrawer.getY(b)),
-          xzu175.setPosition(k, b),
+          setPositionNewAttackClearAttack.setPosition(k, b),
           (p = PixelQualifierAndSquareDrawer.isLand(b) ? !1 : !0),
           p)
         )
@@ -10855,7 +10855,7 @@
               }
             }
             d == xzu161 && (xzu717.values[12] += c);
-            xzu175.clearAttack(d, n);
+            setPositionNewAttackClearAttack.clearAttack(d, n);
             getsStrengthsClearsErasesEnemyPlayersAddsShip.removeIndex(d, f);
             xzu673[d].push(g);
             getsStrengthsClearsErasesEnemyPlayersAddsShip.add(d, c, p);
@@ -11844,7 +11844,7 @@
     this.touchMove = function (m) {
       if (0 == xzu154) return !1;
       if (1 < m.touches.length) {
-        if (!xzu176.end()) return !0;
+        if (!setPositionSetCamera.end()) return !0;
         var h = a();
         d(m);
         m = a();
