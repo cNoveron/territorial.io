@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Territorial.io</title>
-  <meta name="description" content="Territorial.io - The Art of Conquest">
+  <meta name="description" content="Territorial.io - The Art of |st">
   <meta name="keywords"
     content="territorial.io,david tschacher,david leander tschacher,territorial,territorial io,territory game,browser game,io game,io games,territory.io,territory io,io map game,territory map game">
   <meta name="author" content="David Leander Tschacher">
@@ -262,11 +262,11 @@
     xzu16 = 0;
     xzu17 = new Uint32Array(xzu14);
     xzu18 = new Int32Array(4);
-    xzu18[0] = -4 * xzu731;
+    xzu18[0] = -4 * width;
     xzu18[1] = 4;
     xzu18[2] = -xzu18[0];
     xzu18[3] = -xzu18[1];
-    xzu19 = new Uint8Array(xzu731 * xzu732);
+    xzu19 = new Uint8Array(width * height);
   }
   function zto882(a) {
     xzu9 = a;
@@ -542,8 +542,8 @@
       c = zto1304(xzu669[a] + xzu667[a], 2),
       b = zto1304(xzu668[a] - xzu666[a], 8),
       g = zto1304(xzu669[a] - xzu667[a], 8);
-    d += b - zto1304((2 * b + 1) * xzu219.random(), xzu219.value(100));
-    c += g - zto1304((2 * g + 1) * xzu219.random(), xzu219.value(100));
+    d += b - zto1304((2 * b + 1) * getSetSeed_value_random.random(), getSetSeed_value_random.value(100));
+    c += g - zto1304((2 * g + 1) * getSetSeed_value_random.random(), getSetSeed_value_random.value(100));
     xzu43 = 0;
     var e = xzu674[a].length - 1;
     a: for (; 0 <= e; e--)
@@ -628,12 +628,12 @@
           if ((zto913(a), 1 == xzu43))
             (xzu46[a] = 1),
               xzu44[0] == xzu150 ? zto919(a, d) : zto917(a, d, xzu44[0]);
-          else if (0 < xzu675[a].length && xzu219.random() < xzu219.value(50))
+          else if (0 < xzu675[a].length && getSetSeed_value_random.random() < getSetSeed_value_random.value(50))
             xzu172.calcuate(a);
           else {
             if (((xzu46[a] = 0), !(0 == g && xzu672[a] < b)))
               for (
-                b = zto1304(xzu219.random() * xzu679, xzu219.value(100)), c = 0;
+                b = zto1304(getSetSeed_value_random.random() * xzu679, getSetSeed_value_random.value(100)), c = 0;
                 c < xzu679;
                 c++
               )
@@ -647,7 +647,7 @@
                     zto1304(1e3 * d, xzu672[a])
                   );
                   0 == xzu678[(c + b) % xzu679] &&
-                    xzu219.random() < xzu219.value(12) &&
+                    getSetSeed_value_random.random() < getSetSeed_value_random.value(12) &&
                     (xzu46[0] = 0);
                   break;
                 }
@@ -663,7 +663,7 @@
             if (
               1 == xzu43 ||
               400 > xzu679 ||
-              xzu219.random() < xzu219.value(60 < g ? g : 60)
+              getSetSeed_value_random.random() < getSetSeed_value_random.value(60 < g ? g : 60)
             ) {
               zto919(a, d);
               return;
@@ -684,7 +684,7 @@
             (xzu45[0] = xzu45[1]),
             (xzu44[1] = b),
             (xzu45[1] = c));
-          g = zto918(0 < g && xzu219.random() < xzu219.value(g));
+          g = zto918(0 < g && getSetSeed_value_random.random() < getSetSeed_value_random.value(g));
           zto917(a, d, g);
         }
       }
@@ -722,9 +722,9 @@
       e = new Uint16Array(xzu148);
       m = xzu194.getIndex(xzu158);
       for (var k = xzu148 - 1; 0 <= k; k--)
-        (b[k] = 1 + zto1304(20 * xzu219.random(), xzu219.value(100))),
-          (e[k] = 250 + zto1304(1500 * xzu219.random(), xzu219.value(100))),
-          (g[k] = 500 + zto1304(501 * xzu219.random(), xzu219.value(100))),
+        (b[k] = 1 + zto1304(20 * getSetSeed_value_random.random(), getSetSeed_value_random.value(100))),
+          (e[k] = 250 + zto1304(1500 * getSetSeed_value_random.random(), getSetSeed_value_random.value(100))),
+          (g[k] = 500 + zto1304(501 * getSetSeed_value_random.random(), getSetSeed_value_random.value(100))),
           2 >= m
             ? ((d[k] = 0 == m ? 1e3 : 970),
               (c[k] = 0 == m ? 900 : 850),
@@ -732,14 +732,14 @@
               (g[k] = 1040),
               (e[k] = 1040))
             : 3 == m
-            ? ((d[k] = 600 + zto1304(100 * xzu219.random(), xzu219.value(100))),
-              (c[k] = 300 + zto1304(400 * xzu219.random(), xzu219.value(100))))
+            ? ((d[k] = 600 + zto1304(100 * getSetSeed_value_random.random(), getSetSeed_value_random.value(100))),
+              (c[k] = 300 + zto1304(400 * getSetSeed_value_random.random(), getSetSeed_value_random.value(100))))
             : 4 == m
-            ? ((d[k] = 300 + zto1304(200 * xzu219.random(), xzu219.value(100))),
-              (c[k] = 100 + zto1304(201 * xzu219.random(), xzu219.value(100))))
-            : ((d[k] = 200 + zto1304(200 * xzu219.random(), xzu219.value(100))),
-              (c[k] = 23 + zto1304(151 * xzu219.random(), xzu219.value(100)))),
-          (a[k] = 1 + zto1304(g[k] * xzu219.random(), 10 * xzu219.value(100)));
+            ? ((d[k] = 300 + zto1304(200 * getSetSeed_value_random.random(), getSetSeed_value_random.value(100))),
+              (c[k] = 100 + zto1304(201 * getSetSeed_value_random.random(), getSetSeed_value_random.value(100))))
+            : ((d[k] = 200 + zto1304(200 * getSetSeed_value_random.random(), getSetSeed_value_random.value(100))),
+              (c[k] = 23 + zto1304(151 * getSetSeed_value_random.random(), getSetSeed_value_random.value(100)))),
+          (a[k] = 1 + zto1304(g[k] * getSetSeed_value_random.random(), 10 * getSetSeed_value_random.value(100)));
     };
     this.getIStrength = function () {
       return m;
@@ -761,15 +761,15 @@
         getsStrengthsClearsErasesEnemyPlayersAddsShip.isFree(f) &&
           (0 == xzu674[f].length ||
           (0 < xzu675[f].length &&
-            xzu219.random() <
-              xzu219.value(xzu675[f].length > xzu674[f].length ? 7 : 3))
+            getSetSeed_value_random.random() <
+              getSetSeed_value_random.value(xzu675[f].length > xzu674[f].length ? 7 : 3))
             ? xzu172.calcuate(f)
             : zto916(f, zto1304(d[k] * xzu672[f], 1e3)));
       }
     };
   }
   function zto923() {
-    xzu181.calculate(!0);
+    playerStateManager.calculate(!0);
     xzu210.calculate();
     xzu190.calculateSpectators();
     xzu212.check();
@@ -787,7 +787,7 @@
     xzu190.calculate();
     xzu188.calculate();
     xzu183.calculate();
-    xzu181.calculate(!1);
+    playerStateManager.calculate(!1);
     xzu185.calculate();
     xzu717.calculate();
     xzu722.calculate();
@@ -863,14 +863,14 @@
           g =
             xzu666[m] +
             zto1304(
-              xzu219.random() * (xzu668[m] - xzu666[m] + 1),
-              xzu219.value(100)
+              getSetSeed_value_random.random() * (xzu668[m] - xzu666[m] + 1),
+              getSetSeed_value_random.value(100)
             );
           e =
             xzu667[m] +
             zto1304(
-              xzu219.random() * (xzu669[m] - xzu667[m] + 1),
-              xzu219.value(100)
+              getSetSeed_value_random.random() * (xzu669[m] - xzu667[m] + 1),
+              getSetSeed_value_random.value(100)
             );
           var l = ifIsLandIfIsNeutral_ifExistsReturn2_returns012(PixelQualifierAndSquareDrawer.coordToPoint(g, e));
           if (1 != l) break a;
@@ -904,10 +904,10 @@
           (f = xzu667[m] - u),
           (f = 1 > f ? 1 : f),
           (n = xzu668[m] + u),
-          (n = n >= xzu731 - 1 ? xzu731 - 2 : n),
+          (n = n >= width - 1 ? width - 2 : n),
           (p = xzu669[m] + u),
-          (p = p >= xzu732 - 1 ? xzu732 - 2 : p),
-          (q = zto1304(2 * xzu219.random() * (n - k + p - f), xzu219.value(100))),
+          (p = p >= height - 1 ? height - 2 : p),
+          (q = zto1304(2 * getSetSeed_value_random.random() * (n - k + p - f), getSetSeed_value_random.value(100))),
           (r = n - k),
           (t = p - f),
           q <= r
@@ -1014,12 +1014,12 @@
     };
     this.removePlayer = function (h) {
       1 == xzu154
-        ? (0 != xzu665[h] && (zto1204(h), zto1247()), xzu181.addState(h, 4))
-        : 2 == xzu154 && xzu181.addState(h, 4);
+        ? (0 != xzu665[h] && (zto1204(h), zto1247()), playerStateManager.addState(h, 4))
+        : 2 == xzu154 && playerStateManager.addState(h, 4);
     };
     this.surrender = function (h) {
       switchStateMouseMoveSurrenderPossibleDrawCross.surrenderPossible(h) &&
-        (xzu181.addState(h, h == xzu161 ? 21 : 22),
+        (playerStateManager.addState(h, h == xzu161 ? 21 : 22),
         0 < xzu167
           ? xzu726.endGame(1 - h)
           : (zto1204(h), zto1247(), xzu152 && xzu164 && xzu168.calculate()));
@@ -1116,7 +1116,7 @@
       y = !1;
     this.setStartPosition = function () {
       a(1);
-      this.instant(0, 0, xzu731 - 1, xzu732 - 1);
+      this.instant(0, 0, width - 1, height - 1);
       xzu164 || this.setDeathCamera(xzu161, 3e3, !0, 0.3);
     };
     this.setDeathCamera = function (v, z, B, w) {
@@ -1141,7 +1141,7 @@
       xzu186.grMouseMoving = !1;
       y = !0;
       a(v);
-      c(0, 0, xzu731 - 1, xzu732 - 1);
+      c(0, 0, width - 1, height - 1);
       d(0.875);
       u = !0;
       xzu217.deactivateAll();
@@ -1188,8 +1188,8 @@
       a: {
         for (t = 0; 8 > t; t++)
           if (
-            ((g = zto1304(m * xzu219.random(), xzu219.value(100))),
-            (e = zto1304(h * xzu219.random(), xzu219.value(100))),
+            ((g = zto1304(m * getSetSeed_value_random.random(), getSetSeed_value_random.value(100))),
+            (e = zto1304(h * getSetSeed_value_random.random(), getSetSeed_value_random.value(100))),
             d())
           ) {
             t = !0;
@@ -1199,9 +1199,9 @@
       }
       if (!t)
         a: {
-          t = zto1304(m * xzu219.random(), xzu219.value(100));
+          t = zto1304(m * getSetSeed_value_random.random(), getSetSeed_value_random.value(100));
           for (
-            var q = zto1304(h * xzu219.random(), xzu219.value(100)), u = 40;
+            var q = zto1304(h * getSetSeed_value_random.random(), getSetSeed_value_random.value(100)), u = 40;
             1 <= u;
             u--
           )
@@ -1275,18 +1275,18 @@
       r = Array(12);
       n = 6;
       l = 10;
-      m = zto1304(xzu731, l);
-      h = zto1304(xzu732, l);
-      k = zto1304(xzu731 - l * m, 2);
-      f = zto1304(xzu732 - l * h, 2);
+      m = zto1304(width, l);
+      h = zto1304(height, l);
+      k = zto1304(width - l * m, 2);
+      f = zto1304(height - l * h, 2);
       if (xzu164) for (var t = 0; t < xzu146; t++) (p = t), c(), (xzu665[p] = 1);
-      if (!zto1265(xzu737)) {
-        t = initsArrayConcatsStringsGivesBotsNames.get()[xzu737 - zto1263()];
+      if (!isNot10Nor11Nor12(selected_mapIndex)) {
+        t = initsArrayConcatsStringsGivesBotsNames.get()[selected_mapIndex - numberOfMapsMinus4()];
         var q = t.length + xzu146;
         q = q > xzu150 ? xzu150 : q;
         for (p = xzu146; p < q; p++) {
-          var u = t[p - xzu146][1] % xzu731,
-            y = zto1304(t[p - xzu146][1], xzu731);
+          var u = t[p - xzu146][1] % width,
+            y = zto1304(t[p - xzu146][1], width);
           c();
           b(u - 2, y - 2);
         }
@@ -1311,9 +1311,9 @@
             if (
               (t == q + y || t == q - y || v == u + y || v == u - y) &&
               3 < t &&
-              t < xzu731 - 5 &&
+              t < width - 5 &&
               3 < v &&
-              v < xzu732 - 5
+              v < height - 5
             ) {
               var z;
               if ((z = PixelQualifierAndSquareDrawer.isLand(PixelQualifierAndSquareDrawer.coordToPoint(t, v))))
@@ -1335,7 +1335,7 @@
                 if (0 < xzu670[p]) {
                   for (u = xzu668[p]; u >= xzu666[p]; u--)
                     for (q = xzu669[p]; q >= xzu667[p]; q--)
-                      (y = 4 * (q * xzu731 + u)),
+                      (y = 4 * (q * width + u)),
                         PixelQualifierAndSquareDrawer.isThisPlayer(p, y) &&
                           (PixelQualifierAndSquareDrawer.drawNeutralSquare(y), xzu670[p]--);
                   0 != xzu670[p] && console.log("error 3423");
@@ -1369,7 +1369,7 @@
     xzu210.draw();
     xzu162 ||
       ((xzu690.imageSmoothingEnabled = !1),
-      xzu181.draw(),
+      playerStateManager.draw(),
       xzu189.draw(),
       xzu185.draw(),
       xzu190.draw(),
@@ -1388,7 +1388,7 @@
     this.players = null;
     this.init = function (a) {
       this.players = a;
-      xzu181.addEloStartMsg(this.players);
+      playerStateManager.addEloStartMsg(this.players);
     };
     this.setEndingMessage = function (a) {
       var d =
@@ -1417,11 +1417,11 @@
       c = c.toFixed(1);
       d = d.toFixed(1);
       0 == a
-        ? xzu181.addEloEndMsg(this.players, c, d, [
+        ? playerStateManager.addEloEndMsg(this.players, c, d, [
             "rgba(10,140,10,0.75)",
             "rgba(140,10,10,0.75)",
           ])
-        : xzu181.addEloEndMsg(this.players, d, c, [
+        : playerStateManager.addEloEndMsg(this.players, d, c, [
             "rgba(140,10,10,0.75)",
             "rgba(10,140,10,0.75)",
           ]);
@@ -1555,8 +1555,8 @@
       else
         (xzu154 = 2),
           (xzu149 = xzu147),
-          xzu181.removeState(8),
-          xzu181.removeState(17),
+          playerStateManager.removeState(8),
+          playerStateManager.removeState(17),
           (d = !1);
       d ||
         (0 < xzu167
@@ -1564,17 +1564,17 @@
             (d = a == xzu161),
             xzu226.wrapPackageGameEnding(d),
             d
-              ? (xzu181.addState(a, 2), 2 == xzu167 && xzu169.setEndingMessage(a))
-              : (xzu181.addState(1 - xzu161, 3),
+              ? (playerStateManager.addState(a, 2), 2 == xzu167 && xzu169.setEndingMessage(a))
+              : (playerStateManager.addState(1 - xzu161, 3),
                 2 == xzu167 && xzu169.setEndingMessage(1 - xzu161)))
           : xzu166
           ? ((d = xzu722.isPlayerVictorious()),
             xzu226.wrapPackageGameEnding(d),
-            xzu181.setWinMessageAlliances(d))
+            playerStateManager.setWinMessageAlliances(d))
           : ((a = xzu442[0]),
             (d = a == xzu161),
             xzu226.wrapPackageGameEnding(d),
-            xzu181.addState(a, d ? 2 : 3)),
+            playerStateManager.addState(a, d ? 2 : 3)),
         xzu191.show(d, !1),
         xzu189.repaint(!0),
         xzu190.repaint(!0),
@@ -1608,7 +1608,7 @@
           (xzu714.pixelInWindowChanged = !0),
           xzu714.render())
         : xzu191.show(!1, !1);
-      xzu181.removeState(18);
+      playerStateManager.removeState(18);
       xzu210.endFreePositioning();
       xzu210.repaint();
       xzu168 = null;
@@ -1651,7 +1651,7 @@
     xzu149 = 0;
     xzu161 = c;
     xzu716.deinit();
-    xzu219.setSeed(a);
+    getSetSeed_value_random.setSeed(a);
     zto1244(b);
     xzu166 && !xzu152 && xzu721.init();
     xzu154 = 1;
@@ -1681,7 +1681,7 @@
     xzu190.init();
     switchStateMouseMoveSurrenderPossibleDrawCross.init();
     xzu184.init();
-    xzu181.init();
+    playerStateManager.init();
     xzu183.init();
     mouseObserver.init();
     xzu191.init();
@@ -1722,7 +1722,7 @@
     encoderDecoder,
     mouseObserver,
     switchStateMouseMoveSurrenderPossibleDrawCross,
-    xzu181,
+    playerStateManager,
     xzu182,
     xzu183,
     xzu184,
@@ -1756,11 +1756,11 @@
     xzu212,
     xzu213,
     xzu214,
-    xzu215,
+    mapsData,
     xzu216,
     xzu217,
     xzu218,
-    xzu219,
+    getSetSeed_value_random,
     xzu220,
     xzu221,
     xzu222,
@@ -1781,7 +1781,7 @@
     encoderDecoder = new EncoderDecoder();
     mouseObserver = new MouseObserver();
     switchStateMouseMoveSurrenderPossibleDrawCross = new SwitchStateMouseMoveSurrenderPossibleDrawCross();
-    xzu181 = new zto996();
+    playerStateManager = new PlayerStateManager();
     xzu182 = new zto1002();
     xzu183 = new zto1023();
     xzu184 = new zto1035();
@@ -1815,11 +1815,11 @@
     xzu212 = new zto1243();
     xzu213 = new zto1250();
     xzu214 = new zto1275();
-    xzu215 = new zto1281();
+    mapsData = new MapsData();
     xzu216 = new zto1283();
     xzu217 = new zto1311();
     xzu218 = new zto1314();
-    xzu219 = new zto1322();
+    getSetSeed_value_random = new GetSetSeed_value_random();
     xzu220 = new zto1327();
     xzu221 = new zto1337();
     xzu222 = new zto1340();
@@ -1924,7 +1924,7 @@
         if (m)
           return (
             this.hide(),
-            xzu181.addBalanceWarning(),
+            playerStateManager.addBalanceWarning(),
             xzu152
               ? zto1100(xzu161, q, xzu185.getPercentageThousand())
               : xzu226.wrapPackageLandAttack(
@@ -1949,7 +1949,7 @@
                       PixelQualifierAndSquareDrawer.getY(u)
                     ))
               : (this.hide(),
-                xzu181.addBalanceWarning(),
+                playerStateManager.addBalanceWarning(),
                 xzu152
                   ? zto1098(xzu161, q, xzu185.getPercentageThousand())
                   : (!xzu165 || 300 < xzu190.getTimePassed()) &&
@@ -1962,7 +1962,7 @@
       if (e)
         return (
           this.hide(),
-          xzu181.addBalanceWarning(),
+          playerStateManager.addBalanceWarning(),
           xzu152
             ? attacker.executeSeaAttack(
                 xzu161,
@@ -1991,8 +1991,8 @@
         return !1;
       C = Math.floor((w + xzu394) / xzu393);
       var I = Math.floor((x + xzu395) / xzu393);
-      if (1 > C || 1 > I || C >= xzu731 - 1 || I >= xzu732 - 1) return !1;
-      var O = I * xzu731 * 4 + 4 * C;
+      if (1 > C || 1 > I || C >= width - 1 || I >= height - 1) return !1;
+      var O = I * width * 4 + 4 * C;
       if (!PixelQualifierAndSquareDrawer.isLand(O)) return !1;
       if (2 == xzu154)
         return 1 <= xzu715.nSelected && ((q = PixelQualifierAndSquareDrawer.getPlayerAt(O)), q < xzu146)
@@ -2141,13 +2141,13 @@
     };
     this.switchState = function () {
       (this.isSelected = !this.isSelected)
-        ? (xzu181.moveDown(),
+        ? (playerStateManager.moveDown(),
           xzu152 &&
             (setTimeout(function () {
               xzu714.renderAll();
             }, 0),
             zto878(0)))
-        : (xzu181.moveUp(), (h = -1), a(), xzu152 && zto878(1));
+        : (playerStateManager.moveUp(), (h = -1), a(), xzu152 && zto878(1));
       xzu720.requestRepaint = !0;
     };
     this.mouseDown = function (k, f) {
@@ -2226,18 +2226,18 @@
       xzu690.stroke();
     };
   }
-  function zto996() {
+  function PlayerStateManager() {
     function a(f, n, p, r, t, q) {
       var u = 1e3 <= p;
       var y = p - 1e3,
         v = Math.floor(
-          xzu184.measureText(n, xzu181.font) + 1.5 * g + (u ? c : 1.5 * g)
+          xzu184.measureText(n, playerStateManager.font) + 1.5 * g + (u ? c : 1.5 * g)
         ),
         z = document.createElement("canvas");
       z.width = v;
       z.height = c;
       var B = z.getContext("2d", { alpha: !0 });
-      B.font = xzu181.font;
+      B.font = playerStateManager.font;
       B.textBaseline = xzu326;
       B.textAlign = xzu330;
       B.clearRect(0, 0, v, c);
@@ -2270,7 +2270,7 @@
       d = [];
       this.zto1324();
       xzu164 && this.addState(0, 18);
-      var f = "Map: " + xzu215.get(xzu737).name;
+      var f = "Map: " + mapsData.get(selected_mapIndex).name;
       a(300, f, 6, 0, xzu315, xzu290);
     };
     this.zto1324 = function () {
@@ -3064,7 +3064,7 @@
           : xzu185.inside(a, d)
           ? ((xzu186.grMouseMoving = !1),
             xzu185.pressMouse(a, d) && (xzu720.requestRepaint = !0))
-          : xzu181.mouseDown(a, d) ||
+          : playerStateManager.mouseDown(a, d) ||
             (0 == c && mouseObserver.mouseDownUnselected(a, d)));
     }
   }
@@ -3231,8 +3231,8 @@
       this.zto1324();
     };
     this.zto1324 = function () {
-      e = xzu181.font;
-      m = xzu181.fontSize + 5;
+      e = playerStateManager.font;
+      m = playerStateManager.fontSize + 5;
       m = Math.floor(1.25 * m);
       xzu706 && (m = Math.floor(1.25 * m));
       h = Math.floor(0.15 * m);
@@ -3448,7 +3448,7 @@
       if (0 != g)
         if (4 == g)
           xzu720.time > z &&
-            ((g = 0), 1 == xzu154 && xzu184.addText(xzu215.get(xzu737).name, 3));
+            ((g = 0), 1 == xzu154 && xzu184.addText(mapsData.get(selected_mapIndex).name, 3));
         else {
           if (1 == g)
             0 == e && (d(), (e = 1e-4)),
@@ -3603,11 +3603,11 @@
     };
     this.setVisible = function () {
       k = !0;
-      xzu181.moveUp();
+      playerStateManager.moveUp();
     };
     this.setInvisible = function () {
       k = !1;
-      xzu181.moveDown();
+      playerStateManager.moveDown();
     };
     this.getPercentageThousand = function () {
       var t = Math.floor(1e3 * f);
@@ -3761,9 +3761,9 @@
         k = xzu695 / 16,
         f = 0;
       xzu394 < -xzu694 + h && (l = -xzu694 + h - xzu394);
-      xzu394 > xzu393 * xzu731 - h && (l = xzu393 * xzu731 - h - xzu394);
+      xzu394 > xzu393 * width - h && (l = xzu393 * width - h - xzu394);
       xzu395 < -xzu695 + k && (f = -xzu695 + k - xzu395);
-      xzu395 > xzu393 * xzu732 - k && (f = xzu393 * xzu732 - k - xzu395);
+      xzu395 > xzu393 * height - k && (f = xzu393 * height - k - xzu395);
       xzu394 += l;
       xzu395 += f;
       setCamHWXY_setMapXY.calculatePreRendering();
@@ -4780,13 +4780,13 @@
             q[4] != x && (r++, (q[4] = x)),
             xzu152 && xzu189.isFirstPlayerWinning()
               ? xzu163
-                ? v || ((v = !0), xzu181.addState(0, 17))
+                ? v || ((v = !0), playerStateManager.addState(0, 17))
                 : xzu726.endGame(-1)
               : xzu163 &&
                 !v &&
                 9500 < x &&
                 xzu442[0] == xzu161 &&
-                ((v = !0), xzu181.addState(0, 17)));
+                ((v = !0), playerStateManager.addState(0, 17)));
       x = xzu209.getPlayerInterest(xzu161);
       x != q[5] && ((q[5] = x), r++);
       c();
@@ -4977,10 +4977,10 @@
         0 != c &&
           ((g = g > c ? c : g),
           a == xzu161 &&
-            (xzu181.addSupport(g, d),
+            (playerStateManager.addSupport(g, d),
             (xzu717.values[11] += b),
             (xzu717.values[12] += g)),
-          d == xzu161 && (xzu181.receiveSupport(g, a), (xzu717.values[10] += g)),
+          d == xzu161 && (playerStateManager.receiveSupport(g, a), (xzu717.values[10] += g)),
           (xzu672[a] -= g + b),
           (xzu672[d] += g)));
     }
@@ -5038,33 +5038,33 @@
         this.pixelInWindowChanged =
         this.camMoveDetection =
           !1;
-      this.borders[0] = xzu731;
-      this.borders[1] = xzu732;
+      this.borders[0] = width;
+      this.borders[1] = height;
       this.borders[2] = this.borders[3] = 0;
       var d = 1;
-      a: for (; d < xzu731 - 1; d++)
-        for (a = xzu732 - 2; 1 < a; a--)
+      a: for (; d < width - 1; d++)
+        for (a = height - 2; 1 < a; a--)
           if (1 == xzu768[PixelQualifierAndSquareDrawer.coordToPoint(d, a) + 2]) {
             this.borders[0] = d;
             break a;
           }
       a = 1;
-      a: for (; a < xzu732 - 1; a++)
-        for (d = xzu731 - 2; 1 < d; d--)
+      a: for (; a < height - 1; a++)
+        for (d = width - 2; 1 < d; d--)
           if (1 == xzu768[PixelQualifierAndSquareDrawer.coordToPoint(d, a) + 2]) {
             this.borders[1] = a;
             break a;
           }
-      d = xzu731 - 2;
+      d = width - 2;
       a: for (; 0 < d; d--)
-        for (a = xzu732 - 2; 1 < a; a--)
+        for (a = height - 2; 1 < a; a--)
           if (1 == xzu768[PixelQualifierAndSquareDrawer.coordToPoint(d, a) + 2]) {
             this.borders[2] = d;
             break a;
           }
-      a = xzu732 - 2;
+      a = height - 2;
       a: for (; 0 < a; a--)
-        for (d = xzu731 - 2; 1 < d; d--)
+        for (d = width - 2; 1 < d; d--)
           if (1 == xzu768[PixelQualifierAndSquareDrawer.coordToPoint(d, a) + 2]) {
             this.borders[3] = a;
             break a;
@@ -6979,8 +6979,8 @@
         xzu690.imageSmoothingEnabled = !0;
         if (7 == state) xzu201.drawMap();
         else if (xzu739) {
-          var c = xzu694 / xzu731,
-            b = xzu695 / xzu732;
+          var c = xzu694 / width,
+            b = xzu695 / height;
           c = c > b ? c : b;
           xzu690.save();
           xzu690.scale(c, c);
@@ -7288,8 +7288,8 @@
         : "rgba(160,20,20,0.8)";
     }
     function d(u, y) {
-      zto1262(u % xzu740, y);
-      xzu196.get(15).txt = "Map: " + xzu215.get(xzu737).name;
+      zto1262(u % numberOfMaps, y);
+      xzu196.get(15).txt = "Map: " + mapsData.get(selected_mapIndex).name;
     }
     function c(u, y, v) {
       y = xzu694 / y;
@@ -7379,8 +7379,8 @@
           (n = v),
           xzu194.setBalanceIndex(z),
           void 0 == xzu767 && (xzu767 = document.createElement("canvas")),
-          (xzu767.width = xzu731),
-          (xzu767.height = xzu732),
+          (xzu767.width = width),
+          (xzu767.height = height),
           (xzu769 = xzu767.getContext("2d", { alpha: !0 })),
           xzu769.drawImage(xzu733, 0, 0),
           d(u, y),
@@ -7461,11 +7461,11 @@
     };
     this.drawMap = function () {
       100 == h
-        ? c(xzu733, xzu731, xzu732)
+        ? c(xzu733, width, height)
         : ((xzu690.globalAlpha = 1 - h / 100),
           c(xzu767, xzu767.width, xzu767.height),
           (xzu690.globalAlpha = h / 100),
-          c(xzu733, xzu731, xzu732),
+          c(xzu733, width, height),
           (xzu690.globalAlpha = 1));
     };
     this.mouseDown = function (u, y) {
@@ -7503,16 +7503,16 @@
     };
   }
   function zto1163() {
-    function a(c) {
-      c = 0 > c ? xzu740 - 1 : c >= xzu740 ? 0 : c;
-      zto1262(c, Math.floor(16384 * Math.random()));
-      xzu196.get(6).txt = "Map: " + xzu215.get(xzu737).name;
+    function a(ifGt1) {
+      ifGt1 = 0 > ifGt1 ? numberOfMaps - 1 : ifGt1 >= numberOfMaps ? 0 : ifGt1;
+      zto1262(ifGt1, Math.floor(16384 * Math.random()));
+      xzu196.get(6).txt = "Map: " + mapsData.get(selected_mapIndex).name;
     }
     var d;
     this.init = function (c, b) {
       xzu198.setState(2);
       d = Math.floor(16384 * Math.random());
-      xzu196.get(6).txt = "Map: " + xzu215.get(xzu737).name;
+      xzu196.get(6).txt = "Map: " + mapsData.get(selected_mapIndex).name;
       xzu196.mouseMove(c, b, !1);
       xzu196.get(9).txt = xzu194.getString();
       xzu720.requestRepaint = !0;
@@ -7529,21 +7529,21 @@
     };
     this.mouseDown = function (c, b) {
       if (void 0 != xzu196.get(51)) {
-        var g = xzu196.inside(c, b, 0, xzu740);
-        -1 == g || (g == xzu737 && !zto1266(g)) || a(g);
+        var g = xzu196.inside(c, b, 0, numberOfMaps);
+        -1 == g || (g == selected_mapIndex && !isStrictlyBetween1And_numberOfMapsMinus4(g)) || a(g);
         xzu196.deleteMenu();
         xzu720.requestRepaint = !0;
       } else if (((g = xzu196.inside(c, b, 5, 8)), 5 == g))
-        a(xzu737 - 1), (xzu720.requestRepaint = !0);
+        a(selected_mapIndex - 1), (xzu720.requestRepaint = !0);
       else if (6 == g) {
         g = [];
-        for (var e = 0; e < xzu740; e++) g.push(xzu215.get(e).name);
-        xzu196.createMenu(6, xzu737, g);
+        for (var e = 0; e < numberOfMaps; e++) g.push(mapsData.get(e).name);
+        xzu196.createMenu(6, selected_mapIndex, g);
         xzu196.mouseMove(c, b, !1);
         xzu720.requestRepaint = !0;
       } else
         7 == g
-          ? (a(xzu737 + 1), (xzu720.requestRepaint = !0))
+          ? (a(selected_mapIndex + 1), (xzu720.requestRepaint = !0))
           : 8 == g
           ? (xzu194.changeLevel(-1),
             (xzu196.get(9).txt = xzu194.getString()),
@@ -8119,7 +8119,7 @@
       k = 255;
       f = 240;
       t = new Int32Array(4);
-      t[0] = -4 * xzu731;
+      t[0] = -4 * width;
       t[1] = 4;
       t[2] = -t[0];
       t[3] = -t[1];
@@ -8145,7 +8145,7 @@
           }
       for (u = xzu150 - 1; u >= xzu146; u--)
         if (
-          ((v = zto1304(xzu150 * xzu219.random(), xzu219.value(100))), 0 == m[v])
+          ((v = zto1304(xzu150 * getSetSeed_value_random.random(), getSetSeed_value_random.value(100))), 0 == m[v])
         )
           (e[u] = v), (m[v] = 1);
         else
@@ -8162,13 +8162,13 @@
           (r[u] = 36 * (e[u] & 7));
     };
     this.getX = function (q) {
-      return zto1304(q, 4) % xzu731;
+      return zto1304(q, 4) % width;
     };
     this.getY = function (q) {
-      return zto1304(q, 4 * xzu731);
+      return zto1304(q, 4 * width);
     };
     this.coordToPoint = function (q, u) {
-      return Math.floor(4 * (u * xzu731 + q));
+      return Math.floor(4 * (u * width + q));
     };
     this.hasOutsideNeighbour = function (q) {
       return (
@@ -8388,14 +8388,14 @@
   }
   function zto1208(a, d) {
     if (a == xzu161)
-      xzu181.addState(d[zto1207(d)], 1), xzu191.show(!1, !1), xzu190.moveUp();
+      playerStateManager.addState(d[zto1207(d)], 1), xzu191.show(!1, !1), xzu190.moveUp();
     else {
       for (var c = d.length - 1; 0 <= c; c--)
         if (d[c] == xzu161) {
-          xzu181.addState(a, 0);
+          playerStateManager.addState(a, 0);
           return;
         }
-      a < xzu146 && xzu181.addStateErased(a, d[zto1207(d)]);
+      a < xzu146 && playerStateManager.addStateErased(a, d[zto1207(d)]);
     }
   }
   function zto1209(a) {
@@ -8408,7 +8408,7 @@
   function zto1210(a) {
     for (var d, c = xzu668[a]; c >= xzu666[a]; c--)
       for (var b = xzu669[a]; b >= xzu667[a]; b--)
-        (d = 4 * (b * xzu731 + c)),
+        (d = 4 * (b * width + c)),
           PixelQualifierAndSquareDrawer.isThisPlayer(a, d) && (PixelQualifierAndSquareDrawer.drawNeutralSquare(d), xzu670[a]--);
   }
   function GetsStrengthsClearsErasesEnemyPlayersAddsShip() {
@@ -8494,7 +8494,7 @@
       g[a(h) + e[h]] = l;
       m[a(h) + e[h]] = 0;
       e[h]++;
-      k == xzu161 && h < xzu146 && xzu181.addState(h, 5);
+      k == xzu161 && h < xzu146 && playerStateManager.addState(h, 5);
     };
     this.addShip = function (h, l, k) {
       xzu665[h] = 2;
@@ -8789,14 +8789,14 @@
     }
     function l(A, G, D, F) {
       return (
-        PixelQualifierAndSquareDrawer.isThisPlayer(A, 4 * (D * xzu731 + G)) &&
-        PixelQualifierAndSquareDrawer.isThisPlayer(A, 4 * ((D + F - 1) * xzu731 + G))
+        PixelQualifierAndSquareDrawer.isThisPlayer(A, 4 * (D * width + G)) &&
+        PixelQualifierAndSquareDrawer.isThisPlayer(A, 4 * ((D + F - 1) * width + G))
       );
     }
     function k(A, G, D, F) {
       return (
-        PixelQualifierAndSquareDrawer.isThisPlayer(A, 4 * (D * xzu731 + G)) &&
-        PixelQualifierAndSquareDrawer.isThisPlayer(A, 4 * (D * xzu731 + G + F - 1))
+        PixelQualifierAndSquareDrawer.isThisPlayer(A, 4 * (D * width + G)) &&
+        PixelQualifierAndSquareDrawer.isThisPlayer(A, 4 * (D * width + G + F - 1))
       );
     }
     var f, n, p, r, t, q, u, y, v, z, B, w, x, C, I, O, S, Q, K, V, R, T, E, L, P;
@@ -9247,19 +9247,19 @@
       var b = xzu146,
         g = a.length,
         e = xzu146 + g;
-      if (!zto1265(xzu737)) {
-        e = xzu737 - zto1263();
+      if (!isNot10Nor11Nor12(selected_mapIndex)) {
+        e = selected_mapIndex - numberOfMapsMinus4();
         var m = c[e].length + xzu146;
         m = m > xzu150 ? xzu150 : m;
         for (b = xzu146; b < m; b++) 
           xzu664[b] = d + a[c[e][b - xzu146][0]];
         e = b = m;
       }
-      for (m = xzu219.random() % g; b < xzu150; b++)
+      for (m = getSetSeed_value_random.random() % g; b < xzu150; b++)
         xzu664[b] =
           b < e
             ? d + a[(b + m) % g]
-            : "Bot " + zto1304(1e3 * xzu219.random(), xzu219.value(100));
+            : "Bot " + zto1304(1e3 * getSetSeed_value_random.random(), getSetSeed_value_random.value(100));
     };
     this.get = function () {
       return c;
@@ -9370,15 +9370,15 @@
     this.calculate = function () {
       0 == --d &&
         ((d = 10),
-        a() ? (g = 0) : 3 == ++g && xzu181.addState(0, 8),
+        a() ? (g = 0) : 3 == ++g && playerStateManager.addState(0, 8),
         (xzu680 -= l),
         (xzu680 = 0 > xzu680 ? 0 : xzu680));
       3 <= g && 10 != d && a() && (g = 0);
       3 > g
         ? ((xzu681 = 0 < xzu681 ? -1 : 0),
           -1 == xzu681 &&
-            (xzu181.removeState(8),
-            -1 != e && (xzu181.addState(e, 19), (e = -1))))
+            (playerStateManager.removeState(8),
+            -1 != e && (playerStateManager.addState(e, 19), (e = -1))))
         : ((xzu681 += h), (xzu681 = 1e4 < xzu681 ? 1e4 : xzu681));
     };
   }
@@ -9502,11 +9502,11 @@
     xzu727 = new zto1104();
     xzu728 = new zto1103();
     zto1007();
-    xzu219.init();
+    getSetSeed_value_random.init();
     xzu209.setArray();
     xzu205.init();
     xzu194.init();
-    xzu215.init();
+    mapsData.init();
     xzu214.init();
     xzu198.init();
     zto1008();
@@ -9603,80 +9603,80 @@
     xzu690.imageSmoothingEnabled = !1;
     xzu733 = document.createElement("canvas");
   }
-  var xzu731,
-    xzu732,
+  var width,
+    height,
     xzu733,
     xzu734,
     xzu735,
     xzu736,
-    xzu737,
+    selected_mapIndex,
     xzu738,
     xzu739,
-    xzu740 = 14,
+    numberOfMaps = 14,
     dyeOceanLandCalculateDiameter;
-  function zto1262(a, d) {
-    a < zto1263() && (d = xzu215.getPreferredIndex(a, d));
-    if (a != xzu737 || (zto1266(xzu737) && d != xzu738))
+  function zto1262(_selected_mapIndex, d) {
+    !isGtoe_numberOfMapsMinus4(_selected_mapIndex) && (d = mapsData.getPreferredIndex(_selected_mapIndex, d));
+    if (_selected_mapIndex != selected_mapIndex || (isStrictlyBetween1And_numberOfMapsMinus4(selected_mapIndex) && d != xzu738))
       if (
         ((xzu739 = !1),
         dyeOceanLandCalculateDiameter.stop(),
-        xzu219.setSeed(a),
-        (xzu737 = a),
+        getSetSeed_value_random.setSeed(_selected_mapIndex),
+        (selected_mapIndex = _selected_mapIndex),
         (xzu738 = d),
-        zto1266(a) &&
-          ((xzu215.get(a).seed = d),
-          2 == xzu737
-            ? (xzu219.setSeed(d),
-              (xzu215.get(a).speed =
-                60 + zto1304(141 * xzu219.random(), xzu219.value(100))),
-              (xzu215.get(a).acceleration =
-                zto1304(xzu215.get(a).speed, 6) +
+        isStrictlyBetween1And_numberOfMapsMinus4(_selected_mapIndex) &&
+          ((mapsData.get(_selected_mapIndex).seed = d),
+          2 == selected_mapIndex
+            ? (getSetSeed_value_random.setSeed(d),
+              (mapsData.get(_selected_mapIndex).speed =
+                60 + zto1304(141 * getSetSeed_value_random.random(), getSetSeed_value_random.value(100))),
+              (mapsData.get(_selected_mapIndex).acceleration =
+                zto1304(mapsData.get(_selected_mapIndex).speed, 6) +
                 zto1304(
-                  xzu215.get(a).speed * xzu219.random(),
-                  3 * xzu219.value(100)
+                  mapsData.get(_selected_mapIndex).speed * getSetSeed_value_random.random(),
+                  3 * getSetSeed_value_random.value(100)
                 )),
-              xzu219.setSeed(a))
-            : 4 == xzu737
-            ? (xzu219.setSeed(d),
-              (xzu215.get(a).speed =
-                20 + zto1304(141 * xzu219.random(), xzu219.value(100))),
-              (xzu215.get(a).acceleration = zto1304(
-                xzu215.get(a).speed * xzu219.value(100) +
-                  xzu215.get(a).speed * xzu219.random(),
-                20 * xzu219.value(100)
+              getSetSeed_value_random.setSeed(_selected_mapIndex))
+            : 4 == selected_mapIndex
+            ? (getSetSeed_value_random.setSeed(d),
+              (mapsData.get(_selected_mapIndex).speed =
+                20 + zto1304(141 * getSetSeed_value_random.random(), getSetSeed_value_random.value(100))),
+              (mapsData.get(_selected_mapIndex).acceleration = zto1304(
+                mapsData.get(_selected_mapIndex).speed * getSetSeed_value_random.value(100) +
+                  mapsData.get(_selected_mapIndex).speed * getSetSeed_value_random.random(),
+                20 * getSetSeed_value_random.value(100)
               )),
-              xzu219.setSeed(a))
-            : 8 == xzu737 &&
-              (xzu219.setSeed(d),
-              (xzu215.get(a).speed =
-                200 + zto1304(300 * xzu219.random(), xzu219.value(100))),
-              (xzu215.get(a).acceleration = xzu215.get(a).speed),
-              xzu219.setSeed(a))),
-        zto1264(xzu737))
+              getSetSeed_value_random.setSeed(_selected_mapIndex))
+            : 8 == selected_mapIndex &&
+              (getSetSeed_value_random.setSeed(d),
+              (mapsData.get(_selected_mapIndex).speed =
+                200 + zto1304(300 * getSetSeed_value_random.random(), getSetSeed_value_random.value(100))),
+              (mapsData.get(_selected_mapIndex).acceleration = mapsData.get(_selected_mapIndex).speed),
+              getSetSeed_value_random.setSeed(_selected_mapIndex))),
+        isGtoe_numberOfMapsMinus4(selected_mapIndex))
       )
         zto1280();
       else {
-        var c = xzu215.get(xzu737);
-        xzu731 = c.w;
-        xzu732 = c.h;
-        xzu219.setSeed(c.seed);
-        xzu216.create([xzu731, xzu732, c.speed, c.acceleration]);
+        var c = mapsData.get(selected_mapIndex);
+        width = c.w;
+        height = c.h;
+        getSetSeed_value_random.setSeed(c.seed);
+        xzu216.create([width, height, c.speed, c.acceleration]);
         zto1272();
         xzu214.run();
         xzu216.clean();
       }
   }
-  function zto1263() {
-    return xzu740 - 4;
+  function numberOfMapsMinus4() {
+    return numberOfMaps - 4;
   }
-  function zto1264(a) {
-    return a >= zto1263();
+  function isGtoe_numberOfMapsMinus4(a) {
+    return a >= numberOfMapsMinus4();
   }
-  function zto1265(a) {
+  function isNot10Nor11Nor12(a) {
     return !(10 == a || 11 == a || 12 == a);
   }
-  function zto1266(a) {
-    return 1 < a && a < zto1263();
+  function isStrictlyBetween1And_numberOfMapsMinus4(a) {
+    return 1 < a && a < numberOfMapsMinus4();
   }
   function DyeOceanLandCalculateDiameter() {
     function a() {
@@ -9708,58 +9708,58 @@
       this.state = 0;
       this.positionY = 1;
       this.oldRed = [
-        xzu215.get(xzu737).colorLand[0],
-        xzu215.get(xzu737).colorOcean[0],
+        mapsData.get(selected_mapIndex).colorLand[0],
+        mapsData.get(selected_mapIndex).colorOcean[0],
       ];
       this.brightness = [
-        xzu215.get(xzu737).borderAlgo[3],
-        xzu215.get(xzu737).borderAlgo[4],
-        xzu215.get(xzu737).borderAlgo[5],
-        xzu215.get(xzu737).borderAlgo[6],
+        mapsData.get(selected_mapIndex).borderAlgo[3],
+        mapsData.get(selected_mapIndex).borderAlgo[4],
+        mapsData.get(selected_mapIndex).borderAlgo[5],
+        mapsData.get(selected_mapIndex).borderAlgo[6],
       ];
-      this.radiusMin = xzu215.get(xzu737).borderAlgo[7];
-      this.radiusMax = xzu215.get(xzu737).borderAlgo[8];
-      this.radiusMinCoast = xzu215.get(xzu737).borderAlgo[9];
-      this.radiusMaxCoast = xzu215.get(xzu737).borderAlgo[10];
+      this.radiusMin = mapsData.get(selected_mapIndex).borderAlgo[7];
+      this.radiusMax = mapsData.get(selected_mapIndex).borderAlgo[8];
+      this.radiusMinCoast = mapsData.get(selected_mapIndex).borderAlgo[9];
+      this.radiusMaxCoast = mapsData.get(selected_mapIndex).borderAlgo[10];
       this.calculate();
     };
     this.calculate = function () {
       if (0 == this.state) {
-        var b = xzu219.getSeed();
-        xzu219.setSeed(xzu215.get(xzu737).borderAlgo[2]);
+        var b = getSetSeed_value_random.getSeed();
+        getSetSeed_value_random.setSeed(mapsData.get(selected_mapIndex).borderAlgo[2]);
         xzu216.create([
-          xzu731,
-          xzu732,
-          xzu215.get(xzu737).borderAlgo[0],
-          xzu215.get(xzu737).borderAlgo[1],
+          width,
+          height,
+          mapsData.get(selected_mapIndex).borderAlgo[0],
+          mapsData.get(selected_mapIndex).borderAlgo[1],
         ]);
-        xzu219.setSeed(b);
+        getSetSeed_value_random.setSeed(b);
         this.matrix = xzu216.getV();
         this.state++;
         this.thread = setTimeout(a, 0);
       } else {
         b = 8 == xzu198.getState() ? 9 : 40;
-        b = xzu732 - this.positionY - 1 < b ? xzu732 - this.positionY - 1 : b;
+        b = height - this.positionY - 1 < b ? height - this.positionY - 1 : b;
         b = this.positionY + b;
         for (var g, e, m = this.positionY; m < b; m++)
-          for (var h = 1; h < xzu731 - 1; h++)
-            if (((e = h + m * xzu731), (g = 4 * e), c(g)))
+          for (var h = 1; h < width - 1; h++)
+            if (((e = h + m * width), (g = 4 * e), c(g)))
               this.dyeDeepOceanLand(g, e, 1);
             else {
               this.dyeDeepOceanLand(g, e, 0);
               e = h;
               var l = m;
               ((1 < e && c(g - 4)) ||
-                (e < xzu731 - 2 && c(g + 4)) ||
-                (1 < l && c(g - 4 * xzu731)) ||
-                (l < xzu732 - 2 && c(g + 4 * xzu731))) &&
+                (e < width - 2 && c(g + 4)) ||
+                (1 < l && c(g - 4 * width)) ||
+                (l < height - 2 && c(g + 4 * width))) &&
                 this.calculateDiameter(h, m);
             }
         m = this.positionY - this.radiusMax;
         m = 1 > m ? 1 : m;
-        xzu734.putImageData(xzu735, 0, 0, 1, m, xzu731 - 2, b - m);
+        xzu734.putImageData(xzu735, 0, 0, 1, m, width - 2, b - m);
         this.positionY = b;
-        this.positionY >= xzu732 - 1
+        this.positionY >= height - 1
           ? this.stop()
           : (this.thread = setTimeout(a, 8 == xzu198.getState() ? 100 : 0));
         8 != xzu198.getState() && (xzu720.requestRepaint = !0);
@@ -9781,14 +9781,14 @@
       var h = b + this.radiusMax,
         l = g + this.radiusMax;
       e = 1 > e ? 1 : e;
-      h = h > xzu731 - 2 ? xzu731 - 2 : h;
-      l = l > xzu732 - 2 ? xzu732 - 2 : l;
+      h = h > width - 2 ? width - 2 : h;
+      l = l > height - 2 ? height - 2 : l;
       for (var k = 1 > m ? 1 : m; k <= l; k++)
         for (var f = e; f <= h; f++)
-          if (((m = 4 * (f + k * xzu731)), c(m))) {
+          if (((m = 4 * (f + k * width)), c(m))) {
             var n =
               this.radiusMin +
-              ((this.radiusMax - this.radiusMin) * this.matrix[f + xzu731 * k]) /
+              ((this.radiusMax - this.radiusMin) * this.matrix[f + width * k]) /
                 1e4;
             if (!(Math.abs(b - f) > n || Math.abs(g - k) > n)) {
               var p = Math.sqrt((b - f) * (b - f) + (g - k) * (g - k));
@@ -9798,7 +9798,7 @@
             (n =
               this.radiusMinCoast +
               ((this.radiusMaxCoast - this.radiusMinCoast) *
-                this.matrix[f + xzu731 * k]) /
+                this.matrix[f + width * k]) /
                 1e4),
               Math.abs(b - f) > n ||
                 Math.abs(g - k) > n ||
@@ -9807,11 +9807,11 @@
     };
   }
   function zto1272() {
-    2 == xzu737
+    2 == selected_mapIndex
       ? zto1273([520], [520], [0, 410, 520], [500, 500, 0], [0, 0, 0])
-      : 8 == xzu737
+      : 8 == selected_mapIndex
       ? zto1273([300], [300], [0, 110, 240], [500, 225, 825], [0, 0, 0])
-      : 9 == xzu737 &&
+      : 9 == selected_mapIndex &&
         zto1273(
           [450],
           [450],
@@ -9825,7 +9825,7 @@
       m,
       h,
       l = a.length - 1,
-      k = xzu731 + xzu732;
+      k = width + height;
     k *= k;
     var f = c.length;
     for (e = f - 1; 0 <= e; e--) c[e] *= c[e];
@@ -9838,8 +9838,8 @@
       (n[e] = c[e] - c[e - 1]),
         (p[e] = b[e] - b[e - 1]),
         (r[e] = g[e] - g[e - 1]);
-    for (m = xzu731 - 1; 0 <= m; m--)
-      for (h = xzu732 - 1; 0 <= h; h--) {
+    for (m = width - 1; 0 <= m; m--)
+      for (h = height - 1; 0 <= h; h--) {
         var q = k;
         for (e = l; 0 <= e; e--) {
           var u = (m - a[e]) * (m - a[e]) + (h - d[e]) * (h - d[e]);
@@ -9853,7 +9853,7 @@
             y = g[e - 1] + zto1306((q - c[e - 1]) * r[e], n[e]);
             break;
           }
-        zto1274(xzu731 * h + m, u, y, t);
+        zto1274(width * h + m, u, y, t);
       }
   }
   function zto1274(a, d, c, b) {
@@ -9863,64 +9863,64 @@
     b[a] += zto1304(c * (10 * d - b[a]), 1e3);
   }
   function zto1275() {
-    var a;
+    var colorDataFor10FirstMaps;
     this.init = function () {
-      a = Array(zto1263());
-      a[0] = {
+      colorDataFor10FirstMaps = Array(numberOfMapsMinus4());
+      colorDataFor10FirstMaps[0] = {
         w: [0, 2e3, 8e3, 1e4],
         r: [200, 200, 255, 255],
         g: [200, 200, 255, 255],
         b: [200, 200, 255, 255],
       };
-      a[1] = {
+      colorDataFor10FirstMaps[1] = {
         w: [0, 4e3, 5e3, 6e3, 1e4],
         r: [25, 0, 100, 0, 25],
         g: [25, 0, 0, 0, 25],
         b: [25, 0, 0, 0, 25],
       };
-      a[2] = {
+      colorDataFor10FirstMaps[2] = {
         w: [0, 500, 2500, 3e3, 4e3, 5e3, 5500, 8600, 1e4],
         r: [5, 5, 20, 255, 252, 40, 40, 20, 30],
         g: [25, 25, 100, 255, 248, 180, 180, 90, 140],
         b: [90, 90, 180, 255, 217, 10, 10, 10, 10],
       };
-      a[3] = {
+      colorDataFor10FirstMaps[3] = {
         w: [0, 400, 1800, 2e3, 3200, 4500, 6e3, 7700, 8500, 9500, 1e4],
         r: [10, 10, 20, 10, 30, 10, 16, 40, 55, 230, 230],
         g: [10, 10, 40, 50, 100, 40, 80, 120, 55, 230, 230],
         b: [80, 80, 200, 10, 60, 10, 16, 40, 55, 230, 230],
       };
-      a[4] = {
+      colorDataFor10FirstMaps[4] = {
         w: [0, 300, 1400, 1700, 3e3, 4e3, 1e4],
         r: [10, 10, 20, 10, 10, 170, 212],
         g: [20, 20, 60, 100, 100, 110, 170],
         b: [70, 70, 160, 30, 30, 60, 120],
       };
-      a[5] = {
+      colorDataFor10FirstMaps[5] = {
         w: [0, 1e3, 3e3, 3500, 4e3, 4500, 7e3, 7500, 8e3, 1e4],
         r: [10, 10, 20, 10, 5, 10, 20, 5, 20, 25],
         g: [30, 30, 50, 100, 30, 100, 140, 60, 140, 200],
         b: [80, 80, 200, 10, 5, 10, 20, 5, 20, 25],
       };
-      a[6] = {
+      colorDataFor10FirstMaps[6] = {
         w: [0, 700, 2650, 3200, 5e3, 8e3, 1e4],
         r: [10, 10, 60, 255, 255, 200, 200],
         g: [10, 10, 60, 255, 255, 200, 200],
         b: [80, 80, 255, 255, 255, 200, 200],
       };
-      a[7] = {
+      colorDataFor10FirstMaps[7] = {
         w: [0, 500, 1e3, 1360, 1800, 5e3, 7e3, 7700, 8e3, 8400, 9300, 1e4],
         r: [16, 30, 13, 255, 30, 10, 30, 30, 220, 10, 20, 7],
         g: [80, 130, 60, 255, 30, 10, 30, 100, 255, 50, 100, 80],
         b: [16, 37, 15, 255, 170, 60, 170, 120, 220, 10, 20, 7],
       };
-      a[8] = {
+      colorDataFor10FirstMaps[8] = {
         w: [0, 1e3, 3e3, 4999, 5e3, 6500, 8e3, 9500, 1e4],
         r: [5, 5, 25, 20, 40, 10, 20, 12, 40],
         g: [25, 15, 25, 30, 160, 55, 110, 60, 100],
         b: [60, 45, 70, 180, 60, 20, 55, 25, 55],
       };
-      a[9] = {
+      colorDataFor10FirstMaps[9] = {
         w: [0, 4900, 5e3, 6e3, 6600, 8600, 1e4],
         r: [3, 20, 240, 220, 20, 10, 10],
         g: [11, 60, 220, 200, 95, 55, 55],
@@ -9928,64 +9928,62 @@
       };
     };
     this.run = function () {
-      xzu733.width = xzu731;
-      xzu733.height = xzu732;
+      xzu733.width = width;
+      xzu733.height = height;
       xzu734 = xzu733.getContext("2d", { alpha: !1 });
-      var d = xzu734.getImageData(0, 0, xzu731, xzu732);
+      var d = xzu734.getImageData(0, 0, width, height);
       xzu736 = d.data;
-      var c = a[xzu737].w,
-        b = a[xzu737].r,
-        g = a[xzu737].g,
-        e = a[xzu737].b,
+      var wieghtsOrWidths = colorDataFor10FirstMaps[selected_mapIndex].w,
+        red = colorDataFor10FirstMaps[selected_mapIndex].r,
+        green = colorDataFor10FirstMaps[selected_mapIndex].g,
+        blue = colorDataFor10FirstMaps[selected_mapIndex].b,
         m,
-        h,
         l = xzu216.getV(),
-        k = c.length - 2,
         f = Array(k + 1),
         n = Array(k + 1),
         p = Array(k + 1),
         r = Array(k + 1);
-      for (h = k; 0 <= h; h--)
-        (f[h] = c[h + 1] - c[h]),
-          (n[h] = b[h + 1] - b[h]),
-          (p[h] = g[h + 1] - g[h]),
-          (r[h] = e[h + 1] - e[h]);
-      for (m = xzu731 * xzu732 - 1; 0 <= m; m--)
+      for (h = wieghtsOrWidths.length - 2; 0 <= h; h--)
+        (f[h] = wieghtsOrWidths[h + 1] - wieghtsOrWidths[h]),
+          (n[h] = red[h + 1] - red[h]),
+          (p[h] = green[h + 1] - green[h]),
+          (r[h] = blue[h + 1] - blue[h]);
+      for (m = width * height - 1; 0 <= m; m--)
         for (h = k; 0 <= h; h--)
-          if (l[m] >= c[h]) {
-            var t = l[m] - c[h];
-            xzu736[4 * m] = b[h] + zto1306(n[h] * t, f[h]);
-            xzu736[4 * m + 1] = g[h] + zto1306(p[h] * t, f[h]);
-            xzu736[4 * m + 2] = e[h] + zto1306(r[h] * t, f[h]);
+          if (l[m] >= wieghtsOrWidths[h]) {
+            var t = l[m] - wieghtsOrWidths[h];
+            xzu736[4 * m] = red[h] + zto1306(n[h] * t, f[h]);
+            xzu736[4 * m + 1] = green[h] + zto1306(p[h] * t, f[h]);
+            xzu736[4 * m + 2] = blue[h] + zto1306(r[h] * t, f[h]);
             xzu736[4 * m + 3] = 255;
             break;
           }
       xzu734.putImageData(d, 0, 0);
-      xzu215.hasText() &&
+      mapsData.hasText() &&
         xzu205.loaded() &&
-        xzu215.hasText() &&
-        ((c = xzu205.getByName("arena")),
+        mapsData.hasText() &&
+        ((wieghtsOrWidths = xzu205.getByName("arena")),
         xzu734.save(),
-        (xzu734.globalAlpha = 1 == xzu737 ? 0.1 : 1),
+        (xzu734.globalAlpha = 1 == selected_mapIndex ? 0.1 : 1),
         (xzu734.imageSmoothingEnabled = !0),
         (d = 2.8),
         xzu734.scale(d, d),
         xzu734.drawImage(
-          c,
-          Math.floor((xzu731 / d - c.width) / 2),
-          Math.floor((0.5 * xzu732) / d - c.height / 2)
+          wieghtsOrWidths,
+          Math.floor((width / d - wieghtsOrWidths.width) / 2),
+          Math.floor((0.5 * height) / d - wieghtsOrWidths.height / 2)
         ),
         xzu734.restore(),
-        (c = xzu205.getByName("territorial.io")),
+        (wieghtsOrWidths = xzu205.getByName("territorial.io")),
         xzu734.save(),
-        (xzu734.globalAlpha = 1 == xzu737 ? 0.1 : 1),
+        (xzu734.globalAlpha = 1 == selected_mapIndex ? 0.1 : 1),
         (xzu734.imageSmoothingEnabled = !0),
         (d = 0.87),
         xzu734.scale(d, d),
         xzu734.drawImage(
-          c,
-          Math.floor(0.745 * (xzu731 / d - c.width)),
-          Math.floor((0.422 * xzu732) / d - c.height / 2)
+          wieghtsOrWidths,
+          Math.floor(0.745 * (width / d - wieghtsOrWidths.width)),
+          Math.floor((0.422 * height) / d - wieghtsOrWidths.height / 2)
         ),
         xzu734.restore());
       xzu739 = !0;
@@ -9994,20 +9992,20 @@
     this.adaptRasterC = function () {
       var d;
       xzu155 = 0;
-      for (d = xzu731 - 1; 0 <= d; d--)
-        (xzu768[4 * d + 2] = 3), (xzu768[xzu732 * xzu731 * 4 - 4 * d - 2] = 3);
-      for (d = xzu732 - 1; 0 <= d; d--)
-        (xzu768[d * xzu731 * 4 + 2] = 3),
-          (xzu768[d * xzu731 * 4 + 4 * xzu731 - 2] = 3);
-      for (d = xzu731 * xzu732 - 1; 0 <= d; d--) {
+      for (d = width - 1; 0 <= d; d--)
+        (xzu768[4 * d + 2] = 3), (xzu768[height * width * 4 - 4 * d - 2] = 3);
+      for (d = height - 1; 0 <= d; d--)
+        (xzu768[d * width * 4 + 2] = 3),
+          (xzu768[d * width * 4 + 4 * width - 2] = 3);
+      for (d = width * height - 1; 0 <= d; d--) {
         var c = 4 * d;
         3 != xzu768[c + 2] &&
           (xzu736[c + 2] > xzu736[c + 1] && xzu736[c + 2] > xzu736[c]
             ? (xzu768[c + 2] = 2)
             : ((xzu768[c + 2] = 1), xzu155++));
       }
-      if (3 == xzu737)
-        for (c = xzu731 * xzu732 - 1; 0 <= c; c--)
+      if (3 == selected_mapIndex)
+        for (c = width * height - 1; 0 <= c; c--)
           (d = 4 * c),
             xzu736[d] == xzu736[d + 1] &&
               xzu736[d] == xzu736[d + 2] &&
@@ -10016,27 +10014,27 @@
   }
   function zto1280() {
     var a;
-    xzu737 == zto1263()
+    selected_mapIndex == numberOfMapsMinus4()
       ? (a =
           "AL66AJ7F66B7Ao59AK8UcJ7A7AUBC9AW7P67ByEGKBIAcJ9A6H7AUDAMW56eBAKQAfsC8FKBE8A7AoBHKDAKDWF6UTAU6yBH8C9AeBEyDE9AeBA7HUHV95uAUNI7AK77DKCAKuAUyAUBA7DoBAKCDyKAKBVjtAeMCKFN8A6AKZKeKD6AUiBeWAUBAL865sAoNCAGN6A7AKYKoHAKCHeNAKBCADS65oA8BUFAKRAVmDUiAUlAKjAKCAe7oCAULB8Ap855pAeBAKNAeDBoEN8De7oBD9AUMAK67AoBA6B6Ap855tAUCAKBAKHAKDByCOKhHoBD9AeLAU69AKCA6ByECKBQg98A7AoBXoGAKBBKNAefAfEDyBAUtAK68AULAKyAeUA7BoECABQq97A8AKEXeJA6AeCBKDDUBK7DyCAKuAKCAKMAUJAUpAKJAeuAKDAUVA6ByEB8AV6q96A9AKHW7BeFAoBBADDeCKolFUCBeBA9AKqAKIAeuAKEAKGAKPAyPAKBAUTAL6q9ySW6BeEA7AKIAeCAKfApBD7FoDF6AK6yBBUCBoED8AL6q9oTWACAoLAUKAUEA9DeBJ8AUDD8FyBF7AK6yBAKCA9AUOAgDdUUWAFAeEA8BKBAUKDoBJ8AUDD8G6AKuAU67AUJAUNAgDdeOWyFAoBAeBAeCAULBfhAUCDoBAo6eDBKBA6AKDAKYAU66AeYAWDdoMWyGA7CADA9ALfAKBD8AKFGeDBKBA6AyYAU66AeQAKFAgDdoEAKHWyFA6AUBA7AKLAVpC9AoIAeCEoBA6AUMAKNAKhAe68AeGAKNAqCd9A5X6AKBA9AULAVpC8AoEAKEC6AUVAUGAKNAKMAefAo69AUGAKFAKGAqCeACYB6ycAUGAKCC8AUVAUKAKKAKMAUSAKNAe7ACA6AUEAUDA5UXAAWkQ9C8AeBAKBAeBC8AeVAKLAUXAKSAKOAU76AKBAeEA9UZiAUCQ6DUlAeiAKbAUVAU8oFAoIUW98AMhRUgAoBDeCDyBC7AUJAUJAU6oCB9AyEAKBA6UM98AWhAyBGoCCUDG9AUEDeBAU69AeNAKYAUIAU79AKGAyGA7T9d8AgcAeEG8AKXAo69AUBD8G8AoKAKBAUXAe89AeEA6AoJT7d9AWZAyFJUGGosG8AyIAUUAUFAoNAU7eEAUIAeIT7d9AWXAoBAUBJ6A7GUtG9AUCAUHAeSAeFAoMAU76BKDA8T7z8AoBAyDJ7A8GKrHKBAoEAyCB9AUHAKNAe76BADA8E8ALwz7ByBAeDJAIGArHUBAoBAUBA6AKSAUWAeoAKjA9AULEyCO8z6BoBAKCAeEI9A7F9EABApGAKRAKEAolAKBAKkCUsAfvz6CUCJKFGAtGUCGABAKBAeCD8AKmCerAfvdoBWUVAU9eDGAtGeBAyCF6AUBAUmAKmCorAfudoCV7AUCAKBB8Af5ysHKBBABDeDA7AUEAKoAKLAKBAKXCyqAfudoDV7AKBCeCPetIUBEeDF6AoBAUTC6EKDO6doDV9R7EzFAKWAU57AySC9EAEO5doCV6AeBR6EzHAUUAUBAK56AoTC9AUBD8ALudoCVyEA7Q9E6NAEB8AKmAUVC7AUBS5dyBW7Q8E7NAEB8AU6AbAKBS5dyBVKBAUDAUBAUBAp67E8M9AeWAK6AdStBAKCB7AL67E8LoBByDCeCDADC6C9SjBAKCSywLABAeDAUCA9AoWAeiAKZC7SjEB8AL66E8LAIByBCKEDoBDACAKTSjAS9FBIAKDAymAU7ARSjDS6E9K9AUDAymAK7KQSi96AeBA9Ap76E9LACAeFB6AK9oPSY96AoCAUESKxLyGBeEJoOSY9yKAKHAL7ozL6AyKAeBAUDAe89Bp8O9oTAL7e5VSAoIAoFAoqAUuBf8O9KOAL7oBAy5fUAeIAoFAUNAKeAKvBKqApkxKFAKIAL7eCAe56MACA8AyFAKBAKLAU77BAsApjwoCA6AeCSUBAy5zeAeIAUOAU7yHE6A6Ni8oDAUEAKCAL8oDAK57M9AUTAKDAKBAoBAU56AKMA7E7AzhwoDAVDAK89GLUAKFAKWBo5yDBAHE8AphwyDAKIAK9oBI7GepAU7oDAKBAoCCKQFeDBAHE9Apgw6AUCKUBI7GfPA7AyBCKQFeEA9A6FUCNY87BUBJUBI8GVPA7C8B6GoHFeCNO8KCApFAK89GBQAoCAUaB8GoGFeCNO8KCAMAF9L7AKEAUYCA6oBF7AVfwfIAK9K59L7AKHAKXB8Z7woCAVBAe9A6BRAKdBABBABAW5i78AyBKyCJK6A68AUkAKGAUfBKBCCuv9BeCJyCJA6K67AejAUGAKhDgsv9AUCBABAKBSy6U6yFEUBDojYO8MAGe6oGHomYE8CAGo66AemAUBAKiD8X9v9UK6y66AUHAecAUiEMmv9UK66C7AUkAUIAKdAeBAKfEK78AL59v9UK67C7AKHAKbAeeAKJAoGAKVEo7yBAKBA7Apwwf8oCBA68C7AKHAKbAefAeFAKBAoFAeUEo7oBA6A9O6wf8oDA9G8DyBBACBeFD6BeCAKTAKBEy79BLtwf8yDA8G8DyCBABBeFD7AyDAyWE8H6BVtwf86AKJG9DyCA9AUMAymByVE6H6BVtwV87AKKG8DyCAoCBKBAyEEeJCysH6Bfswf97G9DoCAoBBUBA8AerA6C8Ee7yMO5wCCGyBAK6KEH8EU76BBuv9T9AKEGo6oDHUCAyqH6AUCAKBALwv8UADAU6ypAUUAe7UCA6EfFAfVv6UKEAK6ygAUJAKWAKFAK67AKHEVHApSwB97HKgAKgAUDAe76D9JACB7ApRl9AU96T9HUgAKhAe8KnJ6AKNApPl8Ae96C8AL7A7K67AU8UnJ6AUOApNlyBAUCJ7D8AV59HVzD8J6AePApLloDAKCJoDAKBAKjAL6A7U66AK8ylJ6AeRAfKloDAKBJopAL6U7K6yDIykJ6AeSAVKleEJ6AyBCeBRo7UrAeSAKBAK8ykJ6Afek8AeBAo96AyDA8AyJAV7U7esAKWAK8yjJ7ALfk6AyBAe96AKJAyCAoFAyBAUBA9Ap58HLkAKSDqdk6AyCAU96AKFAoBAeBA9AoCAUEAKHAV6A7BlAURDgek7AeDAVBA6AKOAoGA6AKCQU69P7DWek7AUBAVECeBA8AV67HB57DMfk7AzDDoBP8AUHHB58DMek7AzAD7AL68G9BoCL6AUZC9XN67AzBD6AL68G9BoDKAEBUBCydXN6UBAUHKejALpAKZG8B6AU99A6D8C7XX6ULKeiALpAKZG9ByCJ9A6D8C6Xh6UKKKDAp7eBCo68B7AK98A7EAWX5keIKUEAf7eBCo68LoJEKLY5keHKeCAKCAL99G8LULEKKY6k8AfBAeBAeBT8G7LKNEKKY6k7ApCA7AL5eBEe67KAZEUIY6k7AUBALDQABEe7A9oeEAIY6k7ALCAKDQADEU69JeiD7A8Y6k7ALFQKEAeCD7G8I6AKED7D7A7Y6k6AVDAKCA6AK9UBGKEAKCD8G8I6AUBEAJA6CKHY6kyDKeBAKBAK98AU6AGD9G8IysA8A8CAHY6kyCKoBAUBAU9oFGABEo66Io6UUA6LABN6kyBK6AKBJ8ApFGyCAK8K6pjAVjkyBK6AKBJ9AfFGyDAKFAK7e66NoFNY7UBAU99AVDG7AoBAeCHU7BgA8M8vKhAe68ALIGeHAU7A7VgAUBA6M7vKaAo7yBK8GUGAUDAK6KBA6F9AUKNeBAUGM6vKYAUDAV8oEAU59AKEGoBAKEAK5oQAVkAKBAzYvKLAKJAeFAL8yCAo6yDAK5y6z5oBAKFMs7UKAKKAKGAL69AKVGoEAe5U66P7A6MY7UJAUQAL7ABCUGAK57AeEE8G9P7A7MO7eBAUFAKHAMEAyBGybAUQHB59A8L9v7AoBA6AeHAL96AoCCUGDevHL59A9L8v7AUCA7AgFAeCCKIDUFAeFAKfGyBAztAUOBVPwoEAWHAUDCAIDeEAUGAKeGz5UEBeOLY7oBA8A6AWLCAJAKCDADAKmGz5eEBePLDfAVpAKCAKFAyDVKRBUBAUPAUFAyFAKCD6GKCAp5eDBePLDgALoAUCA9AgNB7BUCAKQAKCA9AoBAUeAUDGKDAp5yDBUPK9heBN9AeBA9AWPB6BUWAUBAyHA7AKBAKTAyBGUDAp56AoEAeBB8K8h7AVkA7AKDAMQB6A9C6AKNA7AeTG8QobLDdAUGAVkA6AqRAeBB6A6AeBD6A7AeSG9Q6CykAK7hZAeBAUDALnA7AgUB9AyCAUkAUCAUDB8HL68CUhAosAKcgoFOeJAWXB7A8AyBD9B7Hp68CKhAetAUbgoFOUDAKEAe76ALwB9A6AeCEACAUHH9RAUDeBEyDC7geHA6ALiAeBAoCH6AVxCKDAeCEoDAKCIB7KPAKDDeBEyDC7geGAUCAeBNoHAy7oCO9CKCE9Ao8f7eOIAFC7goFAeBN8A7AqaHKEIf8UHH9AybgyFOUFAyBAgXL7AUBAKBAKjSKIIADC7gKDAUGOABAeCA8WfQBeEAKXSeCAUCIKDC7a8AoxAeGAVoAKCAeFW7LoQAKFBUBAf87AU8yDC7a6AyyAeGALoAUCAyDIUDOpMCoDT9AK8yDC7aoHCAEC6AfyJAEOpME6AW6oDC7aAKCAFC7AKEAVsJKDOfCAKKE7AW6yDC6Z9BKTA7DKCOe9UCOzAAeBAUCFACa6AeaZoCAKMCKHAUBRU9UBO6J9g8AoYZeQCAMRK9UBO6J7hKECg5UPCKNAUDA9AUCAL5VlAK98J7hyECW5UOCKXAKHAUDO8BKDMyBJy97h9AeVZUNAUBB9D8O6BKBUeCB8J7iADCC5UNCUmOyMAK8UBEyBHUEB8J6iKEB9ZUMCelO6BUCIKBEyBHUGBy9rtAeTZUMB8ELvAUBA9AUPAU6eBDoCAoBAyBGKFA6A6By9ruAeSZUMB9ELuAUCAeCAKFBoCF9AyjAUCAK67A7AoGB6J5iyDB8ZoJCAoO7AUCAKJB6AK6AED6AKDAK66A7AoEB8JNxAeSZoHCUnO8AUBAUIAUBHyEDKCAeBG7A7AKDAeDByCAU89GyFcUDB7ZUJCUnO8AKCAULH7AUEAK97AeEAKDAoBA6BKEAK87GyIcKEB6ZAHCepPUBBK78AU96AoMAUCA9BKDAK86GoLcKCB7ZAGCopPoDA6F6AKVAeSAKCAKBAK89AKDAoDAKOI6GoMeCxAoBAKaD7P8AeFF7AKVAUSAKCAU89AUCAyEAKKAKFIo6UNeC8KiQKDAo58AUUAoQAKCAKcA6GAGAeBB6Io6UNeCpAolDV6KDAe6UBB8AyqAKBAeDAy6KFB9Io6UOGUBX6YAHC7AUGDL6UCAo8KFEUBAKDAUJC7AUcAKCAUTIo6eOGUEAeBW9YKGCoCAKCAeCAKdQoDAo8AFCABAeBB6A7AKJCeDAKDAUBCoCB7AKDIy6ePGKFAKCW9YKGCoCAKjQ7AUGAoDG9A7CKBAUBAUBBeRC7BKmHoCA8G9Bo6KIW9YUFBeBA9AeBDf68AeFAeBHUKCUEBoQC8A6Ee7eEA6AyDGUNGAKW8YKFBeDA8D6Q8I7A8AoBB8AKQB6C7AytHKJAyBAe66BK59BMcYAFBoDA9DV7KJAK7yBAKIAKEDyPC9AosHUKA8G7BA58A9XMoAeLAUCAyHDf7K8oCAKHAUDD6By76AUBG9BUHG7BK56A9XWoAoKAUCAyGDf7U7yBA7B7DyOHyDAU66ByHG7BK57A8XWnAeJAUBA9A6DV7U7yCAySD7Be66AKGAKBHKDAKLA8G7BA59AqiX9AUJBUIDUBAV68HoEAKVC8AyEByEAKuAULAKFAKCH6BAIG8BC96X9AUJBUIDz68HKdC8A6AeOAoCG7H7A7BKCAU6oKd6X8AeKBKBAKDD7Q9HKdC8A6AoNAoDGoEAK7oFBy66A8d8X8AUMA9AykRK7KdC8A7AeNAoCF9AUDIKEBy67A7d8X7AePA6AydAUBR6G8DKbA8AeNGoDAe8KEBo68A7d8X7AeOA8AocAKCR7G8DKbCo6oDAe8UCA9AeEHAEd8X7AUPA6A6DULAL6o67DUaCy6e99AyDlWlAUPA7AygA7AKBA6QK66DeZCy6e9ABAoCAeGAX7W5oHA8C8AKDAKNQK6eiCyWBADFe9ABAeGAKFAetANZZoHA6E9AUBP8GKjCoWBKDA6AUrJKPA6EUDg5ZyKAU5z56F8D7CoWBeBAyDEU89B7A8EKDC6AW97Z6BACF6Py57D8CeVB9AonJUSA7EKDC6AeBAq9M58HBzF6D9CeLAKIB9AynJAUA8EKCC6BC89aKFAK66O7FooCyIAeFBoBAyFCyDBK87AUBB8BKLAoaAUaBM88aAFAU69Oy5UpC6A6AeDB6AKFA6B8AUFAULI7CUMBAEC7AKcBC87ZUDAyEAU7BuFAqCyHAeDByBAyGB9AUOJUUByIAecAKcAUBA7c7ZKEAoDAU7fvE7EeYA7AoCCUGD6JUSCAEAe6AHc7ZUCA9HpxEeuCUHAyCCUIDy9KSCKBAy6KGc7ao7fyEKvCKIC8A9BKCCe89B8C8GUFc7aKDAK7V5UmE7CUGDAIBUBCo88B7DA6eEc7aK76PojE8CKDAKBC6AKEA8D6EUBE7B7DA6oBc9aA76PojE8CKDDoGDy9yKD6jg6A7z5yiE9F7A6D6AUCJUHD8jg6K7f56De5e5oFEK9eFD9jg6A7f56DU5yCAKyA6EK96AUnjg5eCAe7p58DA58AKCE8A6EK96AKnjqtAeEH9QeVAKCF9AUBE8A6DKDA6J7AUnjqsAeGH8QySGezA6DeBA7JyDD9jqtAKJHz67AKDA9G6FUFEe9oDD8j5ZADAeDAU68Y7FUEEo9oDD8j5X7AUKAyBHqvFUEEo9eED8j5X7AKKA7AK7WxFAFEo9eDD9j5Y9A6AKKAU6CzE8AyrN6j5ZAFAKHAe6MzAoBEoEEfmjq5ULAU6M5UEAKsAesEeCJh5qzA6AUCAo6C5eDAKsAeuEKDJh5qyA9A6GC5oBAUsAUvD7AeBAU9r5qyBAEGC58EoCE7DoCAKDAKCGKDDN5guAKEA8Ao6M57EyBE8DeHGeDDX5gtBeEGM58EyBEUBAyhA7GKFDh5WvAyCAeEGM59EyBEUCAefBA6AGDh5W6A6M6K88DyKF8A9DX5W58GWnAKWJKfBK57BKfjW58GCoAeVJKfA8F6B6DD5W58GCnAUWJUeA9FeUDDzZ8F9X9AUYJKeA9FeVC9jM58F9XKCAeFCy89DKJFeXC7jMtAKMF7XeKC7I7DAKFUZC6jMtAKGAeDF6XeKC8I8C8BK5UbCrzZKEAU56XeMC7I8C7BU5UcChzY9A6AKwA6AWhBebI8C7BUzDAWjMwAyCFCoBoaI8C7BUzDAVjWsAUBAyCFMnB6Co9AaBUyDUUjWnA6AKFAeGAKtX8B6Co9AaBowDUUjWmBUEAyBA9A6D5XeRCo9AaBovDoTjWmBKEAyCA7A8D6XKSCoDAK8ycBUwDoSjglBKGAoBA8A7D7XASC6AKCIodBKxDoRjqlA9A7AyBAoBAeCEWeB8A8AUTIeJAKUBAyDyOj6YAFA8A6AKGAUiAoFW9B9A7AeTIUJAUTBKyDyNj7YKEA8A6AUDAoXAKJX8CAHAUUIUIAeTBKyD9A9AUBjqoAyIAyEAUDCeFA5X8CAeIUIAeTBA5UnA5kCnAoKAoFAUDCqeAeCDKfIKJAeUA8FiEX9AKMAyFAUDC8WylDU8AJAeUA6F5oqzAyGAUDC9AKBWUkDe8KIAeVAo56oqSAKfAyBAoGDyEAgLCUDBUiIAHAeWAo55o5VABAyBAKDC9AoCAoGEqIBKEAUCAKEBejIKGAeWAe56oz99AKDAeCAoDA6C9AoBAyGE5U6A9A8A6AKND6IKGAUYAU55o6T8BoCA8C7AyBAyGE7UeGBKUD7IKFAeXAo5iHT8BoCA8C7AoCAyGE8UUGAeCAyVD8C6AUzA6AUYAe5iIT6B7AKJC6AeDA6A6E7UKMAyVD9CyCB9AKeA7AUYAe5YJTydCoDAyEA8E8T8BUGCKnCoDB7AeeA6AeXAe5YKToSAKKCeEA6AoIE9T7A7AKEA6CKnCoCB9AKfAyECeBFsKToRAUIAUCCKEA6AoHFL96AyBA6AyVEKWAU5UFAo78pB9yPAUGAyLBUEB7FL97D8EKWAUzAyDH9pB9oXAoPA9AyRFL98AeBBKBCKqCKBFUEAo79pB9eYAUTC7Ff98AeCDUsB9AK5UDAo8EKS8AeBE7Cy5qAAUDA8AUUEo7KDAo8YJS7FUYF6TeBAyCAeHAoTEo7KDAo8OKS6FeYF6TeDA7A7AyUEe7KCAy8OKS6FoWF8TKGAyHAKYEe7KCAy8OKS7FUWF9TKIAoeEy7ACAy8OKS8AKBE9CK6B9KIAofEylAUeAKGIOKTAxCA6V9ALAKfE7D6AKcAeGIOKQUBDAuB9Gf9AsE6DoBC9AoFIOLP8AUCAodEoSGp89FemDyBC8AoEIiKP7AeCAycEyQG6S8AKBFUlGoDAy8iKP7BeXE7By67S8AKBFUlGeEAy8iKP6AKCBeQFUOG8S8FyhAKCGeEAo8sKP9BoOFoMG9S8FohG7AoEIsKQANBKPAKBAKYAKPBK69S8FohG6A6Ae8sKQANAUDA7ByCCoCBoLG9S8FohG6A6Ae8sKP9CeDB6AKYAoMBA7B88FekGoGAe8sKPUFAUqAKXAyMBA7B87EoCA7D7GeHAe8sKPoDAepAKXAoLBe69S7EeCA7D9GUHAU85pB5yCAU6yFA9B6G8S7EUCA6DyCAo6UHAU86o9Py69AyIAKBBy68S8EKCAemAoBGeHAU86o9Py7ADByLAKFGV9AmEy66A8AK88o8P8IyLAUFAyCBoBAeBDz9KlEo66J9o7QK8ULAKHAoDBeFDz9KmEo5yGAo99o7QK8ULAKHAoEA6AoBAykS7AKDD8D6AoEDyCAoMAKHAfAo7QKqAKkAKCCACA8AKKD9TKlDyHAeiAKGB7AVDo7PyEAUqAKkAKCCACB9D8TUkDyKAKpB7AVDo7Py8yBAeUAKSD9S8AKCD7DeMAKpMOIPo8yCAenEB86AUBD8CeBA8AeBA9AUjAUEMEIPo8yCAKnEV86EKXAeFAUBAKCA8AehM8o7Po8yBAUnEV86EKGAKRAoEBUEDLeo7PK88AUBD8Ef86DyEAKGAeQAoEBUEDBfo7O9JKnEp86D6BADB6AoFAKBBAEC9NOHO9BoCHonEz86D7A9AUOA7AyBAKKAocNiGO9BUDHADAUnEz8ymBABBoHAoNAybNiGO7IyaAoQEz8ylC6A7AUPAybNsFO7IyZA6BytSyfAKFB8ByCByGC6N5opxIUaA7BouSehAKBA9AoJDKHCzjop5UJAe67CyIBouSegBAHA8B9AUKA8Cpjop5UKAU6UdA8B6Ez8oDAKaBAJA8DKHCpkofzHKCAUcA9B6E6SyBAUYBAKA9DAGC6N5of5eLAK56DeHB8E6S8CeJBeIDAGC6NUCAYCPyKAKUAUhDUHB9E7S6CoIBoICoDAeFC8NKCAYCPyfAUiDKGCAvSyDAUUA6B6A9CUMC8NKCAYCPygAKiDKECUwSyCAeTAoSA9CKNC8NUBAODP6DADDefAeXFB8eCAeTAoSA9CKNC8NKBAYDP9C7AehF7FL87B9AoSBATBobNUBAiCQy57F8FL86B9AoSA9CKNC7NKCAsBQy56GA5V8yTAoSA7CeMB9AKGNUCAsBQy57F9AoBE8SeUAoSA7CoMBUIAzmoL58AeECACDy58AyBE8SeUAoSA7CyMA9O6AKGoL57C7AejF9AUGE6SUUAyRA9CoRAVuAKGoV56C9AKkF9AKGE7R9AKCCKEB7A9Cf6yBA7oV5y67G6E7R8AUCB8A7B7A8Cp6yBA7oV5y67GyxR7AUCB6BUOA8CUwALRAKIoV5y67GyxR7AUCB7BUNBoNFKELoBA8oV5y67GyyR9B8BUNB7BAyA6MYCPo68GozR9B7BUNB9A8FKIMECPe68Go5V7eBAyZA7BACAKQA8FKJMEBPU68GU5z7eBAyaA9A6AeBB7A8FAJK6AUMoLzG9GU5z7UCAoXAKEBKDAUCB7A8FKIKoDBiBO8C7AKsGK57RKCAocBKCAUDB8A7AKCE9A7J6AKCB7AYDO6CyCAKBEo6U58RADAecBoDCKEAUGE6Ay96q6Oo7y6U59RydAoCA6AoEAeLAKBAoBA8E8Ae96q6Oe76Ge57R6B8AeBBKDAyDAoGA8A6AUEAeBO7q6PA69Ge57R7B9BoEAeCAyHA7A6AKEPYaO6AUDAKBA6AK59Ge56RoBAeWBUDAUDAyIAeKP6q6OyGAUBAyBAU57GU57RoCAeWByEAyWLyIDiZOoNAU6AfAoZF9ReCAoZBeCA6CVNBUfqzoH9DAGCo59R9CyNAUGCLLByeq6OA79C7A9Co59SAZCKTK6AUCB7DABAUFAOROA78C9A8Co59SAZCUSKoYC8AUIp7M9AyGH8DAHCe6B8AZCoPKeEAUVC8AKGp9M7A8Ay78C9BAVGL8AYCyKAKDKUFAKWDsUM7BADH8DAJAeFBU6f7oCAeYC7AeEAKBAfBC9DiVM7JKfB9AKBA6Gp78ComAKaAe7UfCoBAsYNA87DUZAK5eBAUDA6R9CU66Ae7KgC8qzgIoiCoCF8AKGR9CAXAKBAUoAUCAe6elC6q6N6GKBB8DyYAK59AKFR8CADAeSAonAoBAy58EAUAKEq7N7F9AURD6CoBF9AKFRefB7AymAyBAo57EUUAKDq8M9AKBGyBB7D6I6AKFReeAUDBUFD7BA57EeXq9M8I6D6I7AoBRKnBAGCoEA8BA56E7BoBAseM8IyiJL7ypAyFC7A6A7BA5ywBeBA5rBaI6De9p78D8AeFC8A6AoCAeIFo6AFrfZI6DU96R8D8AUGDKEAUDAKLFe6AErpZI6DK98R7E6C9Ce5U5oBA7AYjM8IUfA6Ay89R6E6CyBAKVF5yBcIUeA6A6JB7yuCoCAKUF5yLcIKrJB7yuCUWF7yVcAeEAKBHKsJB77EeWCoyy8NU7ytJB77EUUC7E8zBfHyuJB77EKPDerzzbH9E6JL7yoB6D6AeDDPTM7H7E9I9R6D9B6Eyb5VM8BABEeEB8E8JL7ynB6E7CZYOAoA9AUCBUuJV7ynBe5US5aNotBoBAoHE6JV69AKFD9Be5eP5cNosCUFE6JV69EyIAKBAKCE8AoCBZeNeBAKlDACE7JL69E7AeIAKwAoEA7OyDmzfDKDAy8K9L68K9AKHApvAh8zfDKDAe8e9L68MABO7AX86NeBAUCAKXI9JBxA9BBVAPjN9ByBAe9U88NoBA9B8A9MKB5jOUCAoBAUCJ6IABA7NyCA7B9A9LKN5hY9H9AKHLyBC8CUHLKO5gY8IABA7A8Ae96AyCA6AyCB6CeILKN5gY7IKBA8A7A8I9A6AoBC7CeCAeDLeK5hY6JKGBfDAoGAyFCeBAyBL9A55hYe9yEB6JyXAeXAfZAjhX6AUCMA9AaAUXAfcAPhW8AKEM9I6C8AUXAk6WbAUBAKBNA8ydAUYAVdAPgW6N7IKhAf5oB5fWfpG8AKKD6Af5UB5fWVqG7AeJD7Aa8qWOe6yEA8D8ALMAUnAPfWpqGoDA9PKDD8APfWpqGoCBBzAj7CYOe76PKB57MVO6H67XWLuGUBBlXWVtGUCBbXWzqGKHA87XWfsGKIA87WWyGAzeGUJA77WX8M8GUKA67WX9M7GUKA67WYBaGKLA67WX9AKBMy6KLA67WX8M7GKMA67WX8M6GUMA67WYACApSGUNA57WY7L6GULA87WY7Ly6eJA97XY7Ly6UKA97XY8Lo6UKA87YY9LU6UMA77YZBLGULA67aZKNAy9U6KMA57bZUIA7Je6ULAleZoEA7Jo6btZ6AUGJe6luae9e6vuX7AyBAeRJK657vX6BKPJK65577AL7CkBeNJK6t78AV69X6BoLIoCA6Gj8ADQ7XyTA6IoFAU657yW8AeDCeDIUCAK6875gcL6G7755W7L7G7755W7L6G6757W7L6G6757W6L7G6757W6K9AeEG7757WpLHl58WfOHH59WVRHH57WLUGeBAt6ACT5V9Me59A6Aj58Az9gOM8GUFAZ57A6TWOM9AUDF756oGTMON8Ft6eGTMNOAsAUCAeD56eFTMMN9EyJAj6UGTCKEUCJ7EoKAj6UFTMJEABAKHAKDI9EyKAj6AGTMGEUOI9E6BAD56eCTMEEURI8E9A7Aj6eCTL99B9AUZB8C9AK58EKHAUGAj6eDTB98B9A7AKBB9CAaAe56D8BKEAKG56eDTB97BoCAoLAKBByUAoBBADAyHAeBFAmBoEAUD56eDTB97AoBA8CKNC7A8A9AKCAUHEeoCyB56oDTCDA7CUMC9AyIA9A6EAp59KES9UoFCyJEoJAyEAKBAeCAeaD759yES9UyEC6A7E6A8A6AKNCyj598Af89UyEC7AywA6CoPA6AKYAUC6FAf89UyCC9AU5UEC6BKZAoE6KAp88gKFDGUAL89juWAL89jkXAL89jkXAV88jaZAL88jQbAL87jQbAL87jQbAV86jQcAL86jQcAL86jQcAV85jGfAL8ry6gAL8hz6gAV8Nz6hAV8Dz6HAUaAL79jGIAKcAUKAf6rx6IAKfAUIAf6rx6qAKEA6Qrx6rA6AUDQhx65UDQXx65UDQXx65UDQXx65UDQXx65eBQhu657AKaAVii6658AKZALjbUCHG6KCCeCNq7UEG766oCAeCB7ALibUJGQ67A8BoBNq7KOF567eJA9AfgZyCBoOFk77BKGAffZ6AKOBovAUB68UNAUFM9bKOD8696B9M8bKND77AB9M6bKMDvHB9Mg7KNDbKB8MW7UMDRMB8MM7UMDHQCLPbUNC87SBKBAeEAzLaUBA9Beb7VAyQAUBAVHaUCA9BUCAeW7fAKMAUBAoDAK99aeBA9B8CHfAUSA7J7boSCHeAKVAy97boUCR5UCJ7boZB575yCJ5bobBR58Ao9W7odA876UDJCKAeDAULAoBAojDKD768AUGAUBAU78UyQA8BUg8CBy76UUUAKCAoMDcRAK75UUYAUNDcSAK7qCEAg8SAK7gBEKf8TAK7gBEUe8TAK7gBEec8UAK7gBEec8UAK7gFD9C78WAK7WJDyb8WAK7WKDoHAUT8VAK7WFAKDD6AoHB68WAK7MEEUCA9AoEA78WAK7MHF8A78WAK7MIF8A78VAK7MJF8ASaAK7MJ88yBHL99A6Aw8yBHMA89oBHMB89eBHME89KBHCE89UBG9Uw9UCG8Uw9eCG7U589eBG6U789KCGqI89UDGMK89KEF9VeDA688KFF5W588AGFWd876A9FWe87KNFMi86yQFMj86UDAKKFqm856A6AyGF5X985oFG8YIxAUCAo66AKBYcvA9Gqv8uA7G5Y98uAo66ZStAU67ZctAU66CAEXSrAUCAK6eTA5X88lAU6oWAgm8lAK6oXAgj8nAU6KCAKXAgj8nAU6AdAMq8fAU59DKBYcfAU58Z9AKQ8dAe56aKBB68dAe56b78eAU56b78fAU5oBAM778fAK5W8SfAUxc58dAUyc68cAUkAKMc98aAUkAKKdUBASXAUlAKJdwXAUlAKHd68XAKmAUGd68XAKnAUEd68XAUoAUDd88VAKpe58SAKrd8AKE8SAUrd8AKF8RAKtd7AKE8RAUqeKBAcRAKrewRAUremQAerev88AKZAetev87AUWAoue5767AKUAKUAexe5768AKTAKRAoxe8787AUOAU5XK786AUNAU5UFAXE786AeLAK5rM78yEA7Aezf677eDA9A6AeDEUBAUDA5f777KGAeOE6AyFf6Z6APNColAeGAyFf6ZyDzKNAUHD9AUBAKEA7ArRZeGy9BKyAKCAoCAeBAeEAyCfCzA9y7BU5eCBABAyEAXKZeKyKQAUHFyCAyEANMZyHx9C7DyBCKBAeEAU58AM5W57A7xycC8AKHAKVAKCAoDEyEA7Ag5g58A6xobC8A6AeCCeEAesA7AyDZ6Z6A6xeYDKIAKDCUBAKEAUrA9AUEZ775oYAUDCUQC6DyGAKCAoIAKFZ775efB7CUYAKEC8BKFAUCA9Z775ohBUEAUSDKaBAIBM5975UjA8AyDB6DeZBKGBg6RxEABC6D6CeLAoLAKDaRxG6D7B7AUBBeEA7A6Ag6ljAUKGymB6B6AoHA7Ag57AUE7iAeJGyoByQAoIAyEZ77oAoIGyoByRAoEAKBA9AM58AUB7mAyFGopBoSclnAeDGerBeTcloAUDGKtBAXcbqAUBGAzAyWcf9ACDKCz7GU78b8AKFS9AeeAjRGU7eBAg78AeES6AygAZSF9H5cUEAf86Aj5e59G7AKHcoDAvpF8GeHAq87AUD7qF8GeJAM88AUDtKBc9F7GrAAKCtKDc8F7GrCtKDc9F6GrAAKBtAFc8F6G5eEzA5c8F6G6eEyA5c8F7G5eOwA6c8F7GrEsyHc6GAIAo5XGsKIc7GAFA9A7Aone7r8A9c8GKEBAGAeoe7R7A6ZeJceBAe8ADAone9RoKZAHcyDAe8ACA6D5fL7UNY9Aq88AeEI7DNLAUDRAEAoH5pAUEI8C8fUEAf68AoJAPrAeCI9C7feFAV69AP5y9yZfoFAf67AP56JyXf6A6AlXJyXfyIAbXJyVf7A9AbXJeWf7A9ARZJeVf7A9ARcJAUf8A9ARcJAVf6BAC7cI9CDQBUB7bJAUf6AUBA9ARbJATf77oJASf8BKB7cJARP6Af59BeB7aJARPoGAKDPyNARbI9B7PUOPlpJKOO9B9PbpJeLPAVPCjAZDJyJPAXO8XyDye97ApnAeLCpvX6APEX9AyFAeDCfv7qXUBAUBAUnO67rXKvO57rXUvOeCARpW9FfoAUC7oW8F7N7AKE7WAeOW8GBkc8AOkAUPW9GVgc8AOlAeOW9Gpec7AYlAoIXy7LVc8AYmAeGX7HVTc8AYnAoCYK7UFAfKc7AinY7ILJc6Ae58AoGAX7MtIVJcyDF9Bh69Y6IpGcyEF9Br67Y8AKBIVFcyEF8B5k9Y8IUDALBc6Ae5ySk8Y7JK98c7AU5UUk8Y8JK97heEAeVk9Y8JU95heGAKWk7Y9Jo9reDD7CwAoCJA9XdDN7WuAUDJe9DdDD7W5U9y87g9DN7W5U98IheDX7C5VBINdDh7C5VDH9g9Dh69ZVGH7hAhB7ArvZVIH5hKgB7A5i5ZzJAeBAKGF9hofB6A7iq5zVAUCFriDKQA8ig5pdFNiDKQA6i6ZVeFNiDKPA6i8ZLhE8hofByFi9ZBlEhkDKPAryZBlEhkDUOAhzY8OAqh7DUMAoKAXnY7OUEAehiKeBKEA9ArmY7PUdieeA9AyGA7h9Y6PebiegA7A7AeJh8Y7PyZiUhA6A7AoJh8Y6P7ChpDyFA8AoJh8Y6P8CNqD6AoIAeKh8Y6QKPienAUJAeKh8Y6QyDAKEiyoAKKAeKh7Y6z9FKEAyDANmY5z9FUDA6AUBh8Y5z9FUDA9h8Y5z9FUDA9h8YtRAKDFUCBDlYtVFUBA8AKCh7YtVGXnYsgAo8y6XoYieA9IU6hnYicBo79GrmYibB8H6GyCANiYiaCA7y66AUBhgrq6CK7y66AUBhWrqoZHe67hgsqUdHK68hMtqUfHA69g9Y5qKhG9G9geFAMtqAjG8G8gW5YUD7G7G8gM5iUD9G6G8gC5iUEA66G7gB7KBAKDH7p8Ee66G6gB69A7H7foBAUBJ9E7Go66f8Q9A7H8fUGJ8FA6e58AKGf8Q8A8H8e9A9J6Fe6e57AeFf6Q8A9H8e8BUUAK69F8Go56AUHff68BAUAU56e7CANAK58G9G6FyBA8fV6yPB7Ay5rGCyJAU5o7e66FyBAoCANMQoRBoHFrBC9BUBFe7e67FyCAeDANKP7CyMA8Fg99DK6y76G8FeDAeCAXJPAnAeKFq96DyFAe5e78HA5UDA7e8O7Fy5q9ylAoEFK79HK5UBA8e8OK6K5q9ouE8IU7e6DHNy67Fg9o5UqIe7o6DGNo68Fg9e5opIe7y6NFNU69Fg9U56D8I6Hy6XDNA7Kzdo56D6I7H7GhBM9HUzdo56Do89H8GhAM8He5W9U6AeJK78Gg99M6Hy5W9U6KdJK8A6M99My76FM9e6ecJA8K6C99Me78FC9o66Co9e8A59d9MK8Ayde67CU9y8K58dzYIKwdy69B8J7IU57A6A9cBWIewdo7KBAeCAyDKK8K59AeLb8MU8ovd6Sy8U7g77MA86E7d6S6IK76bpTI7E6d7S6IU6eCBq69L9I8E5d8S6IU6yBAeHA5azVI8E5d8S6Ie66BKDapVI9Eq99S6Ie67BADa6L9I9EhAS6Io8M67Ly9AreL8y8o8g66Le9Kqef8o8o67AyMa7LK9KqeV8y8y66A6Bg6zKJUqef8y8o67ByEazIJeqeV56AebIy69BAHafIJoqeV56AoaIy87afFJ6ENEPyDC6I6F6AKfapCJ7EDHPeDC8Io5yDCyCA5afAJ8EDIPUDDK8K8eFAg6e96KKne9PUDDe8A79AKEAyBay9fCD8e8PeEDe8A69BUFa9JfCD8ez56AohIA7KEBg68JLDD7ez5UBAoEB7AyLIA9C66JBED6e6PKDAeEB6A6BK8A9W6y88Kyke7O9BKRAePH8Jq6e87K6D5e9OoPD7H7JyBAW58I6K7D5e9OKSD8H6I8AoIZ6IzIDhLOATD8H7JADA8Ze8zJDhKOAVD8H6KW5U8zJDXLN9CUnHzEZK8pJDNMN8CeoHzFY9IpJDDNN7CynH6K5Y9IVKC9ffmCyoH6K5Y9IBLC8fVnC6EA77K5Y9H7LeaffoC6EA77K6Y9Ho8ACDeZfVrCypH6K8Y8HA8UCDoZfLtCeqH7K8ZA59AeBIyBD6C5e9O6CopAKDH6K8Y8E9N6C5e6O7C6E9HfLZAqN7CrFO9C6FA7fLBoBX7AKEDplChEPUZFK7pJBKDZKWOKWeL56Cy5U7fKA9AoBAMxAUMALwCW99P9Co5e7fLA8AUBAWxAV6KUd7QoXFo7VMA8AUCAMwAL6UUd6Q6CU5o7zLA8AWxAL6UUdz67CK56HzLZ7AV6UUdf68CK57H6LM56AL6eUdV67Ce57H6LW5oCQeTcyCAp69CU58H7LM5oBQoTb7S8B6F9H9K9ZoBQoSa8AUBToQGK8VGZeBQoRa6UAQGy79K6ZAEQeRa5UKQG6H9K6XeBBUJQKRaqBB7G8H9K6W6BUDBf6ATaMCB7G9IUTAU8UCAMVDL58CM59UURHA8UHAKFA8I8V6Dp56CW56U6By7K9ADBA87V6D6PoXZ5U8Be7K9ADBA87U8Ef5yXZ5U6Bo7fCI7UysP7Cg56UyOHVDI7UosP8Cg56UoOHpBI8UopQKXZ5U6Be77J7I9UomQoWZKCAWIBU78J6I8UonQoWY9VyKIA9o89UomQyXAUBAUBYWRA8IK9U9CED7Q6DglWKFIK89JgDD7Q7DqjWUDIo88JWDD7Q8DgjWoBI6I8I9UykQ9DMlfK88I9OyDF6A8AeaQ9DMkfe87I9OyGAKBFAIAebQ9DMjfy86JBrByBAUDA6DKKAKdAyCQKfXrRI6I8OUdDAoQ9DMhgo8A89NAEA6DATAKJB7AySRAfXWdAU9y8e86M7A7AehB8AKGB8A8A7SAfXMeAo9o8y8fbEoMAyHB9A6Af6UBCUeXMdA7Je87IKfAK9otBKFA6CUGAL6UDCKdXMcBA9e89H8DKDJUtA6BAEA9AeNTUdXMbBy9ADA6IU7ygAU9KHA6GAGBV9UdW9W8B6JABBADAe77HUgAU9AIA6E7AeDAeDA8A8AKBTeZAKBW8XARK8H8HAgAU89A8A7EyMAKJAUcAf7AYXCeB7LK78G8DeBAoEHKDAyKA7Eo5oCMyDEUZW8W9B9LU8K6ohAKEAo7AUA6EeoAVoAyoC6W6V8AKKCLLIo6KnAe69CeDCKEB7EKCOKBEobWqPAUBAeGCpMIy59EABHAuAoRXAbWgQA6AoaLU86F8EKCHAsAoQXKbWWRD7LU87F6LotAKQXUbWMRD9LK88FzPGWfC7WMREBLI7FzQGMfC6WWREBMI7Fe9ABCy6V8oBE6C6WWRELLI8FU88AoYGV8yBEyaWCTELLJUwI7AoZFAGA6SyBEyaWCSEVLJouI6AocE8A6Az86AKtC5WCUELLJ6Eo8yFDyoA7Ap86AUtC5WCWD9LUEAU9UoI6A6CyEA7D7A6A6AeBSKEEoZWCYD7L9JUnI6A6CeHA7D9AUGAeCSKFEeZWCZD6K7AULJelI6A7CKLAyySUFEeYWBIA6LUlK6AUNJejI7A7CANAowSUHEUYWA8eHB8A9K9D7MK9ekI6BATBUEE6SeIEKYV9H9BUSBBID8L9JykIyNAyFA6BeEEz8oHEKYV9H8BUTBBID8NA8yjIoRAUJAe6L8yGEKXWK76BeUBBGD8NU8yiIoRAeJA6DKCAeCB9S7AopCMXHeQCoGK7D6No8yhIeTAeJA6C8A8CL86AUrCMXHKSCyFK9DfjI6DU8eUAUKAycA8CMfCMYG9CyUApJDfkFoGC8C8IoUAeJAycA8CMfCCZG8C8B9AVJDVmFUJC8C7IyTAoJAocA8CMfCCYG9C8NAgN9FKJC9C7IoUA6A7AedAKCAoVXKTW6G8C8NAgN9FALC8C7IoUA8EUBCWfB9W6G8C7NKgN9E9BobC7IoTA9GqfB7W8G9AUDCLfDVoE8B6C6C7IoZAK6yRAgLB7W8HySNegN9E8C8BycIe9KOA5VUSAeGV9HyQNUjN8E7DAPC8Ie89BUHVedV7HyPNejN7E8DKOC9Ie88A8BCODCRHoONokN6E7DUODU8K87A7BMODWQHoNNokN7EyiBogIA87AoNVyiVy76BBhD6OArDoPDU8K8yDBgQD7Ve77A7NojOepDoODy8BAV6D8VejAenAznDLuD7DyND7H9J9V7D9VUgA7D9AfpDBvD6DyND8H8I7A6A6V7EAKAz98C8BB8UeO8A6AUbD7BAoH7I6A7A7V6EUBAUBBf9yaBB8eeO9AeFC6D7BAoH8IoIA8Vy6KBAV9AaA9SefPABA7CylBAoH9IAMA8Vo6z88C7A8SUhP8CymA9EA79H8B6A7Ve67SycA6SohP9CeoA8D6AeBH9H8B7A7VU68SUBAKeAf8yhQAVEUGDo86H8B8A7VK69R9DyCSyhQKUIUGAU78H7B9A7VK7B76WogQUTIeGAU78A9AK68B8A6VU7L7qZDV6UTIoFAy7yJAK69AUDBUHVK7V68XAgQUTIyEA8HUIAU7yLA7VK7f65XKhQeSI6AeIHUIAe7yKA9AKBU7Hf6qgDV6oSI7AeHHUHAo78AUPU8Hp6MiDV6oTI7AeGHUHAo9zBAfEHz58X6DV6oaIKCA6HUHAo9zBAfEH6P7XyhQobIACA6HKIAo9zBApDH6P7XyhQodH9AyDG9A9Ao9pDAfDH6P7XyhQydH9AoDHAIAoJAU8VGAVCH7PgmDV66DA8ACAo7AHAeKAe79K8AeKAU89H7PWnDV67DK8y69A8AU9VIAeKAy86H8PMmDf68DK8y7BAK7AoLAy8y77PWmDf69DK8y7AHAKfAeyAKHK6AoLAy8y76PWnDf69DU87G8AyFC8AouAyHKyEBUGIe77PCpDV7AeJA66AeHC9AeuAyIKyCBoHIK77PCpB7AUDAUHRKeJK6yCA8DUBE6AyHK6AUNA7IK77PCoAKBByJAz7UeJU7ygAKtA6A8L9A8IA77O9YKCAKOS7C9JU6KDBe6oBAoBA6A7A8L9Ay8U78O8YADAUNS7C9JeDAy5UBB7GKIAyHA6MKDIo79O6YUCAUNS7C9JoBA9HU56A8AyHAzXAK8y78O6YoBAeMS7C9KyyA6B8FoHA6A7AWLH7O6Y9BV87C9Ky5UHB6FoGA8V8H7O5ZeIS8C9J9AeDFeGCevA6A8V8H7O6ZeGTAcJ8AyCFoICAvA7A6V8IBuZeBTUeJ6GoHCAuA7AqTIVaA6BiuDA96GyHB9E6A7AqSIfZA8AUCA7s6DK9y68A7B8E6AyFBKBUy8pXu8C9Je7UIB6EyFA6AKBA6A5Ue8zUvKdJeGAK6yIByuAyLAeFUe86L7voXAUCJeEAo67AeTEyEBeCA5UU88L5v7B7KKEAy88E7AKVAoCTy89EoEG5v9BzCAyGI7H9TK89EePFs8AOKeFA7IKBAo8L88JApCAzv9BpEAyHI6IV86JeXA7A7Coxv8BpGAeII7IL86JeWEKvv7BzSI6IL8y9yUEetv7BzTAKCDyBFA78So96B9E6EY76B7MUiAUzH7So98B6E8AUFDs7oTMUiAeCAelAKMHV8fABo6KdvoTK9AKMB8CABAyjAUMGeBA7SfBBK6yJAUPv6B9K6AKCAUKAyCA8AyECUgAoLF7A7A6SfCBA67A7A7A9v8B9KoDAUCBAEA6AKGBKTAUECoGBA5oKAV87K6Ao69A6A9A7wASKeEAUCBKBBoQCeXA7A8AeDE8A9Ap86TyFwATKUFC9CeRCeIAyEAoxAUCAeGSz96Ai8AUKUGC6C8BoXB8A8GB8G8AVKKICehBAYB9A7GB77KyCAeD569CLCA9B9D7AePA6BASA7DyBCpIAK67KUN568CBDBARD8AeOA7BATA7DKDCy9yBAoMGfCB6566B9KoCAKIBypAKMBKJCAFC8AyaJUXGBAB956oTK8BANFKOA9CKEC7AybJUaF6KAU56eSLUCAKEBeyB6A9CeBC7AycAoBI6DAzKUUxoEFoDA7B8NewB9A8FUDDABAe86D7EfDCE9UHFKGA6B7NezCAFCyGF9IynEBDCO9AKD6AeBAyDA8AyRNe5eUAoaAy6U8UoD6K6CO9AKDyVAyQNe5yHAKLAoGAeTAU6y8KoDpGCY8UCA6BefCUEB6Ne56A6AeLAUHAe8y8KqDBJCO8UEAoQC8CeEB6Ne56A7AKVAUbAK59IKqC6LUWwAGAKTBADBKaAoQMKDA9F6F8AU58B7AK6esCVOCY78DAFEeEBzVAyJFyEALGAeCBoGGetB9LyZvo8AEBzVA6BA5eDAebAK76B9Ay6yvBpRC6vU8UFBfXA7A9FeCAebAU7yPA8GyxBVSC7vK8UFBVZA7A9F7C7AU7yKBU6y5oHEeBHeevA8KHA9M8AoLF7C7AU7yEB7G6KUDHUfvK8ALALhAeMAKBD7AKSCyBJ7BoCFBBAo7UfvA8BuAUQD6A7BU5yCGyKA7A8AenKAEHUiu7IB67DoJBA5oDD8AUXA9BAIAymJ8Ao7eiu7H9Q8DoKA8FyED7AKEAoMBePAUFD9J8Ae7eku7H7RAiA9Ay57AypAyIB7CUnJ6Ay7eku8H6RKhA9AU5oCAeGEAGA8A6AyGCUmJ7Ao7olu8Hp7ehGeDAeGEADA8A6A9AeYDeCAe96Ao7onP7AKwA5Z7Hf7ehGUFAeEEADA7A7BACC6C9KeEHyoPeRDoHB6A8XU7V7oiGKEAoED9AKKA6D9C9KAGHypPAbCyLAKCBAOW8HL7ojGKBA7Ae96CzCA7HeuOorBAUAUYWo69RyiQ9CfBA8HUwOAzAe55W7GB7yiOeCCyBAKRKeIHexN8LqYF8RyjOeCC8BzCBA7U5VhMCWF6RykOeCDAMKUJHe5pdMykA7IUDJy5f7ooN9AegAKEAVDBK7e5yBAKPAVENKiA8IAMI9FV7ooN8ApjB8HU6oCAKCAKCApCNehA9B8AK5ySI9FL7opGUCHKGNySHU78J8N6DKLB6A6E6Co89FB7opGUCC7AKqA7M8C7G9IA97N6ByEAeGAUNByIEUfIyxRyoGUDCoED9A9M7C9G7IU8eBBLlBUiBUJEAhIyxRopGUBG7A9M8DA66IyJAe6yGA8OAJD9A6BUmDo87E8RoMAeZD7Ao88BBcDK6o9UBA6FeEA6A7A7OeGEeBB8DeiJKuRoKAoaDyFI8A9M9DK6o99FAJAUMAgNCyBAyjJesRyIA6CyjAe89BBdC9GzAEyBAgoCerJorRyJA6CyjAK9AKM8C9GzBEquA7A8AKwJ6EV7yJA7CpaBBbC6G7KesfKWAK7ooRyJA8A9AyIM7BBUDU67KorfUVAU76D9RoJA9A8AyIM7A7MefG6K9D9BUDAUBd6B7A6IegRoIBAHA6A7GeCGUHMUfG6LKmBAId7ByIIofR8AUNAoIA6GeDGUFMeeGzPAeEC7AKBBACAeCd9BeJI7C7ToEA9Ay6yBGKFMeeGzYCXXA7Be89Cz9yEBAFM6ApXDA6fcCNWA7Bo89Cp96AeLA6MyEMABAKeF9N6B5gyGBy9AXT6AeNAzaALWDK56OANg6AyQJKVT7AePAqwDA5psAyCAheAeOJeUT8AeQAgwC8FZFJeUT8Ag67C7FFHJ6B7UACa8CojAUHzo98B6vKVDPcKUNVoCZyUDFdKyMVeDZoSDPeLoDVeEZeSDPehAFLKCOABAKJAoCDPdhKFLACOyEEFdhUELACS95choCLKCS95YtKBTFWteDS85VtoDS85UtyES7z9t6Ap87z9t7AV88z9teBTjTtKCTtTtKCTtT6vz96vz86wjoEQGwjeGAKEP6lyBbDyB6GABJh7eECKBY7g7AoTB7F7Ae9r6eNBKNA7AKHAoNAMMg6AyYAeDA6F7Ae9r59B7BAhA8AeBAWMgyEDeGF6Ao9pFAWzB9A6DyGA8VXZAKmAz5pFAWyGAEBCMkoDP6K6AgwGACBWM5XK7AWwHqMeeEAKCVr56HqMeKJV8jU7gNeUHV9jK7qNZeBAoBEeBW6jA68V9ZeDAKCbXwGWZZKIZoFB5i7A6A6AoKC9XMwBM5oFB6lyWX5ZAJZoFB6l9B7X6YACA8A8Z7AURl9BgoXyBAKEA8A8Z9AUQmALYMXAUBAUGA7A7AoBAg6KDBr8UCY8V8BAFBC7yCBugV8AoDAeEAKCBC896gV7AeGAXG6gV7AUHANG6h5h6h5i6g")
-      : xzu737 == zto1263() + 1
+      : selected_mapIndex == numberOfMapsMinus4() + 1
       ? (a =
           "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566Hg8ejjAhEKKAo5t68Hg8ogjKgEeJAy5Z7A7W8yejKaFUHAy5Z7K5oCB6c6BoFA8jUUF9AyGFZ7U5eFBg88A9BeCjyQGUDA7Fj7U5eIA8dUDloOGoCA7Fj7e5oJA567UJG6AeGAUCE957o56687Ae7KBAyCAex57o5876eDAexI7AO87F8768E9I8AY86F976KDAUxI9As8o5977ArJKEwo6H69EU9UDwy6R69EA9eDwo6b69D9JyCwo6b69D8J6AO8y6l67D9J6AKCAO8U6l67D8J7As8U6b67D8J8Ai8e6b67D7J9Ai8e6R69D6J8A5wU6R7KaAyCJ9A6AoBv7F877oLAKKK9A7AKDv8F5778A7AoIK8BY79Fl8oCA6AzIBs8Ar8CAfHB5wKq8EALHBs8Ur9LBi8os9JBY86ExJBO87E59JA9w9Ev9KBL7A8xAr79KCL8A5xUiAUH8FAVDA5xogAyE8GAK9eBA9A5x6DKHAb9eCBKBJUCA8A5x8DSAA6AoDJUDAeBAeFyKe8ABo9AEAKDAoCyoe799Be9AIzUd799BU89A9zod798BU88BFPDH97BA88A9z7Db9oKI7A9z8Db9oJI8A85UDR9yJI6A85WDH96A6AUBIoJ5YC9796Ao87BFaC8796Ao8oN5aC988KND8AY89C8878BUqAO9Ka877BZkC5876BjlCw7yO5lC587eP5mCw7eP5nCm7UQ5oCm7KP5oC6868B55oC8868BjqC987AI5uC887KE5yC7866AP58C886eC559C8999AEYC8999AEZC7999AEZC8999AEZC7999AEZC6999AEaC6999AEbCx99AEcCx99AEcCn99AEeCd99AEeCT99AEgCJ99AEhB9999AEiB7999AEjB7999AEkB6DUB999AEDB7C8BJ99AD99BydBJ99AEABoaBJ99AEDBobA7999AEEBefAn99AEGBJ99AEqAUDAx99AEyAKFAn99AEwA6999AEuA8999AEsA9999AEqBd99AEoBn99AEoBx99AEnBo8eC999AD5oQIKC999AD57By79Ad99AD58Ao89Ad99AEzAT99AJ99AJLAT99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AGjAT99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AA6e")
-      : xzu737 == zto1263() + 2
+      : selected_mapIndex == numberOfMapsMinus4() + 2
       ? (a =
           "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")
-      : xzu737 == zto1263() + 3 &&
+      : selected_mapIndex == numberOfMapsMinus4() + 3 &&
         (a =
           "AJ8AA8C999AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AC78AUCAT7oDAUB999AJ99AJgAX7ABAKH599AX7AJ97AK969BT69Bn66Bx66Bx67B6AoD957B8AKE956C6A6AK66AS79C7AKHAKBA9AUEAKCAKEAeiA987enAyHAKGAeEDUL869EUDB6AeFA7AoRAUBBc67GUCA7AeHByR85yDA6I9A9B885VCAKDAoS8xK9AeT8vLeBCwmO68gPcVAUEPwRA6AV558QA7AV578NQ88KRAIASBRKEA6798Sv96S579z8779f8779L89788Tb86T578p9678p9778f9778gB777U577gH77gI77WK77CKA6Av6CJA6A7C8AbdVUBA9AeBB8A8AUE7WWUCAoQB57WWABA6AKCA6AeEByKA57HXKCAKCAeDB9AyJ7DWeBA9AUHAUTAoL7CWUBEKDBk98a8AKO697ck95c569q8769M9Q87dk86du8q9u85d5joCg8d6joDg7d6jyDg5d8jACAUCg5eDxANeeNvAXcehuAhdehsAhbe6iKBAKEg5e9h9A7grKiKFgrLiKEgKCANL66rR66XU659gu56goIAKBAKCAQpgyIA8gKCf6geLBKBA5fKCf6geJCUGAKDAQOgoIDuOgoHD76MgoHAKBD56MgUDAKEEQJgKEAKEEUCAuCgUCAUBAKCE96AgoBF7A7Aj88goBF8AyF587myDA7eyCb8nyMAW6KBCUBA6AW78nyLAq6ABCeIb9nyKA5cKIAKBb9noNAg78AKBA7ch9yHAoCAW77BC8h9oHA7ZoCCKDAKGc5noHBCzAeUBC85noHBAJAqjAUBAeTBg8h9yGA9A8A7XoFCANch98AeIA8BChAySB5cX98AKKA7BgdA7B9Bg8iKAySW6A6B8AKCAUBA8ceBAOJAoUWoGCKCAKEAKBcsLAeXWeGC8AW7KFA6pyBCqWA6C8AM7KHA5pyBC5WKGB8A7AKEa8BeCsMUA6B8BM68rABC7V9AyTBM67uMSAoTBM66ugRAoTA6AKDa7u5VyEB6AKBBADAM6s65V6AeQAKBBABAeGAW56u5V6AKVA9AKDAyDZ6u6VeFB8BoFAg57u6VUFB8B9AKCZ9uqMAyRCACAW59ugMA6BoKAKLAUDZ8uqLAyPAUCCg58u5VAGB7Cq58u5VAGB7Cq58u6U9A6B7Cq59u5U9A6B7B9a5uqKAySA8AKJa7uWIAKBAyRA9AUIa8uMHAyBAKTBADAg7E6MIAoVBC76uMIAoDAeJAUEBg7i6MHAyCAoKAeDBg7Y6CJAeEAeJAKBAUBB7bE6CIAoFAKPB7bE6CKAUWB6bE59VKDCKObO6CLAeSAKCBABAM7i6CLAKRAUDBW7s6McAUDB5bO6McCC7E6gcByCAM7E6gdB5bY6qdAeBBKHAW6i6qIAUHAUOBUGAUBAq58t8AKFU8AeFAeNBoIA5Z7t8AKDVKCAeFA6AUBAeDBUFA8aO5yBAMMAeDAeGAeCAeCBUFA5a6tgPAUEAKNAUEBAEA6a7tWhAKBAeEBACAq7E5WgA6AeLAKEbO5gfA6AURbO5ggAoDB7bE5ggA7AoNbO5ggA7AUObE56XAIAUMbY56XKIAKNbE57XUHAKLbO59XoEAKNByCZY59XUBAUDAKPBUEZE59XeVBeIY6t9XeVBUNYY59XKIAKOAeCAUDAUOYE6MdC6AKYAUCX6uCdBACEqiuKBAMbF6Xs6WcF6Xi6gfFghuqdF5Xi6WfBABEghuWfF5XO6qeA6AKyW8u5XA6MYuyBAWcAyBF5WY69AKBW7AeCF6AeCV6u7AeBW7AeDGWPu6XeBAo6WOu7X8GWKvClAeBAUBF7U9vClAUBAUCF9U7vCoAKCGWFvCjAUIGCEvMkAeFGWDvMkAUCAUEGMCvWnAUEGgAvWdAKGAeCAeDGp97vqiAyBAeBG6T6v5Xe76T6v5Xe76T6v8XKFAK69T6v7XU76T5v8XK77Ts79XK77AyCS5v8AKBXU8z8oHAO7ChAKBIV8yGAO7MjA6Ae7eCAL8i77X6AUBAKFH9R9v7Y6IL77v6YyCAe8B7s76X8AUEAeDIL7i76X9AeCAUCIp7E78X9AoBAeBI6Q7wCoAUBAUCI8Qi8WnA6AU9B57w6X9AoEJpzw9X8A7Ay9LxxCoAeGAUBJBqx6YACA7AeCAKBJLlx6Y9AoCJphx8YeBALFNY99YKHALBNO99YKHAVDAKFMPAYKEAKCALLMFBYLTL9yMpMBSyWoMBRygpMLPygqBUBK9K8AKDyqqBUBA6ApAKtLYeMBACAU97KFOYoMA9AUEJ7J7z6YyKB7AKBJe96z7Y6BKTJK77AKRz8Y7BKQAKBJU69AyBA8A85VY7A9B8AKBAeCAKCIy68B6A65WY7BAOAKJAKBI6FZ59Y9A8BUCBABAK86E6565ZKEAoBByBA8I7EZ68AKBZeCAKCCe88D957g5eBCy9Ki576Z9AKTJya58M7ABAo99CZ8g7oBALAB958g7oEALAB758C79AKCKUO58M8fCBZ8W8yGAK9oI585dK97At88d7JUB589eA9AB589byDA8AUCAKJ678byJAKMAu78b67Fb57GbvGbvGbvHblIbRJbRLa97Ma97La97La97LbAIARCbUDA57Ab7AUB7Ab67Ab97Db67Eb6A7Ak9q77AyE69g88AKB689du86du85d668g9868DA68DA669AKJeQ69AUHeeIAa58AeBAKCeyEA6AKB656d7AoJAeBAUJ656doJA6A7A7659AKBdAJA7A6A766M9AJA6A8A766C9AJA7A7A7BoDA7AUEAkbAKBc8A9A6A9AyOAyFA96gc7A7A7A8A6BoGAKM6gc7A6A8A9A6BoR6hc7A6BAGA8BeQ6jc9AUMAyJBUQ6jeeFA8BKS6jAUCAKBd6A7A7BKR6oAKCdyHA7BKR6od8A6A9A9ByCAQod8A6BABAKFB56sAyCdUFBeCB66vAeDAKDc7Ayf6vAUJc6Aye66NS66hR66rR666fa68fG7NG675e5675e6675e5676eG8C9968W9868g9868W99BAB67M97BKB67UQBg6yMAa7KQBq6eOAa7UNB6aePAa78AyRaeGAeGAa8ABB9aoDAyHAKBAQ98bUGAk98boDARBb8699cG99cG97ck97ca97ck96coGAQ89c969C8969M8969KGAW8a9AEAq8oEAa8UEAq9G8eBA6dQ8UBA7dG9M8969M8969M8869W8769W87695c6695cu96ca99cHAcHAcHAcHAcHAcHBb87Cb77DbbJa97La87Ma87Ma77Ma77Na77Ma87Ma87Ma87La97La87La97La67Na77Ma77La97La97La97La87La97La97Ma77Na67Oa67Oa87NT9Ao657MT9Ao6vOT8Ae6vPa57QavQavRalRavQavQavRavQalRalRabSabSBUCY87RBUDY87RBUDY87PBoDY87RBUBAKBY87RavPalRavQavQa57QabSaRTZ77UZ97WZ77YZ57ZZvbZbcAKDY87hY87gY77gY97fZHfAUCY57sX67wXbwXRxXRzW975Wb75qa755W5755W675gd75Wc75Wd7yXAzAk96W9EeBA7A8689XUqAeGA8688XepA6AeJ687X6DABA8A7AUJ686X6DACA8A6AeJ685X8C7AoHAKCAoBBa7yEAWpC7AoHA6AUDAUH675Y7C7AoIBABA867oBA5YebAeHAeCB6679YebAeDAUCAeCB6679YebAeDAKCAoDB5679YyZAyBA8AKP68CtCeg68CyA7AKKDa8CyAyEA6B6AUQ68CzAoFAoj67q58AoFAKl677Z7AUfAKM678c9AUM677beCC9676bUDC9676bKEC7677bKEC668W68Aoa68g9868g99A6AQ7q99AyD67hAAeF67XI67NJ67DG67XI67NHAKB67DH67DJ67NK669fQ68fk67fG69fG7DJ67NI67UEAKGAM96677AyDd6678AUEd668g97679AKCd8676AKBea75e6666AKEe966rR66hR66hS66DU66DU659gG59gG6DU658ga58gQ58ga57gk56g5655g665re6xhavhkuhkvhkuhawhauh56uh66qiGoiQlikiAKBiufjGfi96ejGejGei96gi76ji56ji66ji56ji76fjGei96gi86hAeCikkiujAKBiuji56ji66ji56ji66ji56ji56ji56ji66ii76hjQdjabjkbjkbjkbjacjacjkbjkbjkbjkajacjabjuXjoQA76DjoNBZ98j9BAO597kAIB559UCAN6UIB5589k8A7B7588lAFB758oBAh9j8UCAh96577o5576o557sF57sH57iK566AKDo6AKD565pACAt6YNAKG557q555sc55Yf5wrfhAONrffA7o8r9AyDL7A9o7sKCA7LAPo5sKBA9K6B9os5VDCsAto6yDC9DX96ty6yDC6D8nY58A6AKyAKFAoYEN9E58AeFE9AUDA7CUsm6u7E9BUUFD8Y68AoBEeMCA57l5vACAKqBoTGD7Y7ooB6B7Gr68t8AURDeCAeUA6AUFG7G8AW95v8C7AKECyGAUFG9G6AW95v9CyfAKCAKEAo7A6KIds79CUrAe7A6eJc9woTEeDHK6UJdE86AKCAKBBLSGUIdE96AzVGKHdE98AfWF9BC896ZAoCFAKc96oEKLc86qDeCAyLc66tCeFAUEAoMc56uCANAoMc568ACB6ca97ck97b7686AUPb6687AUPb77Eb67Eb57GblHblHblIbbIbbHblHblJbRKbHJbHKa77Oa8688AUWa8688AUWa569KCCg657Pa57Pa57Pa57FbvGb57Fb57Fb57GbvOaKBAlPaHUYyCBRWY57kYvjYvkYllYllYlkYvkYvgAKDYvgY97fZRdZHgY87gY97fZHfY97gY87fZHeZRYZ77XZ77YZ67ZZlbZbbZRbZRdZReY87fY87ZAUEY87TAUEAoBZHSAoDZ57SAoBZ67UaHUAeBZlXAeBZlYAUBZlbZlbZlaZlaZbcY87hY87fY97fY97fY97fY97eY97fY87gY67iYllXoDAbpX57tXvvXbxXRxW97zW775gX755Wb5yBAMV757Wb58WR6CPAKC76gO767U9AeB767U877gG77oDAV98778AUET6778AeETl8KCA7SeDAb8eCA8SSDOABD58FM6AKLAoBAUe8FC7AU96AyIA7C98GC8Ae9eKAeMAUBCmGC7Ae9odBeCAmJAyBB8AeCAUFAK8KEAKeA8AKE8PAeBA7ByCAeCAyDAe6oCA6D6A88aAKBAKQAKTGUEAolA886y6UEAolAS7U6dVF99WF99XF79YCKBA8AKY9dB7AKFA6CTfAUGAUDAKEAKKB896eQ966A9AKD97KF978AT99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99ADh");
     a = encoderDecoder.decodeMapString(a);
-    var d = xzu215.get(xzu737).colorLand,
-      c = xzu215.get(xzu737).colorOcean;
-    xzu731 = 1e3 * a[0] + a[1];
-    xzu732 = 1e3 * a[2] + a[3];
-    xzu733.width = xzu731;
-    xzu733.height = xzu732;
+    var d = mapsData.get(selected_mapIndex).colorLand,
+      c = mapsData.get(selected_mapIndex).colorOcean;
+    width = 1e3 * a[0] + a[1];
+    height = 1e3 * a[2] + a[3];
+    xzu733.width = width;
+    xzu733.height = height;
     xzu734 = xzu733.getContext("2d", { alpha: !1 });
-    xzu735 = xzu734.getImageData(0, 0, xzu731, xzu732);
+    xzu735 = xzu734.getImageData(0, 0, width, height);
     xzu736 = xzu735.data;
     for (var b = a.length, g = !0, e = 0, m = 4; m < b; m++)
       if (g) {
@@ -10061,11 +10059,11 @@
     dyeOceanLandCalculateDiameter.init();
     xzu720.requestRepaint = !0;
   }
-  function zto1281() {
-    var a, d;
+  function MapsData() {
+    var maps, d;
     this.init = function () {
-      a = Array(xzu740);
-      a[0] = {
+      maps = Array(numberOfMaps);
+      maps[0] = {
         name: "White Arena",
         w: 800,
         h: 800,
@@ -10073,7 +10071,7 @@
         acceleration: 50,
         seed: 81,
       };
-      a[1] = {
+      maps[1] = {
         name: "Black Arena",
         w: 800,
         h: 800,
@@ -10081,7 +10079,7 @@
         acceleration: 50,
         seed: 43,
       };
-      a[2] = {
+      maps[2] = {
         name: "Island",
         w: 1040,
         h: 1040,
@@ -10089,7 +10087,7 @@
         acceleration: 33,
         seed: 0,
       };
-      a[3] = {
+      maps[3] = {
         name: "Mountains",
         w: 960,
         h: 960,
@@ -10097,7 +10095,7 @@
         acceleration: 8,
         seed: 0,
       };
-      a[4] = {
+      maps[4] = {
         name: "Desert",
         w: 900,
         h: 900,
@@ -10105,7 +10103,7 @@
         acceleration: 5,
         seed: 0,
       };
-      a[5] = {
+      maps[5] = {
         name: "Swamp",
         w: 1e3,
         h: 1e3,
@@ -10113,7 +10111,7 @@
         acceleration: 40,
         seed: 0,
       };
-      a[6] = {
+      maps[6] = {
         name: "Snow",
         w: 1e3,
         h: 1e3,
@@ -10121,7 +10119,7 @@
         acceleration: 20,
         seed: 0,
       };
-      a[7] = {
+      maps[7] = {
         name: "Forgotten World",
         w: 1e3,
         h: 1e3,
@@ -10129,7 +10127,7 @@
         acceleration: 30,
         seed: 0,
       };
-      a[8] = {
+      maps[8] = {
         name: "Lake",
         w: 600,
         h: 600,
@@ -10137,7 +10135,7 @@
         acceleration: 100,
         seed: 0,
       };
-      a[9] = {
+      maps[9] = {
         name: "Halo",
         w: 900,
         h: 900,
@@ -10145,25 +10143,25 @@
         acceleration: 400,
         seed: 0,
       };
-      a[10] = {
+      maps[10] = {
         name: "Europe",
         colorLand: [140, 130, 120],
         colorOcean: [20, 20, 84],
         borderAlgo: [240, 120, 100, 30, 35, 30, 90, 8, 32, 3, 9],
       };
-      a[11] = {
+      maps[11] = {
         name: "World",
         colorLand: [165, 145, 125],
         colorOcean: [15, 15, 69],
         borderAlgo: [500, 200, 8, 25, 15, 25, 90, 8, 32, 3, 9],
       };
-      a[12] = {
+      maps[12] = {
         name: "Caucasia",
         colorLand: [140, 130, 120],
         colorOcean: [20, 20, 84],
         borderAlgo: [240, 120, 100, 30, 35, 30, 90, 8, 32, 3, 9],
       };
-      a[13] = {
+      maps[13] = {
         name: "Antarctica",
         colorLand: [220, 220, 220],
         colorOcean: [5, 5, 70],
@@ -10184,10 +10182,10 @@
       ];
     };
     this.hasText = function () {
-      return 1 >= xzu737;
+      return 1 >= selected_mapIndex;
     };
-    this.get = function (c) {
-      return a[c];
+    this.get = function (mapIndex) {
+      return maps[mapIndex];
     };
     this.getPreferredIndex = function (c, b) {
       return 7 <= c ? b : d[c][b % d[c].length];
@@ -10196,10 +10194,10 @@
   var xzu767, xzu768, xzu769, xzu770;
   function zto1282() {
     void 0 == xzu767 && (xzu767 = document.createElement("canvas"));
-    xzu767.width = xzu731;
-    xzu767.height = xzu732;
+    xzu767.width = width;
+    xzu767.height = height;
     xzu769 = xzu767.getContext("2d", { alpha: !0 });
-    xzu770 = xzu769.getImageData(0, 0, xzu731, xzu732);
+    xzu770 = xzu769.getImageData(0, 0, width, height);
     xzu768 = xzu770.data;
   }
   function zto1283() {
@@ -10211,7 +10209,7 @@
             ? ((f[v] = 9999), (z = -z))
             : 0 > f[v]
             ? ((f[v] = 0), (z = -z))
-            : ((z += 16384 <= xzu219.random() ? k : -k),
+            : ((z += 16384 <= getSetSeed_value_random.random() ? k : -k),
               (z = z < -l ? -l : z > l ? l : z));
     }
     function d(v, z, B, w) {
@@ -10254,8 +10252,8 @@
       u = new Int16Array(e);
       y = new Int16Array(m);
       v = h;
-      var z = xzu219.random() % 1e4,
-        B = (xzu219.random() % (2 * l + 1)) - l;
+      var z = getSetSeed_value_random.random() % 1e4,
+        B = (getSetSeed_value_random.random() % (2 * l + 1)) - l;
       a(z, B, v);
       v = y;
       z = f;
@@ -10264,7 +10262,7 @@
       d(0, 0, !0, e);
       v = g[0];
       z = h;
-      B = (xzu219.random() % (2 * l + 1)) - l;
+      B = (getSetSeed_value_random.random() % (2 * l + 1)) - l;
       a(v, B, z);
       v = u;
       z = f;
@@ -10682,7 +10680,7 @@
       xzu166 && xzu690.drawImage(this.canvas, xzu347, xzu438 + 2 * xzu347);
     };
   }
-  function zto1322() {
+  function GetSetSeed_value_random() {
     var a, d;
     this.init = function () {
       d = Array(101);
@@ -10725,7 +10723,7 @@
               xzu190.zto1324(),
               xzu186.zto1324(),
               xzu185.zto1324(),
-              xzu181.zto1324(),
+              playerStateManager.zto1324(),
               switchStateMouseMoveSurrenderPossibleDrawCross.zto1324(),
               xzu183.zto1324(),
               xzu184.zto1324(),
@@ -10739,7 +10737,7 @@
             : (0 == xzu198.getState()
                 ? xzu200.setVisible(0, !0)
                 : 2 == xzu198.getState()
-                ? ((xzu196.get(6).txt = "Map: " + xzu215.get(xzu737).name),
+                ? ((xzu196.get(6).txt = "Map: " + mapsData.get(selected_mapIndex).name),
                   (xzu196.get(9).txt = xzu194.getString()),
                   xzu196.deleteMenu())
                 : 3 == xzu198.getState()
@@ -10847,8 +10845,8 @@
                 r = 200 * xzu670[p] - xzu672[p];
                 r = c > r ? r : c;
                 d == xzu161 &&
-                  ((xzu717.values[14] += c), xzu181.addSupport(r, p));
-                p == xzu161 && xzu181.receiveSupport(r, d);
+                  ((xzu717.values[14] += c), playerStateManager.addSupport(r, p));
+                p == xzu161 && playerStateManager.receiveSupport(r, d);
                 xzu672[p] += r;
                 a(!1);
                 break a;
@@ -10869,11 +10867,11 @@
       var g;
       c = !0;
       b = "rgb(" + xzu736[0] + "," + xzu736[1] + "," + xzu736[2] + ")";
-      var e = 2 == xzu737 || 9 == xzu737 ? !0 : (c = !1);
+      var e = 2 == selected_mapIndex || 9 == selected_mapIndex ? !0 : (c = !1);
       if (e) d = null;
       else {
         a = zto1304(96, 4);
-        if (1 == xzu737) {
+        if (1 == selected_mapIndex) {
           var m = 0;
           var h = 160;
         } else (m = 128), (h = 32);
@@ -10881,8 +10879,8 @@
         d = Array(4);
         for (var l, k, f = 3; 0 <= f; f--) {
           d[f] = document.createElement("canvas");
-          l = 0 == f % 2 ? xzu731 : a;
-          k = 0 == f % 2 ? a : xzu732 + 2 * a;
+          l = 0 == f % 2 ? width : a;
+          k = 0 == f % 2 ? a : height + 2 * a;
           d[f].width = l;
           d[f].height = k;
           var n = d[f].getContext("2d", { alpha: !1 }),
@@ -10926,10 +10924,10 @@
           n.putImageData(p, 0, 0);
         }
         xzu734.fillStyle = "rgb(" + h + "," + h + "," + h + ")";
-        xzu734.fillRect(0, 0, xzu731, 1);
-        xzu734.fillRect(0, xzu732 - 1, xzu731, 1);
-        xzu734.fillRect(0, 0, 1, xzu732);
-        xzu734.fillRect(xzu731 - 1, 0, 1, xzu732);
+        xzu734.fillRect(0, 0, width, 1);
+        xzu734.fillRect(0, height - 1, width, 1);
+        xzu734.fillRect(0, 0, 1, height);
+        xzu734.fillRect(width - 1, 0, 1, height);
       }
     };
     this.zto1145 = function () {
@@ -10937,8 +10935,8 @@
       zto1310(
         g,
         g,
-        xzu731 - 2 * g,
-        xzu732 - 2 * g,
+        width - 2 * g,
+        height - 2 * g,
         setCamHWXY_setMapXY.camX,
         setCamHWXY_setMapXY.camY,
         setCamHWXY_setMapXY.camW,
@@ -10950,7 +10948,7 @@
         (zto1309(
           0,
           -a,
-          xzu731,
+          width,
           a,
           setCamHWXY_setMapXY.camX,
           setCamHWXY_setMapXY.camY,
@@ -10958,30 +10956,30 @@
           setCamHWXY_setMapXY.camH
         ) && xzu690.drawImage(d[0], setCamHWXY_setMapXY.mapX, setCamHWXY_setMapXY.mapY - a),
         zto1309(
-          xzu731,
+          width,
           -a,
           a,
-          xzu732 + 2 * a,
+          height + 2 * a,
           setCamHWXY_setMapXY.camX,
           setCamHWXY_setMapXY.camY,
           setCamHWXY_setMapXY.camW,
           setCamHWXY_setMapXY.camH
-        ) && xzu690.drawImage(d[1], setCamHWXY_setMapXY.mapX + xzu731, setCamHWXY_setMapXY.mapY - a),
+        ) && xzu690.drawImage(d[1], setCamHWXY_setMapXY.mapX + width, setCamHWXY_setMapXY.mapY - a),
         zto1309(
           0,
-          xzu732,
-          xzu731,
+          height,
+          width,
           a,
           setCamHWXY_setMapXY.camX,
           setCamHWXY_setMapXY.camY,
           setCamHWXY_setMapXY.camW,
           setCamHWXY_setMapXY.camH
-        ) && xzu690.drawImage(d[2], setCamHWXY_setMapXY.mapX, setCamHWXY_setMapXY.mapY + xzu732),
+        ) && xzu690.drawImage(d[2], setCamHWXY_setMapXY.mapX, setCamHWXY_setMapXY.mapY + height),
         zto1309(
           -a,
           -a,
           a,
-          xzu732 + 2 * a,
+          height + 2 * a,
           setCamHWXY_setMapXY.camX,
           setCamHWXY_setMapXY.camY,
           setCamHWXY_setMapXY.camW,
@@ -11569,7 +11567,7 @@
               )
               .toUpperCase()
               .trim()),
-            xzu181.addClanMsg(a),
+            playerStateManager.addClanMsg(a),
             xzu725.update(1, a, 0, 0)),
           d)
         : xzu442[0];
@@ -11577,8 +11575,8 @@
   }
   function zto1350() {
     for (var a, d, c = xzu13 - 1; 0 <= c; c--)
-      (a = zto1304(xzu15[c], 4) % xzu731),
-        (d = zto1304(xzu15[c], 4 * xzu731)),
+      (a = zto1304(xzu15[c], 4) % width),
+        (d = zto1304(xzu15[c], 4 * width)),
         (xzu666[xzu9] = xzu666[xzu9] > a ? a : xzu666[xzu9]),
         (xzu667[xzu9] = xzu667[xzu9] > d ? d : xzu667[xzu9]),
         (xzu668[xzu9] = xzu668[xzu9] < a ? a : xzu668[xzu9]),
@@ -11663,22 +11661,22 @@
     var a;
     a: for (; xzu667[xzu12] < xzu669[xzu12]; ) {
       for (a = xzu668[xzu12]; a >= xzu666[xzu12]; a--)
-        if (PixelQualifierAndSquareDrawer.isThisPlayer(xzu12, 4 * (xzu667[xzu12] * xzu731 + a))) break a;
+        if (PixelQualifierAndSquareDrawer.isThisPlayer(xzu12, 4 * (xzu667[xzu12] * width + a))) break a;
       xzu667[xzu12]++;
     }
     a: for (; xzu667[xzu12] < xzu669[xzu12]; ) {
       for (a = xzu668[xzu12]; a >= xzu666[xzu12]; a--)
-        if (PixelQualifierAndSquareDrawer.isThisPlayer(xzu12, 4 * (xzu669[xzu12] * xzu731 + a))) break a;
+        if (PixelQualifierAndSquareDrawer.isThisPlayer(xzu12, 4 * (xzu669[xzu12] * width + a))) break a;
       xzu669[xzu12]--;
     }
     a: for (; xzu666[xzu12] < xzu668[xzu12]; ) {
       for (a = xzu669[xzu12]; a >= xzu667[xzu12]; a--)
-        if (PixelQualifierAndSquareDrawer.isThisPlayer(xzu12, 4 * (a * xzu731 + xzu666[xzu12]))) break a;
+        if (PixelQualifierAndSquareDrawer.isThisPlayer(xzu12, 4 * (a * width + xzu666[xzu12]))) break a;
       xzu666[xzu12]++;
     }
     a: for (; xzu666[xzu12] < xzu668[xzu12]; ) {
       for (a = xzu669[xzu12]; a >= xzu667[xzu12]; a--)
-        if (PixelQualifierAndSquareDrawer.isThisPlayer(xzu12, 4 * (a * xzu731 + xzu668[xzu12]))) break a;
+        if (PixelQualifierAndSquareDrawer.isThisPlayer(xzu12, 4 * (a * width + xzu668[xzu12]))) break a;
       xzu668[xzu12]--;
     }
   }
@@ -12035,7 +12033,7 @@
                   (l = e(l, 7)),
                   0 != xzu665[k] &&
                     0 != xzu665[f] &&
-                    ((l %= xzu715.nAll), xzu181.sendEmoji(k, f, l))));
+                    ((l %= xzu715.nAll), playerStateManager.sendEmoji(k, f, l))));
       }
     };
     this.unwrapPackageAttack = function (l) {
@@ -12182,7 +12180,7 @@
       g = 0;
       b(h, 4, 6);
       d(h);
-      b(h, 6, xzu737);
+      b(h, 6, selected_mapIndex);
       b(h, 14, xzu203.getSeedPlacing());
       b(h, 3, xzu194.getIndex(xzu194.balanceTaken));
       for (var l = 0; l < m; l++) b(h, 10, e[l]);
