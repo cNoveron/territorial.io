@@ -507,7 +507,7 @@
   }
   function zto907(a) {
     if (a < xzu672[0]) return a;
-    var d = xzu170.getIStrength();
+    var d = strengths.getIStrength();
     if (2 <= d) return a;
     if (0 == d) return zto1304(4 * a, 10);
     if (1 == d) return zto1304(6 * a, 10);
@@ -623,7 +623,7 @@
       else {
         var b = xzu209.getMaxInterest(a);
         xzu672[a] > b && d < xzu672[a] - b && (d = xzu672[a] - b);
-        var g = xzu170.getIStrengthArr();
+        var g = strengths.getIStrengthArr();
         if (xzu152 && xzu166)
           if ((zto913(a), 1 == xzu43))
             (xzu46[a] = 1),
@@ -709,7 +709,7 @@
     zto910(a);
     return xzu673[a].length != b ? (zto906(a, c, b, d), !0) : !1;
   }
-  function zto920() {
+  function Strengths() {
     var a, d, c, b, g, e, m, h, l;
     this.init = function () {
       h = [98, 95, 95, 40, 20, 0];
@@ -927,7 +927,7 @@
       m = h;
       0 != xzu675[m].length &&
         a() &&
-        ((h = zto1304(xzu170.getIStrengthShip() * xzu672[m], 100)),
+        ((h = zto1304(strengths.getIStrengthShip() * xzu672[m], 100)),
         60 <= h && zto1099(m, xzu218.getCStart(), xzu206.coordToPoint(g, e), h));
     };
   }
@@ -943,7 +943,7 @@
         if (0 == xzu665[d[c] + xzu146]) {
           var b = c;
           for (a--; b < a; b++) d[b] = d[b + 1];
-        } else xzu170.calculate(d[c]);
+        } else strengths.calculate(d[c]);
     };
   }
   function zto940() {
@@ -1670,7 +1670,7 @@
     xzu177.init();
     zto1245();
     xzu718.init();
-    xzu170.init();
+    strengths.init();
     xzu213.init();
     xzu769.putImageData(xzu770, 0, 0);
     xzu189.init();
@@ -1710,7 +1710,7 @@
     xzu204.init();
     zto878(0);
   }
-  var xzu170,
+  var strengths,
     xzu171,
     xzu172,
     xzu173,
@@ -1769,7 +1769,7 @@
     xzu226,
     xzu227;
   function zto980() {
-    xzu170 = new zto920();
+    strengths = new Strengths();
     xzu171 = new zto928();
     xzu172 = new zto932();
     xzu173 = new zto937();
@@ -4665,8 +4665,8 @@
         ((q[6] = xzu670[xzu161]),
         xzu152 &&
           0 != xzu665[0] &&
-          2 > xzu170.getIStrength() &&
-          (q[6] += zto1304(2 * (4 - xzu170.getIStrength()) * xzu670[0], 5)),
+          2 > strengths.getIStrength() &&
+          (q[6] += zto1304(2 * (4 - strengths.getIStrength()) * xzu670[0], 5)),
         r++);
     }
     var b, g, e, m, h, l, k, f, n, p, r, t, q, u, y, v, z, B, w;
@@ -8555,9 +8555,9 @@
               xzu209.validateBalance(xzu678[h]);
           xzu152 &&
             0 != xzu665[0] &&
-            2 > xzu170.getIStrength() &&
+            2 > strengths.getIStrength() &&
             ((xzu672[0] += zto1304(
-              2 * (4 - xzu170.getIStrength()) * xzu670[0],
+              2 * (4 - strengths.getIStrength()) * xzu670[0],
               5
             )),
             xzu209.validateBalance(0));
