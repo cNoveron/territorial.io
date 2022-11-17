@@ -1281,7 +1281,7 @@
       f = zto1304(xzu732 - l * h, 2);
       if (xzu164) for (var t = 0; t < xzu146; t++) (p = t), c(), (xzu665[p] = 1);
       if (!zto1265(xzu737)) {
-        t = xzu211.get()[xzu737 - zto1263()];
+        t = initsArrayConcatsStringsGivesBotsNames.get()[xzu737 - zto1263()];
         var q = t.length + xzu146;
         q = q > xzu150 ? xzu150 : q;
         for (p = xzu146; p < q; p++) {
@@ -1667,7 +1667,7 @@
     PixelQualifierAndSquareDrawer.init(b);
     xzu221.init();
     xzu722.init();
-    xzu211.create();
+    initsArrayConcatsStringsGivesBotsNames.create();
     xzu177.init();
     zto1245();
     xzu718.init();
@@ -1752,7 +1752,7 @@
     getsStrengthsClearsErasesEnemyPlayersAddsShip,
     xzu209,
     xzu210,
-    xzu211,
+    initsArrayConcatsStringsGivesBotsNames,
     xzu212,
     xzu213,
     xzu214,
@@ -1811,7 +1811,7 @@
     getsStrengthsClearsErasesEnemyPlayersAddsShip = new GetsStrengthsClearsErasesEnemyPlayersAddsShip();
     xzu209 = new zto1214();
     xzu210 = new zto1219();
-    xzu211 = new zto1241();
+    initsArrayConcatsStringsGivesBotsNames = new InitsArrayConcatsStringsGivesBotsNames();
     xzu212 = new zto1243();
     xzu213 = new zto1250();
     xzu214 = new zto1275();
@@ -9004,7 +9004,7 @@
       f %= xzu679;
     };
   }
-  function zto1241() {
+  function InitsArrayConcatsStringsGivesBotsNames() {
     var a, d, c;
     this.init = function () {
       d = "[Bot] ";
@@ -9251,7 +9251,8 @@
         e = xzu737 - zto1263();
         var m = c[e].length + xzu146;
         m = m > xzu150 ? xzu150 : m;
-        for (b = xzu146; b < m; b++) xzu664[b] = d + a[c[e][b - xzu146][0]];
+        for (b = xzu146; b < m; b++) 
+          xzu664[b] = d + a[c[e][b - xzu146][0]];
         e = b = m;
       }
       for (m = xzu219.random() % g; b < xzu150; b++)
@@ -9510,7 +9511,7 @@
     xzu198.init();
     zto1008();
     xzu187.init();
-    xzu211.init();
+    initsArrayConcatsStringsGivesBotsNames.init();
     xzu720.requestRepaint = !0;
     setTimeout(function () {
       zto1262(2, 0);
