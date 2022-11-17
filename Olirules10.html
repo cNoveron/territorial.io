@@ -1151,7 +1151,7 @@
       xzu393 = r;
       xzu186.setZoomX(n, xzu697 / 2);
       xzu186.setZoomY(p, xzu698 / 2);
-      xzu711.calculatePreRendering();
+      setCamHWXY_setMapXY.calculatePreRendering();
     };
     this.end = function () {
       if (u && y) return !1;
@@ -1176,7 +1176,7 @@
         xzu186.setZoomX(l + w * (n - l), xzu697 / 2);
         xzu186.setZoomY(k + w * (p - k), xzu698 / 2);
         xzu210.zoom(z, (v * z - xzu394) / (1 - z), (B * z - xzu395) / (1 - z));
-        xzu711.calculatePreRendering();
+        setCamHWXY_setMapXY.calculatePreRendering();
         1 <= g && ((u = !1), (xzu714.pixelInWindowChanged = !0));
         xzu720.requestRepaint = !0;
       }
@@ -3766,7 +3766,7 @@
       xzu395 > xzu393 * xzu732 - k && (f = xzu393 * xzu732 - k - xzu395);
       xzu394 += l;
       xzu395 += f;
-      xzu711.calculatePreRendering();
+      setCamHWXY_setMapXY.calculatePreRendering();
       xzu210.resetCoords(l, f);
     };
     this.refreshLocation = function () {
@@ -4998,10 +4998,10 @@
         this.pixelInWindowChanged ||
         (this.camMoveDetection && this.atLeastOnePixelChanged)
       ) {
-        var a = xzu711.camC[0],
-          d = xzu711.camC[1],
-          c = xzu711.camC[2],
-          b = xzu711.camC[3];
+        var a = setCamHWXY_setMapXY.camC[0],
+          d = setCamHWXY_setMapXY.camC[1],
+          c = setCamHWXY_setMapXY.camC[2],
+          b = setCamHWXY_setMapXY.camC[3];
         a = a < this.borders[0] ? this.borders[0] : a;
         d = d < this.borders[1] ? this.borders[1] : d;
         c = c > this.borders[2] ? this.borders[2] : c;
@@ -8106,10 +8106,10 @@
         var u = PixelQualifierAndSquareDrawer.getX(q);
         q = PixelQualifierAndSquareDrawer.getY(q);
         xzu714.pixelInWindowChanged =
-          u >= xzu711.camC[0] &&
-          u <= xzu711.camC[2] &&
-          q >= xzu711.camC[1] &&
-          q <= xzu711.camC[3];
+          u >= setCamHWXY_setMapXY.camC[0] &&
+          u <= setCamHWXY_setMapXY.camC[2] &&
+          q >= setCamHWXY_setMapXY.camC[1] &&
+          q <= setCamHWXY_setMapXY.camC[3];
       }
     }
     var b, g, e, m, h, l, k, f, n, p, r, t;
@@ -9404,7 +9404,7 @@
     xzu708,
     xzu709,
     xzu710,
-    xzu711,
+    setCamHWXY_setMapXY,
     xzu712,
     xzu713,
     xzu714,
@@ -9478,8 +9478,8 @@
     document.addEventListener("keydown", zto1258);
     window.addEventListener("error", zto1257, !0);
     xzu713 = 0;
-    xzu741 = new zto1267();
-    xzu711 = new zto1381();
+    dyeOceanLandCalculateDiameter = new DyeOceanLandCalculateDiameter();
+    setCamHWXY_setMapXY = new SetCamHWXY_setMapXY();
     xzu712 = new zto1319();
     xzu712.calculate();
     xzu714 = new zto1101();
@@ -9613,13 +9613,13 @@
     xzu738,
     xzu739,
     xzu740 = 14,
-    xzu741;
+    dyeOceanLandCalculateDiameter;
   function zto1262(a, d) {
     a < zto1263() && (d = xzu215.getPreferredIndex(a, d));
     if (a != xzu737 || (zto1266(xzu737) && d != xzu738))
       if (
         ((xzu739 = !1),
-        xzu741.stop(),
+        dyeOceanLandCalculateDiameter.stop(),
         xzu219.setSeed(a),
         (xzu737 = a),
         (xzu738 = d),
@@ -9678,9 +9678,9 @@
   function zto1266(a) {
     return 1 < a && a < zto1263();
   }
-  function zto1267() {
+  function DyeOceanLandCalculateDiameter() {
     function a() {
-      xzu741.calculate();
+      dyeOceanLandCalculateDiameter.calculate();
     }
     function d(b, g) {
       0 < g && ((xzu736[b] += g), (xzu736[b + 1] += g), (xzu736[b + 2] += g));
@@ -10058,7 +10058,7 @@
       }
     xzu734.putImageData(xzu735, 0, 0);
     xzu739 = !0;
-    xzu741.init();
+    dyeOceanLandCalculateDiameter.init();
     xzu720.requestRepaint = !0;
   }
   function zto1281() {
@@ -10939,10 +10939,10 @@
         g,
         xzu731 - 2 * g,
         xzu732 - 2 * g,
-        xzu711.camX,
-        xzu711.camY,
-        xzu711.camW,
-        xzu711.camH
+        setCamHWXY_setMapXY.camX,
+        setCamHWXY_setMapXY.camY,
+        setCamHWXY_setMapXY.camW,
+        setCamHWXY_setMapXY.camH
       ) || ((xzu690.fillStyle = b), xzu690.fillRect(0, 0, xzu697, xzu698));
     };
     this.draw = function () {
@@ -10952,41 +10952,41 @@
           -a,
           xzu731,
           a,
-          xzu711.camX,
-          xzu711.camY,
-          xzu711.camW,
-          xzu711.camH
-        ) && xzu690.drawImage(d[0], xzu711.mapX, xzu711.mapY - a),
+          setCamHWXY_setMapXY.camX,
+          setCamHWXY_setMapXY.camY,
+          setCamHWXY_setMapXY.camW,
+          setCamHWXY_setMapXY.camH
+        ) && xzu690.drawImage(d[0], setCamHWXY_setMapXY.mapX, setCamHWXY_setMapXY.mapY - a),
         zto1309(
           xzu731,
           -a,
           a,
           xzu732 + 2 * a,
-          xzu711.camX,
-          xzu711.camY,
-          xzu711.camW,
-          xzu711.camH
-        ) && xzu690.drawImage(d[1], xzu711.mapX + xzu731, xzu711.mapY - a),
+          setCamHWXY_setMapXY.camX,
+          setCamHWXY_setMapXY.camY,
+          setCamHWXY_setMapXY.camW,
+          setCamHWXY_setMapXY.camH
+        ) && xzu690.drawImage(d[1], setCamHWXY_setMapXY.mapX + xzu731, setCamHWXY_setMapXY.mapY - a),
         zto1309(
           0,
           xzu732,
           xzu731,
           a,
-          xzu711.camX,
-          xzu711.camY,
-          xzu711.camW,
-          xzu711.camH
-        ) && xzu690.drawImage(d[2], xzu711.mapX, xzu711.mapY + xzu732),
+          setCamHWXY_setMapXY.camX,
+          setCamHWXY_setMapXY.camY,
+          setCamHWXY_setMapXY.camW,
+          setCamHWXY_setMapXY.camH
+        ) && xzu690.drawImage(d[2], setCamHWXY_setMapXY.mapX, setCamHWXY_setMapXY.mapY + xzu732),
         zto1309(
           -a,
           -a,
           a,
           xzu732 + 2 * a,
-          xzu711.camX,
-          xzu711.camY,
-          xzu711.camW,
-          xzu711.camH
-        ) && xzu690.drawImage(d[3], xzu711.mapX - a, xzu711.mapY - a));
+          setCamHWXY_setMapXY.camX,
+          setCamHWXY_setMapXY.camY,
+          setCamHWXY_setMapXY.camW,
+          setCamHWXY_setMapXY.camH
+        ) && xzu690.drawImage(d[3], setCamHWXY_setMapXY.mapX - a, setCamHWXY_setMapXY.mapY - a));
     };
   }
   function zto1340() {
@@ -12068,7 +12068,7 @@
       }
     };
   }
-  function zto1381() {
+  function SetCamHWXY_setMapXY() {
     this.camH = this.camW = this.camY = this.camX = this.mapY = this.mapX = 0;
     this.camC = [0, 0, 0, 0];
     this.calculatePreRendering = function () {
