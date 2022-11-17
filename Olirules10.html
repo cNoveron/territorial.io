@@ -295,7 +295,7 @@
     for (var a = xzu13 - 1; 0 <= a; a--) xzu19[zto1304(xzu15[a], 4)] = 0;
   }
   function zto887() {
-    1 == getsStrengthsClearsErasesEnemyPlayersAddsShip.getSize(xzu9) && attackAdmin.clearAttack(xzu9);
+    1 == getsStrengthsClearsErasesEnemyPlayersAddsShip.getSize(xzu9) && newAttackClearAttack.clearAttack(xzu9);
     if (xzu9 != xzu161) (xzu672[xzu9] += xzu10), xzu209.validateBalance(xzu9);
     else {
       var a = xzu672[xzu9];
@@ -503,7 +503,7 @@
     zto909(c, a);
     getsStrengthsClearsErasesEnemyPlayersAddsShip.add(a, xzu152 && 0 == d ? zto907(b) : b, d);
     xzu672[a] -= b + g;
-    attackAdmin.newAttack(a, !1);
+    newAttackClearAttack.newAttack(a, !1);
   }
   function zto907(a) {
     if (a < xzu672[0]) return a;
@@ -776,9 +776,9 @@
   }
   function zto924() {
     xzu209.calculate();
-    xzu174.calcuate();
+    attacker.calcuate();
     xzu173.calcuate();
-    attackAdmin.calculate();
+    newAttackClearAttack.calculate();
     xzu175.calculate();
     zto1246();
     xzu189.calculate();
@@ -811,7 +811,7 @@
   function zto927() {
     xzu210.repaint() && (xzu720.requestRepaint = !0);
   }
-  function AttackAdmin() {
+  function NewAttackClearAttack() {
     function a(h) {
       g[h] =
         10 == g[h]
@@ -947,7 +947,7 @@
         } else strengths.calculate(d[c]);
     };
   }
-  function zto940() {
+  function Attacker() {
     function a(h, l, k, f, n, p) {
       0 < k &&
         1e3 >= k &&
@@ -1685,9 +1685,9 @@
     xzu183.init();
     xzu179.init();
     xzu191.init();
-    xzu174.init();
+    attacker.init();
     xzu175.init();
-    attackAdmin.init();
+    newAttackClearAttack.init();
     xzu173.init();
     zto881();
     getsStrengthsClearsErasesEnemyPlayersAddsShip.init();
@@ -1712,10 +1712,10 @@
     zto878(0);
   }
   var strengths,
-    attackAdmin,
+    newAttackClearAttack,
     xzu172,
     xzu173,
-    xzu174,
+    attacker,
     xzu175,
     xzu176,
     xzu177,
@@ -1771,10 +1771,10 @@
     xzu227;
   function zto980() {
     strengths = new Strengths();
-    attackAdmin = new AttackAdmin();
+    newAttackClearAttack = new NewAttackClearAttack();
     xzu172 = new zto932();
     xzu173 = new zto937();
-    xzu174 = new zto940();
+    attacker = new Attacker();
     xzu175 = new zto945();
     xzu176 = new zto947();
     xzu177 = new zto954();
@@ -1964,7 +1964,7 @@
           this.hide(),
           xzu181.addBalanceWarning(),
           xzu152
-            ? xzu174.executeSeaAttack(
+            ? attacker.executeSeaAttack(
                 xzu161,
                 xzu185.getPercentageThousand(),
                 PixelQualifierAndSquareDrawer.getX(u),
@@ -2159,7 +2159,7 @@
           ? (this.switchState(), 2)
           : 2 == n
           ? (this.surrenderPossible(xzu161) &&
-              (xzu152 ? xzu174.surrender(xzu161) : xzu226.wrapSurrender(),
+              (xzu152 ? attacker.surrender(xzu161) : xzu226.wrapSurrender(),
               this.switchState()),
             2)
           : 3 == n && 2 <= xzu717.filled
@@ -3273,7 +3273,7 @@
                 ((b[t].shouldRefresh = !0),
                 (b[t].cancelled = !0),
                 xzu152
-                  ? xzu174.checkCancelAttack(xzu161, b[t].enemy)
+                  ? attacker.checkCancelAttack(xzu161, b[t].enemy)
                   : xzu226.wrapPackageCancelAttack(
                       b[t].enemy == xzu150 ? xzu161 : b[t].enemy
                     )),
@@ -4946,7 +4946,7 @@
               zto909(e, a),
               getsStrengthsClearsErasesEnemyPlayersAddsShip.add(a, g, d),
               (xzu672[a] -= g + b),
-              attackAdmin.newAttack(a, !1);
+              newAttackClearAttack.newAttack(a, !1);
         }
       }
   }
@@ -8368,7 +8368,7 @@
     zto1205(a);
     zto1210(a);
     zto1209(a);
-    attackAdmin.clearAttack(a);
+    newAttackClearAttack.clearAttack(a);
     getsStrengthsClearsErasesEnemyPlayersAddsShip.clear(a);
   }
   function zto1205(a) {
@@ -10859,7 +10859,7 @@
             getsStrengthsClearsErasesEnemyPlayersAddsShip.removeIndex(d, f);
             xzu673[d].push(g);
             getsStrengthsClearsErasesEnemyPlayersAddsShip.add(d, c, p);
-            attackAdmin.newAttack(d, !0);
+            newAttackClearAttack.newAttack(d, !0);
           }
     };
   }
@@ -12048,22 +12048,22 @@
             f = e(l, 10);
             var p = e(l, 9);
             p = p == n ? xzu150 : p;
-            xzu174.addNewLandAttack(n, f, p);
+            attacker.addNewLandAttack(n, f, p);
           } else if (1 == f) {
             f = e(l, 10);
             p = e(l, 11);
             var r = e(l, 11);
-            xzu174.addNewSeaAttack(n, f, p, r);
+            attacker.addNewSeaAttack(n, f, p, r);
           } else
             2 == f
               ? ((p = e(l, 9)),
                 (p = p == n ? xzu150 : p),
-                xzu174.addNewCancelAttack(n, p))
+                attacker.addNewCancelAttack(n, p))
               : 3 == f
-              ? xzu174.removePlayer(n)
+              ? attacker.removePlayer(n)
               : 4 == f
               ? ((f = e(l, 7)), xzu210.switchEmoji(n, f))
-              : 5 == f && xzu174.surrender(n);
+              : 5 == f && attacker.surrender(n);
         }
       }
     };
