@@ -313,8 +313,8 @@
   }
   function zto889() {
     for (var a = xzu673[xzu9].length - 1; 0 <= a; a--)
-      xzu206.isLand(xzu673[xzu9][a]) &&
-        xzu206.drawBorderSquare(xzu673[xzu9][a], xzu9);
+      PixelQualifierAndSquareDrawer.isLand(xzu673[xzu9][a]) &&
+        PixelQualifierAndSquareDrawer.drawBorderSquare(xzu673[xzu9][a], xzu9);
     xzu673[xzu9] = [];
   }
   function zto890() {
@@ -326,8 +326,8 @@
       for (var c = xzu16 - 1; 0 <= c; c--)
         (a = xzu17[c] + xzu18[d]),
           0 == xzu19[a / 4] &&
-            xzu206.isPlayer(a) &&
-            xzu206.getPlayerAt(a) == xzu12 &&
+            PixelQualifierAndSquareDrawer.isPlayer(a) &&
+            PixelQualifierAndSquareDrawer.getPlayerAt(a) == xzu12 &&
             ((xzu19[a / 4] = 1), (xzu15[xzu13++] = a));
   }
   function zto892() {
@@ -335,7 +335,7 @@
       for (var c = xzu16 - 1; 0 <= c; c--)
         (a = xzu17[c] + xzu18[d]),
           0 == xzu19[a / 4] &&
-            xzu206.isNeutral(a) &&
+            PixelQualifierAndSquareDrawer.isNeutral(a) &&
             ((xzu19[a / 4] = 1), (xzu15[xzu13++] = a));
   }
   function zto893() {
@@ -405,7 +405,7 @@
     for (var a = xzu13 - 1; 0 <= a; a--)
       xzu673[xzu9].push(xzu15[a]),
         xzu674[xzu9].push(xzu15[a]),
-        xzu206.drawBorderSquare(xzu15[a], xzu9);
+        PixelQualifierAndSquareDrawer.drawBorderSquare(xzu15[a], xzu9);
   }
   function zto905() {
     var a = 1,
@@ -514,11 +514,11 @@
   }
   function zto908(a, d) {
     for (var c, b = xzu674[a].length - 1; 0 <= b; b--)
-      if (xzu206.isBorderLand(xzu674[a][b]))
+      if (PixelQualifierAndSquareDrawer.isBorderLand(xzu674[a][b]))
         for (c = 3; 0 <= c; c--)
           if (
-            xzu206.isPlayer(xzu674[a][b] + xzu18[c]) &&
-            xzu206.getPlayerAt(xzu674[a][b] + xzu18[c]) == d
+            PixelQualifierAndSquareDrawer.isPlayer(xzu674[a][b] + xzu18[c]) &&
+            PixelQualifierAndSquareDrawer.getPlayerAt(xzu674[a][b] + xzu18[c]) == d
           ) {
             xzu673[a].push(xzu674[a][b]);
             break;
@@ -526,13 +526,13 @@
   }
   function zto909(a, d) {
     for (var c = xzu673[d].length - 1; c >= a; c--)
-      xzu206.drawAttackSquare(xzu673[d][c], d);
+      PixelQualifierAndSquareDrawer.drawAttackSquare(xzu673[d][c], d);
   }
   function zto910(a) {
     for (var d, c = xzu674[a].length - 1; 0 <= c; c--)
-      if (xzu206.isBorderLand(xzu674[a][c]))
+      if (PixelQualifierAndSquareDrawer.isBorderLand(xzu674[a][c]))
         for (d = 3; 0 <= d; d--)
-          if (xzu206.isNeutral(xzu674[a][c] + xzu18[d])) {
+          if (PixelQualifierAndSquareDrawer.isNeutral(xzu674[a][c] + xzu18[d])) {
             xzu673[a].push(xzu674[a][c]);
             break;
           }
@@ -547,19 +547,19 @@
     xzu43 = 0;
     var e = xzu674[a].length - 1;
     a: for (; 0 <= e; e--)
-      if (xzu206.isBorderLand(xzu674[a][e]))
+      if (PixelQualifierAndSquareDrawer.isBorderLand(xzu674[a][e]))
         for (b = 3; 0 <= b; b--)
           if (
-            ((g = xzu206.isNeutral(xzu674[a][e] + xzu18[b])
+            ((g = PixelQualifierAndSquareDrawer.isNeutral(xzu674[a][e] + xzu18[b])
               ? xzu150
-              : xzu206.getPlayerAt(xzu674[a][e] + xzu18[b])),
-            g == xzu150 || (xzu206.isPlayer(xzu674[a][e] + xzu18[b]) && g != a))
+              : PixelQualifierAndSquareDrawer.getPlayerAt(xzu674[a][e] + xzu18[b])),
+            g == xzu150 || (PixelQualifierAndSquareDrawer.isPlayer(xzu674[a][e] + xzu18[b]) && g != a))
           ) {
             for (var m = xzu43 - 1; 0 <= m; m--) if (xzu44[m] == g) continue a;
             xzu44[xzu43] = g;
             xzu45[xzu43] =
-              zto1305(d - xzu206.getX(xzu674[a][e])) +
-              zto1305(c - xzu206.getY(xzu674[a][e]));
+              zto1305(d - PixelQualifierAndSquareDrawer.getX(xzu674[a][e])) +
+              zto1305(c - PixelQualifierAndSquareDrawer.getY(xzu674[a][e]));
             if (++xzu43 >= xzu42) return;
           }
   }
@@ -567,16 +567,16 @@
     var d;
     xzu43 = 0;
     for (var c = xzu674[a].length - 1; 0 <= c; c--)
-      if (xzu206.isBorderLand(xzu674[a][c]))
+      if (PixelQualifierAndSquareDrawer.isBorderLand(xzu674[a][c]))
         for (d = 3; 0 <= d; d--) {
-          var b = xzu206.isNeutral(xzu674[a][c] + xzu18[d])
+          var b = PixelQualifierAndSquareDrawer.isNeutral(xzu674[a][c] + xzu18[d])
             ? xzu150
-            : xzu206.getPlayerAt(xzu674[a][c] + xzu18[d]);
+            : PixelQualifierAndSquareDrawer.getPlayerAt(xzu674[a][c] + xzu18[d]);
           b == xzu150
             ? 2 == xzu43 ||
               (1 == xzu43 && xzu44[0] == b) ||
               ((xzu44[1] = xzu44[0]), (xzu44[0] = b), xzu43++)
-            : xzu206.isPlayer(xzu674[a][c] + xzu18[d]) &&
+            : PixelQualifierAndSquareDrawer.isPlayer(xzu674[a][c] + xzu18[d]) &&
               b != a &&
               (0 == xzu43
                 ? (xzu44[xzu43++] = b)
@@ -591,14 +591,14 @@
     var d;
     xzu43 = 0;
     for (var c = xzu674[a].length - 1; 0 <= c; c--)
-      if (xzu206.isBorderLand(xzu674[a][c]))
+      if (PixelQualifierAndSquareDrawer.isBorderLand(xzu674[a][c]))
         for (d = 3; 0 <= d; d--) {
-          var b = xzu206.isNeutral(xzu674[a][c] + xzu18[d])
+          var b = PixelQualifierAndSquareDrawer.isNeutral(xzu674[a][c] + xzu18[d])
             ? xzu150
-            : xzu206.getPlayerAt(xzu674[a][c] + xzu18[d]);
+            : PixelQualifierAndSquareDrawer.getPlayerAt(xzu674[a][c] + xzu18[d]);
           if (
             b == xzu150 ||
-            (xzu206.isPlayer(xzu674[a][c] + xzu18[d]) && b != a && b % 2 != a % 2)
+            (PixelQualifierAndSquareDrawer.isPlayer(xzu674[a][c] + xzu18[d]) && b != a && b % 2 != a % 2)
           ) {
             xzu44[0] = b;
             xzu43++;
@@ -872,7 +872,7 @@
               xzu219.random() * (xzu669[m] - xzu667[m] + 1),
               xzu219.value(100)
             );
-          var l = ifIsLandIfIsNeutral_ifExistsReturn2_returns012(xzu206.coordToPoint(g, e));
+          var l = ifIsLandIfIsNeutral_ifExistsReturn2_returns012(PixelQualifierAndSquareDrawer.coordToPoint(g, e));
           if (1 != l) break a;
         }
         l = 1;
@@ -884,11 +884,11 @@
     }
     function ifIsLandIfIsNeutral_ifExistsReturn2_returns012(h) {
       if (
-        xzu206.isLand(h) &&
-        (xzu206.isNeutral(h) ||
+        PixelQualifierAndSquareDrawer.isLand(h) &&
+        (PixelQualifierAndSquareDrawer.isNeutral(h) ||
           !(
-            xzu206.getPlayerAt(h) == m ||
-            (xzu166 && xzu152 && m % 2 == xzu206.getPlayerAt(h) % 2)
+            PixelQualifierAndSquareDrawer.getPlayerAt(h) == m ||
+            (xzu166 && xzu152 && m % 2 == PixelQualifierAndSquareDrawer.getPlayerAt(h) % 2)
           ))
       ) {
         if (xzu218.exists(m, h)) return 2;
@@ -917,7 +917,7 @@
             : q <= 2 * r + t
             ? ((g = k + q - r - t), (e = p))
             : ((g = k), (e = f + q - 2 * r - t)),
-          (k = ifIsLandIfIsNeutral_ifExistsReturn2_returns012(xzu206.coordToPoint(g, e))),
+          (k = ifIsLandIfIsNeutral_ifExistsReturn2_returns012(PixelQualifierAndSquareDrawer.coordToPoint(g, e))),
           1 != k)
         )
           return k;
@@ -929,7 +929,7 @@
       0 != xzu675[m].length &&
         unkknown_returnsBool() &&
         ((h = zto1304(strengths.getIStrengthShip() * xzu672[m], 100)),
-        60 <= h && zto1099(m, xzu218.getCStart(), xzu206.coordToPoint(g, e), h));
+        60 <= h && zto1099(m, xzu218.getCStart(), PixelQualifierAndSquareDrawer.coordToPoint(g, e), h));
     };
   }
   function zto937() {
@@ -980,11 +980,11 @@
     };
     this.executeSeaAttack = function (h, l, k, f) {
       0 != xzu665[h] &&
-        xzu218.exists(h, xzu206.coordToPoint(k, f)) &&
+        xzu218.exists(h, PixelQualifierAndSquareDrawer.coordToPoint(k, f)) &&
         zto1099(
           h,
           xzu218.getCStart(),
-          xzu206.coordToPoint(k, f),
+          PixelQualifierAndSquareDrawer.coordToPoint(k, f),
           zto1304(l * xzu672[h], 1e3)
         ) &&
         h == xzu161 &&
@@ -1067,8 +1067,8 @@
       m[c] = f;
       h[c] = n;
       l[c] =
-        Math.abs(xzu206.getX(f) - xzu206.getX(n)) >
-        Math.abs(xzu206.getY(f) - xzu206.getY(n))
+        Math.abs(PixelQualifierAndSquareDrawer.getX(f) - PixelQualifierAndSquareDrawer.getX(n)) >
+        Math.abs(PixelQualifierAndSquareDrawer.getY(f) - PixelQualifierAndSquareDrawer.getY(n))
           ? 1
           : 0;
       k = a;
@@ -1225,8 +1225,8 @@
       for (var u, y = q + n - 1; y >= q; y--)
         for (var v = t + n - 1; v >= t; v--)
           if (
-            ((u = xzu206.coordToPoint(v, y)),
-            !xzu206.isLand(u) || xzu206.isBorderLand(u))
+            ((u = PixelQualifierAndSquareDrawer.coordToPoint(v, y)),
+            !PixelQualifierAndSquareDrawer.isLand(u) || PixelQualifierAndSquareDrawer.isBorderLand(u))
           )
             return !1;
       return !0;
@@ -1251,24 +1251,24 @@
       for (u = t; u < t + 4; u++)
         for (y = q; y < q + 4; y++)
           if ((u > t && u < t + 3) || (y > q && y < q + 3)) {
-            var v = xzu206.coordToPoint(u, y);
-            xzu206.isLand(v) &&
+            var v = PixelQualifierAndSquareDrawer.coordToPoint(u, y);
+            PixelQualifierAndSquareDrawer.isLand(v) &&
               ((xzu666[p] = u < xzu666[p] ? u : xzu666[p]),
               (xzu668[p] = u > xzu668[p] ? u : xzu668[p]),
               (xzu667[p] = y < xzu667[p] ? y : xzu667[p]),
               (xzu669[p] = y > xzu669[p] ? y : xzu669[p]),
               (r[xzu670[p]] = v),
               xzu670[p]++,
-              xzu206.drawTerritorialSquare(v, p));
+              PixelQualifierAndSquareDrawer.drawTerritorialSquare(v, p));
           }
       xzu671[p] = xzu670[p];
       for (v = xzu670[p] - 1; 0 <= v; v--)
-        xzu206.hasNeutralOrEnemyNeighbour(r[v], p)
-          ? (xzu206.drawBorderSquare(r[v], p), xzu674[p].push(r[v]))
-          : xzu206.zto1271(r[v])
-          ? (xzu206.drawBorderSquare(r[v], p), xzu675[p].push(r[v]))
-          : xzu206.hasOutsideNeighbour(r[v]) &&
-            (xzu206.drawBorderSquare(r[v], p), xzu676[p].push(r[v]));
+        PixelQualifierAndSquareDrawer.hasNeutralOrEnemyNeighbour(r[v], p)
+          ? (PixelQualifierAndSquareDrawer.drawBorderSquare(r[v], p), xzu674[p].push(r[v]))
+          : PixelQualifierAndSquareDrawer.zto1271(r[v])
+          ? (PixelQualifierAndSquareDrawer.drawBorderSquare(r[v], p), xzu675[p].push(r[v]))
+          : PixelQualifierAndSquareDrawer.hasOutsideNeighbour(r[v]) &&
+            (PixelQualifierAndSquareDrawer.drawBorderSquare(r[v], p), xzu676[p].push(r[v]));
     }
     var g, e, m, h, l, k, f, n, p, r;
     this.init = function () {
@@ -1316,15 +1316,15 @@
               v < xzu732 - 5
             ) {
               var z;
-              if ((z = xzu206.isLand(xzu206.coordToPoint(t, v))))
+              if ((z = PixelQualifierAndSquareDrawer.isLand(PixelQualifierAndSquareDrawer.coordToPoint(t, v))))
                 a: {
                   var B,
                     w = t + 3,
                     x = v + 3;
                   for (z = x; z > x - 6; z--)
                     for (B = w; B > w - 6; B--) {
-                      var C = xzu206.coordToPoint(B, z);
-                      if (xzu206.isBorderLand(C)) {
+                      var C = PixelQualifierAndSquareDrawer.coordToPoint(B, z);
+                      if (PixelQualifierAndSquareDrawer.isBorderLand(C)) {
                         z = !1;
                         break a;
                       }
@@ -1336,8 +1336,8 @@
                   for (u = xzu668[p]; u >= xzu666[p]; u--)
                     for (q = xzu669[p]; q >= xzu667[p]; q--)
                       (y = 4 * (q * xzu731 + u)),
-                        xzu206.isThisPlayer(p, y) &&
-                          (xzu206.drawNeutralSquare(y), xzu670[p]--);
+                        PixelQualifierAndSquareDrawer.isThisPlayer(p, y) &&
+                          (PixelQualifierAndSquareDrawer.drawNeutralSquare(y), xzu670[p]--);
                   0 != xzu670[p] && console.log("error 3423");
                   c();
                 }
@@ -1664,7 +1664,7 @@
     xzu714.init();
     xzu209.init();
     zto915();
-    xzu206.init(b);
+    PixelQualifierAndSquareDrawer.init(b);
     xzu221.init();
     xzu722.init();
     xzu211.create();
@@ -1747,7 +1747,7 @@
     xzu203,
     xzu204,
     xzu205,
-    xzu206,
+    PixelQualifierAndSquareDrawer,
     xzu207,
     xzu208,
     xzu209,
@@ -1806,7 +1806,7 @@
     xzu203 = new zto1163();
     xzu204 = new zto1166();
     xzu205 = new zto1172();
-    xzu206 = new pixelQualifierAndSquareDrawer();
+    pixelQualifierAndSquareDrawer = new PixelQualifierAndSquareDrawer();
     xzu207 = new zto1193();
     xzu208 = new zto1211();
     xzu209 = new zto1214();
@@ -1871,7 +1871,7 @@
         for (var C = xzu674[xzu161].length - 1; 0 <= C; C--)
           if (
             ((w = xzu674[xzu161][C] + xzu18[x]),
-            xzu206.isPlayer(w) && xzu206.getPlayerAt(w) == q)
+            PixelQualifierAndSquareDrawer.isPlayer(w) && PixelQualifierAndSquareDrawer.getPlayerAt(w) == q)
           )
             return !0;
       return !1;
@@ -1941,12 +1941,12 @@
           ? (xzu164
               ? (this.hide(),
                 xzu152
-                  ? (xzu168.add(0, xzu206.getX(u), xzu206.getY(u)),
+                  ? (xzu168.add(0, PixelQualifierAndSquareDrawer.getX(u), PixelQualifierAndSquareDrawer.getY(u)),
                     xzu168.calculate())
                   : xzu226.wrapPackageSeaAttack(
                       1e3,
-                      xzu206.getX(u),
-                      xzu206.getY(u)
+                      PixelQualifierAndSquareDrawer.getX(u),
+                      PixelQualifierAndSquareDrawer.getY(u)
                     ))
               : (this.hide(),
                 xzu181.addBalanceWarning(),
@@ -1967,13 +1967,13 @@
             ? xzu174.executeSeaAttack(
                 xzu161,
                 xzu185.getPercentageThousand(),
-                xzu206.getX(u),
-                xzu206.getY(u)
+                PixelQualifierAndSquareDrawer.getX(u),
+                PixelQualifierAndSquareDrawer.getY(u)
               )
             : xzu226.wrapPackageSeaAttack(
                 xzu185.getPercentageThousand(),
-                xzu206.getX(u),
-                xzu206.getY(u)
+                PixelQualifierAndSquareDrawer.getX(u),
+                PixelQualifierAndSquareDrawer.getY(u)
               ),
           1
         );
@@ -1993,21 +1993,21 @@
       var I = Math.floor((x + xzu395) / xzu393);
       if (1 > C || 1 > I || C >= xzu731 - 1 || I >= xzu732 - 1) return !1;
       var O = I * xzu731 * 4 + 4 * C;
-      if (!xzu206.isLand(O)) return !1;
+      if (!PixelQualifierAndSquareDrawer.isLand(O)) return !1;
       if (2 == xzu154)
-        return 1 <= xzu715.nSelected && ((q = xzu206.getPlayerAt(O)), q < xzu146)
+        return 1 <= xzu715.nSelected && ((q = PixelQualifierAndSquareDrawer.getPlayerAt(O)), q < xzu146)
           ? (q == xzu161 ? (this.hide(), (h = xzu715.show(w, x))) : (l = !0),
             d(w, x))
           : !1;
-      u = xzu206.coordToPoint(C, I);
+      u = PixelQualifierAndSquareDrawer.coordToPoint(C, I);
       if (xzu164) return (g = !0), d(w, x);
       e = xzu218.exists(xzu161, u);
-      if (xzu206.isNeutral(O)) {
+      if (PixelQualifierAndSquareDrawer.isNeutral(O)) {
         q = xzu150;
         a: {
           for (I = 3; 0 <= I; I--)
             for (O = xzu674[xzu161].length - 1; 0 <= O; O--)
-              if (((C = xzu674[xzu161][O] + xzu18[I]), xzu206.isNeutral(C))) {
+              if (((C = xzu674[xzu161][O] + xzu18[I]), PixelQualifierAndSquareDrawer.isNeutral(C))) {
                 g = !0;
                 break a;
               }
@@ -2015,7 +2015,7 @@
         }
         return d(w, x);
       }
-      q = xzu206.getPlayerAt(O);
+      q = PixelQualifierAndSquareDrawer.getPlayerAt(O);
       if (q == xzu161) return this.hide(), (h = xzu715.show(w, x)), d(w, x);
       l = 1 <= xzu715.nSelected && q < xzu146;
       if (
@@ -5044,28 +5044,28 @@
       var d = 1;
       a: for (; d < xzu731 - 1; d++)
         for (a = xzu732 - 2; 1 < a; a--)
-          if (1 == xzu768[xzu206.coordToPoint(d, a) + 2]) {
+          if (1 == xzu768[PixelQualifierAndSquareDrawer.coordToPoint(d, a) + 2]) {
             this.borders[0] = d;
             break a;
           }
       a = 1;
       a: for (; a < xzu732 - 1; a++)
         for (d = xzu731 - 2; 1 < d; d--)
-          if (1 == xzu768[xzu206.coordToPoint(d, a) + 2]) {
+          if (1 == xzu768[PixelQualifierAndSquareDrawer.coordToPoint(d, a) + 2]) {
             this.borders[1] = a;
             break a;
           }
       d = xzu731 - 2;
       a: for (; 0 < d; d--)
         for (a = xzu732 - 2; 1 < a; a--)
-          if (1 == xzu768[xzu206.coordToPoint(d, a) + 2]) {
+          if (1 == xzu768[PixelQualifierAndSquareDrawer.coordToPoint(d, a) + 2]) {
             this.borders[2] = d;
             break a;
           }
       a = xzu732 - 2;
       a: for (; 0 < a; a--)
         for (d = xzu731 - 2; 1 < d; d--)
-          if (1 == xzu768[xzu206.coordToPoint(d, a) + 2]) {
+          if (1 == xzu768[PixelQualifierAndSquareDrawer.coordToPoint(d, a) + 2]) {
             this.borders[3] = a;
             break a;
           }
@@ -8103,8 +8103,8 @@
     }
     function c(q) {
       if (!xzu714.pixelInWindowChanged) {
-        var u = xzu206.getX(q);
-        q = xzu206.getY(q);
+        var u = PixelQualifierAndSquareDrawer.getX(q);
+        q = PixelQualifierAndSquareDrawer.getY(q);
         xzu714.pixelInWindowChanged =
           u >= xzu711.camC[0] &&
           u <= xzu711.camC[2] &&
@@ -8172,10 +8172,10 @@
     };
     this.hasOutsideNeighbour = function (q) {
       return (
-        xzu206.isOutside(q + t[0]) ||
-        xzu206.isOutside(q + t[1]) ||
-        xzu206.isOutside(q + t[2]) ||
-        xzu206.isOutside(q + t[3])
+        PixelQualifierAndSquareDrawer.isOutside(q + t[0]) ||
+        PixelQualifierAndSquareDrawer.isOutside(q + t[1]) ||
+        PixelQualifierAndSquareDrawer.isOutside(q + t[2]) ||
+        PixelQualifierAndSquareDrawer.isOutside(q + t[3])
       );
     };
     this.hasNeutralOrEnemyNeighbour = function (q, u) {
@@ -8409,7 +8409,7 @@
     for (var d, c = xzu668[a]; c >= xzu666[a]; c--)
       for (var b = xzu669[a]; b >= xzu667[a]; b--)
         (d = 4 * (b * xzu731 + c)),
-          xzu206.isThisPlayer(a, d) && (xzu206.drawNeutralSquare(d), xzu670[a]--);
+          PixelQualifierAndSquareDrawer.isThisPlayer(a, d) && (PixelQualifierAndSquareDrawer.drawNeutralSquare(d), xzu670[a]--);
   }
   function zto1211() {
     function a(h) {
@@ -8632,13 +8632,13 @@
           W =
             1200 >
             g(
-              xzu206.coordToPoint(
+              PixelQualifierAndSquareDrawer.coordToPoint(
                 n[W] + Math.floor(r[W] / 3),
                 p[W] + Math.floor(t[W] / 2)
               )
             ) +
               g(
-                xzu206.coordToPoint(
+                PixelQualifierAndSquareDrawer.coordToPoint(
                   n[W] + Math.floor((2 * r[W]) / 3),
                   p[W] + Math.floor(t[W] / 2)
                 )
@@ -8789,14 +8789,14 @@
     }
     function l(A, G, D, F) {
       return (
-        xzu206.isThisPlayer(A, 4 * (D * xzu731 + G)) &&
-        xzu206.isThisPlayer(A, 4 * ((D + F - 1) * xzu731 + G))
+        PixelQualifierAndSquareDrawer.isThisPlayer(A, 4 * (D * xzu731 + G)) &&
+        PixelQualifierAndSquareDrawer.isThisPlayer(A, 4 * ((D + F - 1) * xzu731 + G))
       );
     }
     function k(A, G, D, F) {
       return (
-        xzu206.isThisPlayer(A, 4 * (D * xzu731 + G)) &&
-        xzu206.isThisPlayer(A, 4 * (D * xzu731 + G + F - 1))
+        PixelQualifierAndSquareDrawer.isThisPlayer(A, 4 * (D * xzu731 + G)) &&
+        PixelQualifierAndSquareDrawer.isThisPlayer(A, 4 * (D * xzu731 + G + F - 1))
       );
     }
     var f, n, p, r, t, q, u, y, v, z, B, w, x, C, I, O, S, Q, K, V, R, T, E, L, P;
@@ -10434,23 +10434,23 @@
     this.exists = function (d, c) {
       if (
         0 == xzu675[d].length ||
-        !xzu206.isLand(c) ||
-        (!xzu206.isNeutral(c) && xzu206.getPlayerAt(c) == d)
+        !PixelQualifierAndSquareDrawer.isLand(c) ||
+        (!PixelQualifierAndSquareDrawer.isNeutral(c) && PixelQualifierAndSquareDrawer.getPlayerAt(c) == d)
       )
         return !1;
       for (var b = 21; 0 <= b; b--) {
         if (21 == b) {
           var g = xzu675[d],
             e = c,
-            m = xzu206.getX(e);
-          e = xzu206.getY(e);
+            m = PixelQualifierAndSquareDrawer.getX(e);
+          e = PixelQualifierAndSquareDrawer.getY(e);
           var h = 0;
-          var l = xzu206.getX(g[0]);
-          var k = xzu206.getY(g[0]);
+          var l = PixelQualifierAndSquareDrawer.getX(g[0]);
+          var k = PixelQualifierAndSquareDrawer.getY(g[0]);
           l = Math.abs(l - m) + Math.abs(k - e);
           for (k = g.length - 1; 1 <= k; k--) {
-            var f = xzu206.getX(g[k]);
-            var n = xzu206.getY(g[k]);
+            var f = PixelQualifierAndSquareDrawer.getX(g[k]);
+            var n = PixelQualifierAndSquareDrawer.getY(g[k]);
             f = Math.abs(f - m) + Math.abs(n - e);
             f < l && ((l = f), (h = k));
           }
@@ -10459,19 +10459,19 @@
         a: {
           k = a;
           h = c;
-          g = xzu206.getX(k);
-          m = xzu206.getY(k);
-          e = xzu206.getX(h);
-          h = xzu206.getY(h);
+          g = PixelQualifierAndSquareDrawer.getX(k);
+          m = PixelQualifierAndSquareDrawer.getY(k);
+          e = PixelQualifierAndSquareDrawer.getX(h);
+          h = PixelQualifierAndSquareDrawer.getY(h);
           l = Math.abs(e - g) + Math.abs(h - m);
           if (!(2 > l))
             for (f = 0; f < l; f++)
               if (
                 ((k =
-                  Math.abs(e - xzu206.getX(k)) >= Math.abs(h - xzu206.getY(k))
+                  Math.abs(e - PixelQualifierAndSquareDrawer.getX(k)) >= Math.abs(h - PixelQualifierAndSquareDrawer.getY(k))
                     ? k + xzu18[e > g ? 1 : 3]
                     : k + xzu18[h > m ? 2 : 0]),
-                xzu206.isLand(k))
+                PixelQualifierAndSquareDrawer.isLand(k))
               ) {
                 if (0 == f || f + 20 < l) break;
                 g = !0;
@@ -10794,21 +10794,21 @@
       k = p;
       n = r;
       d = t;
-      e = xzu206.getX(q);
-      m = xzu206.getY(q);
-      h = xzu206.getX(u);
-      l = xzu206.getY(u);
-      g = b = xzu206.coordToPoint(e, m);
+      e = PixelQualifierAndSquareDrawer.getX(q);
+      m = PixelQualifierAndSquareDrawer.getY(q);
+      h = PixelQualifierAndSquareDrawer.getX(u);
+      l = PixelQualifierAndSquareDrawer.getY(u);
+      g = b = PixelQualifierAndSquareDrawer.coordToPoint(e, m);
       f = xzu208.getSeaIndex(d, n);
       -1 == f
-        ? (xzu206.isThisShip(b, d) && xzu206.drawSeaSquare(b),
+        ? (PixelQualifierAndSquareDrawer.isThisShip(b, d) && PixelQualifierAndSquareDrawer.drawSeaSquare(b),
           (c = 0),
           a(!1),
           (p = !1))
         : ((c = xzu208.getStrength(d, f)), (p = !0));
       if (
         p &&
-        (xzu206.isThisShip(b, d) && xzu206.drawSeaSquare(b),
+        (PixelQualifierAndSquareDrawer.isThisShip(b, d) && PixelQualifierAndSquareDrawer.drawSeaSquare(b),
         (p = zto1304(c, 128)),
         (p = 1 > p ? 1 : p),
         (c -= p),
@@ -10817,23 +10817,23 @@
         p)
       )
         if (
-          ((p = xzu206.coordToPoint(e, m)),
+          ((p = PixelQualifierAndSquareDrawer.coordToPoint(e, m)),
           (b =
             Math.abs(h - e) >= Math.abs(l - m)
               ? p + xzu18[h > e ? 1 : 3]
               : p + xzu18[l > m ? 2 : 0]),
-          (e = xzu206.getX(b)),
-          (m = xzu206.getY(b)),
+          (e = PixelQualifierAndSquareDrawer.getX(b)),
+          (m = PixelQualifierAndSquareDrawer.getY(b)),
           xzu175.setPosition(k, b),
-          (p = xzu206.isLand(b) ? !1 : !0),
+          (p = PixelQualifierAndSquareDrawer.isLand(b) ? !1 : !0),
           p)
         )
-          xzu206.isOcean(b) && xzu206.drawShipSquare(b, d);
+          PixelQualifierAndSquareDrawer.isOcean(b) && PixelQualifierAndSquareDrawer.drawShipSquare(b, d);
         else
           a: {
-            if (xzu206.isNeutral(b)) p = xzu150;
+            if (PixelQualifierAndSquareDrawer.isNeutral(b)) p = xzu150;
             else {
-              p = xzu206.getPlayerAt(b);
+              p = PixelQualifierAndSquareDrawer.getPlayerAt(b);
               if (p == d) {
                 a(!0);
                 break a;
@@ -11591,10 +11591,10 @@
       for (d = 3; 0 <= d; d--) {
         var b = xzu673[xzu9][c] + xzu18[d];
         if (
-          xzu206.isNeutral(b) ||
-          (xzu206.isPlayer(b) && xzu206.getPlayerAt(b) != xzu9)
+          PixelQualifierAndSquareDrawer.isNeutral(b) ||
+          (PixelQualifierAndSquareDrawer.isPlayer(b) && PixelQualifierAndSquareDrawer.getPlayerAt(b) != xzu9)
         ) {
-          xzu206.drawAttackSquare(xzu673[xzu9][c], xzu9);
+          PixelQualifierAndSquareDrawer.drawAttackSquare(xzu673[xzu9][c], xzu9);
           continue a;
         }
       }
@@ -11612,15 +11612,15 @@
       var g = (c = !1);
       for (d = 3; 0 <= d; d--) {
         var e = xzu674[xzu9][b] + xzu18[d];
-        if (xzu206.isNeutralOrEnemy(e, xzu9)) continue a;
-        g = g || xzu206.isOcean(e);
-        c = c || xzu206.isOutside(e);
+        if (PixelQualifierAndSquareDrawer.isNeutralOrEnemy(e, xzu9)) continue a;
+        g = g || PixelQualifierAndSquareDrawer.isOcean(e);
+        c = c || PixelQualifierAndSquareDrawer.isOutside(e);
       }
       g
         ? xzu675[xzu9].push(xzu674[xzu9][b])
         : c
         ? xzu676[xzu9].push(xzu674[xzu9][b])
-        : xzu206.drawTerritorialSquare(xzu674[xzu9][b], xzu9);
+        : PixelQualifierAndSquareDrawer.drawTerritorialSquare(xzu674[xzu9][b], xzu9);
       xzu674[xzu9][b] = xzu674[xzu9][a - 1];
       xzu674[xzu9].pop();
       a--;
@@ -11631,18 +11631,18 @@
   }
   function zto1354(a) {
     for (var d = a.length, c = d - 1; 0 <= c; c--)
-      !xzu206.isThisPlayer(xzu12, a[c]) &&
-        xzu206.isLand(a[c]) &&
+      !PixelQualifierAndSquareDrawer.isThisPlayer(xzu12, a[c]) &&
+        PixelQualifierAndSquareDrawer.isLand(a[c]) &&
         ((a[c] = a[d - 1]), a.pop(), d--);
   }
   function zto1355(a) {
     for (var d = a.length, c = d - 1; 0 <= c; c--)
-      xzu206.isThisPlayer(xzu12, a[c]) || ((a[c] = a[d - 1]), a.pop(), d--);
+      PixelQualifierAndSquareDrawer.isThisPlayer(xzu12, a[c]) || ((a[c] = a[d - 1]), a.pop(), d--);
   }
   function zto1356(a) {
     for (var d = a.length, c, b, g = d - 1; 0 <= g; g--)
       for (c = 3; 0 <= c; c--)
-        if (((b = a[g] + xzu18[c]), xzu206.isNeutralOrEnemy(b, xzu12))) {
+        if (((b = a[g] + xzu18[c]), PixelQualifierAndSquareDrawer.isNeutralOrEnemy(b, xzu12))) {
           xzu674[xzu12].push(a[g]);
           a[g] = a[d - 1];
           a.pop();
@@ -11654,30 +11654,30 @@
     for (var a, d, c = xzu13 - 1; 0 <= c; c--)
       for (a = 3; 0 <= a; a--)
         (d = xzu15[c] + xzu18[a]),
-          xzu206.isThisPlayer(xzu12, d) &&
-            xzu206.isTerritorialLand(d) &&
-            (xzu674[xzu12].push(d), xzu206.drawBorderSquare(d, xzu12));
+          PixelQualifierAndSquareDrawer.isThisPlayer(xzu12, d) &&
+            PixelQualifierAndSquareDrawer.isTerritorialLand(d) &&
+            (xzu674[xzu12].push(d), PixelQualifierAndSquareDrawer.drawBorderSquare(d, xzu12));
   }
   function zto1358() {
     var a;
     a: for (; xzu667[xzu12] < xzu669[xzu12]; ) {
       for (a = xzu668[xzu12]; a >= xzu666[xzu12]; a--)
-        if (xzu206.isThisPlayer(xzu12, 4 * (xzu667[xzu12] * xzu731 + a))) break a;
+        if (PixelQualifierAndSquareDrawer.isThisPlayer(xzu12, 4 * (xzu667[xzu12] * xzu731 + a))) break a;
       xzu667[xzu12]++;
     }
     a: for (; xzu667[xzu12] < xzu669[xzu12]; ) {
       for (a = xzu668[xzu12]; a >= xzu666[xzu12]; a--)
-        if (xzu206.isThisPlayer(xzu12, 4 * (xzu669[xzu12] * xzu731 + a))) break a;
+        if (PixelQualifierAndSquareDrawer.isThisPlayer(xzu12, 4 * (xzu669[xzu12] * xzu731 + a))) break a;
       xzu669[xzu12]--;
     }
     a: for (; xzu666[xzu12] < xzu668[xzu12]; ) {
       for (a = xzu669[xzu12]; a >= xzu667[xzu12]; a--)
-        if (xzu206.isThisPlayer(xzu12, 4 * (a * xzu731 + xzu666[xzu12]))) break a;
+        if (PixelQualifierAndSquareDrawer.isThisPlayer(xzu12, 4 * (a * xzu731 + xzu666[xzu12]))) break a;
       xzu666[xzu12]++;
     }
     a: for (; xzu666[xzu12] < xzu668[xzu12]; ) {
       for (a = xzu669[xzu12]; a >= xzu667[xzu12]; a--)
-        if (xzu206.isThisPlayer(xzu12, 4 * (a * xzu731 + xzu668[xzu12]))) break a;
+        if (PixelQualifierAndSquareDrawer.isThisPlayer(xzu12, 4 * (a * xzu731 + xzu668[xzu12]))) break a;
       xzu668[xzu12]--;
     }
   }
@@ -12153,8 +12153,8 @@
       b(h, 4, 5);
       d(h);
       a(h);
-      b(h, 9, xzu206.rgbToIndex(xzu354.objs[3].win.colors[0]));
-      b(h, 9, xzu206.rgbToIndex(xzu354.objs[3].win.colors[1]));
+      b(h, 9, PixelQualifierAndSquareDrawer.rgbToIndex(xzu354.objs[3].win.colors[0]));
+      b(h, 9, PixelQualifierAndSquareDrawer.rgbToIndex(xzu354.objs[3].win.colors[1]));
       for (var l = 0; l < m; l++) b(h, 10, e[l]);
       xzu222.send(h);
     };
@@ -12195,8 +12195,8 @@
           {
             name: xzu204.getName(),
             id: 0,
-            color0: xzu206.rgbToIndex(xzu354.objs[3].win.colors[0]),
-            color1: xzu206.rgbToIndex(xzu354.objs[3].win.colors[1]),
+            color0: PixelQualifierAndSquareDrawer.rgbToIndex(xzu354.objs[3].win.colors[0]),
+            color1: PixelQualifierAndSquareDrawer.rgbToIndex(xzu354.objs[3].win.colors[1]),
             idColor: 0,
           },
         ],
