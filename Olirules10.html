@@ -1018,7 +1018,7 @@
         : 2 == xzu154 && xzu181.addState(h, 4);
     };
     this.surrender = function (h) {
-      xzu180.surrenderPossible(h) &&
+      switchStateMouseMoveSurrenderPossibleDrawCross.surrenderPossible(h) &&
         (xzu181.addState(h, h == xzu161 ? 21 : 22),
         0 < xzu167
           ? xzu726.endGame(1 - h)
@@ -1378,7 +1378,7 @@
       xzu722.draw(),
       xzu188.draw(),
       xzu183.draw(),
-      xzu180.draw(),
+      switchStateMouseMoveSurrenderPossibleDrawCross.draw(),
       xzu191.draw(),
       mouseObserver.draw(),
       xzu718.draw(),
@@ -1679,7 +1679,7 @@
     xzu185.init();
     xzu188.init();
     xzu190.init();
-    xzu180.init();
+    switchStateMouseMoveSurrenderPossibleDrawCross.init();
     xzu184.init();
     xzu181.init();
     xzu183.init();
@@ -1721,7 +1721,7 @@
     xzu177,
     encoderDecoder,
     mouseObserver,
-    xzu180,
+    switchStateMouseMoveSurrenderPossibleDrawCross,
     xzu181,
     xzu182,
     xzu183,
@@ -1780,7 +1780,7 @@
     findStartPosition = new FindStartPosition();
     encoderDecoder = new EncoderDecoder();
     mouseObserver = new MouseObserver();
-    xzu180 = new zto989();
+    switchStateMouseMoveSurrenderPossibleDrawCross = new SwitchStateMouseMoveSurrenderPossibleDrawCross();
     xzu181 = new zto996();
     xzu182 = new zto1002();
     xzu183 = new zto1023();
@@ -2071,7 +2071,7 @@
             xzu690.setTransform(1, 0, 0, 1, 0, 0));
     };
   }
-  function zto989() {
+  function SwitchStateMouseMoveSurrenderPossibleDrawCross() {
     function a() {
       var k = g.getContext("2d");
       k.clearRect(0, 0, b, b);
@@ -2097,7 +2097,7 @@
       k.setTransform(1, 0, 0, 1, 0, 0);
     }
     function d(k, f) {
-      if (!xzu180.isSelected) return k <= b + xzu347 && f >= xzu185.y ? 0 : -1;
+      if (!switchStateMouseMoveSurrenderPossibleDrawCross.isSelected) return k <= b + xzu347 && f >= xzu185.y ? 0 : -1;
       if (k <= 4 * b + xzu347) {
         if (f >= xzu185.y) return 0;
         if (f >= xzu185.y - b - l * xzu347) return 2;
@@ -2156,20 +2156,20 @@
         ? 0 == n
           ? (zto979(), zto879(), 2)
           : 1 == n
-          ? (this.switchState(), 2)
-          : 2 == n
-          ? (this.surrenderPossible(xzu161) &&
-              (xzu152 ? attacker.surrender(xzu161) : xzu226.wrapSurrender(),
-              this.switchState()),
-            2)
-          : 3 == n && 2 <= xzu717.filled
-          ? (xzu718.switchState(), (xzu720.requestRepaint = !0), 2)
-          : xzu718.isVisible || xzu189.mouseDown(k, f)
-          ? 1
-          : (this.switchState(), 2)
+            ? (this.switchState(), 2)
+            : 2 == n
+              ? ( this.surrenderPossible(xzu161) &&
+                  (xzu152 ? attacker.surrender(xzu161) : xzu226.wrapSurrender(),
+                  this.switchState()),
+                2)
+              : 3 == n && 2 <= xzu717.filled
+                ? (xzu718.switchState(), (xzu720.requestRepaint = !0), 2)
+                : xzu718.isVisible || xzu189.mouseDown(k, f)
+                  ? 1
+                  : (this.switchState(), 2)
         : 0 == n
-        ? (this.switchState(), 2)
-        : 0;
+          ? (this.switchState(), 2)
+          : 0;
     };
     this.mouseMove = function (k, f) {
       var n = d(k, f);
@@ -2201,12 +2201,12 @@
         xzu690.textAlign = xzu329;
         xzu690.fillText(m[0], 2 * b, 0.54 * b);
         k = 0.4 * b;
-        xzu180.drawCross(
+        switchStateMouseMoveSurrenderPossibleDrawCross.drawCross(
           xzu347 + 4 * b + (1.5 * b - k) / 2,
           xzu185.y + 0.3 * b,
           k
         );
-        c(1, xzu180.surrenderPossible(xzu161) ? xzu315 : xzu295);
+        c(1, switchStateMouseMoveSurrenderPossibleDrawCross.surrenderPossible(xzu161) ? xzu315 : xzu295);
         2 <= xzu717.filled && c(2, xzu315);
         xzu690.setTransform(1, 0, 0, 1, 0, 0);
       } else xzu690.drawImage(g, xzu347, xzu185.y);
@@ -3056,7 +3056,7 @@
         xzu183.mouseDown(a, d)
       )
     ) {
-      var c = xzu180.mouseDown(a, d);
+      var c = switchStateMouseMoveSurrenderPossibleDrawCross.mouseDown(a, d);
       2 == c ||
         xzu189.mouseDown(a, d) ||
         (xzu186.mouseDown(a, d)
@@ -3083,7 +3083,7 @@
       : xzu718.mouseMove(a) ||
         (mouseObserver.isVisible()
           ? mouseObserver.mouseMove(a, d)
-          : xzu180.mouseMove(a, d) ||
+          : switchStateMouseMoveSurrenderPossibleDrawCross.mouseMove(a, d) ||
             (xzu185.mouseMoving
               ? xzu185.mouseMove(a, d) && (xzu720.requestRepaint = !0)
               : (xzu189.mouseMove(a, d),
@@ -3094,7 +3094,7 @@
   function zto1016(a) {
     0 == xzu154
       ? (xzu198.click(-1e3, -1e3), xzu187.reset())
-      : (xzu180.mouseMove(-1e3, -1e3),
+      : (switchStateMouseMoveSurrenderPossibleDrawCross.mouseMove(-1e3, -1e3),
         xzu189.mouseMove(-1e3, -1e3),
         xzu185.releaseMouse(),
         xzu186.grMouseMoving && (xzu186.grMouseMoving = !1));
@@ -3615,20 +3615,20 @@
     };
     this.draw = function () {
       !k ||
-        (xzu180.isSelected && e < Math.floor(xzu347 + 5.5 * this.h)) ||
+        (switchStateMouseMoveSurrenderPossibleDrawCross.isSelected && e < Math.floor(xzu347 + 5.5 * this.h)) ||
         xzu690.drawImage(h, e, this.y);
     };
     this.inside = function (t, q) {
       return (
         k &&
-        (!xzu180.isSelected || e >= Math.floor(xzu347 + 5.5 * this.h)) &&
+        (!switchStateMouseMoveSurrenderPossibleDrawCross.isSelected || e >= Math.floor(xzu347 + 5.5 * this.h)) &&
         t > e &&
         t < e + g &&
         q > this.y
       );
     };
     this.pressMouse = function (t, q) {
-      if (!k || (xzu180.isSelected && e < Math.floor(xzu347 + 5.5 * this.h)))
+      if (!k || (switchStateMouseMoveSurrenderPossibleDrawCross.isSelected && e < Math.floor(xzu347 + 5.5 * this.h)))
         return !1;
       if (t > e && t < e + m && q > xzu185.y) return c(0.9375);
       if (t > e + g - m && t < e + g && q > xzu185.y) return c(16 / 15);
@@ -3642,7 +3642,7 @@
       if (
         0 == t ||
         !k ||
-        (xzu180.isSelected && e < Math.floor(xzu347 + 5.5 * this.h))
+        (switchStateMouseMoveSurrenderPossibleDrawCross.isSelected && e < Math.floor(xzu347 + 5.5 * this.h))
       )
         return !1;
       0 < t
@@ -5551,7 +5551,7 @@
           Math.floor(a[n].y + m - g - 0.5 * c)
         );
         xzu690.save();
-        xzu180.drawCross(
+        switchStateMouseMoveSurrenderPossibleDrawCross.drawCross(
           Math.floor(a[n].x + a[n].w - 0.8 * e),
           Math.floor(a[n].y + 0.3 * e),
           Math.floor(0.5 * e)
@@ -9559,7 +9559,7 @@
           ? ((xzu162 = !xzu162), (xzu720.requestRepaint = !0))
           : xzu718.isVisible
           ? xzu718.hide()
-          : xzu180.switchState()
+          : switchStateMouseMoveSurrenderPossibleDrawCross.switchState()
         : 7 == xzu198.getState()
         ? (xzu201.deinit(), xzu204.init(1e3), (xzu720.requestRepaint = !0))
         : 2 == xzu198.getState()
@@ -10726,7 +10726,7 @@
               xzu186.zto1324(),
               xzu185.zto1324(),
               xzu181.zto1324(),
-              xzu180.zto1324(),
+              switchStateMouseMoveSurrenderPossibleDrawCross.zto1324(),
               xzu183.zto1324(),
               xzu184.zto1324(),
               mouseObserver.prepare(),
@@ -11223,7 +11223,7 @@
       a -= zto1304(xzu697 - this.w, 2);
       d -= zto1304(xzu698 - this.h, 2);
       if (0 > a || 0 > d || a >= this.w || d >= this.h) {
-        if (1 < xzu180.mouseDown(c, b)) return !0;
+        if (1 < switchStateMouseMoveSurrenderPossibleDrawCross.mouseDown(c, b)) return !0;
         this.hide();
         return !0;
       }
@@ -11745,11 +11745,11 @@
           ((this.time +=
             this.interval *
             Math.floor(1 + (xzu720.time - this.time) / this.interval)),
-          2 == xzu154 || xzu180.isSelected
+          2 == xzu154 || switchStateMouseMoveSurrenderPossibleDrawCross.isSelected
             ? zto923()
             : (zto924(), this.calculations++, xzu714.render()),
           this.index++)
-        : (xzu180.isSelected
+        : (switchStateMouseMoveSurrenderPossibleDrawCross.isSelected
             ? zto927()
             : ((xzu720.requestRepaint = !0), zto926()),
           (this.index = 0));
