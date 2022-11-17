@@ -81,7 +81,7 @@
     }
     d = d.split("%");
     if (4 != d.length) return a;
-    for (a = 3; 0 <= a; a--) d[a] = parseInt(xzu178.decodeNumberString(d[a]));
+    for (a = 3; 0 <= a; a--) d[a] = parseInt(encoderDecoder.decodeNumberString(d[a]));
     return d;
   }
   function zto867() {
@@ -147,7 +147,7 @@
   }
   function zto873(a) {
     for (var d = [], c = 0; 4 > c; c++)
-      d.push(xzu178.encodeNumberString(a[c].toString()));
+      d.push(encoderDecoder.encodeNumberString(a[c].toString()));
     a = d[0] + "%" + d[1] + "%" + d[2] + "%" + d[3];
     return xzu702
       ? (window.webkit.messageHandlers.iosCommandA.postMessage("password " + a),
@@ -1427,13 +1427,13 @@
           ]);
     };
   }
-  function zto968() {
+  function EncoderDecoder() {
     function a(m, h, l) {
       m = m.trim();
       a: {
         var k = m.toLowerCase();
-        for (var f = e.length - 1; 0 <= f; f--)
-          if (0 <= k.indexOf(e[f])) {
+        for (var f = profanitiesArray.length - 1; 0 <= f; f--)
+          if (0 <= k.indexOf(profanitiesArray[f])) {
             k = !0;
             break a;
           }
@@ -1458,7 +1458,7 @@
     var c,
       b,
       g,
-      e = "fuck asshole porn rape nigger rapist nigga nazi".split(" ");
+      profanitiesArray = "fuck asshole porn rape nigger rapist nigga nazi".split(" ");
     (function () {
       c = [32, 65, 191, 913, 931];
       b = [64, 127, 688, 930, 1155];
@@ -1719,7 +1719,7 @@
     xzu175,
     xzu176,
     xzu177,
-    xzu178,
+    encoderDecoder,
     xzu179,
     xzu180,
     xzu181,
@@ -1778,7 +1778,7 @@
     xzu175 = new zto945();
     xzu176 = new zto947();
     xzu177 = new zto954();
-    xzu178 = new zto968();
+    encoderDecoder = new EncoderDecoder();
     xzu179 = new zto981();
     xzu180 = new zto989();
     xzu181 = new zto996();
@@ -7751,7 +7751,7 @@
       var e = b.split("%");
       if (4 != e.length) return !1;
       for (var m = Math.floor(Math.pow(2, 30)), h = 0, l = 3; 0 <= l; l--) {
-        e[l] = parseInt(xzu178.decodeNumberString(e[l]));
+        e[l] = parseInt(encoderDecoder.decodeNumberString(e[l]));
         if (0 > e[l] || e[l] >= m) return xzu199.init(3232), !0;
         h += 0 == e[l] ? 1 : 0;
       }
@@ -7761,7 +7761,7 @@
       return !0;
     }
     function c() {
-      if (g && void 0 !== b && xzu178.validateUsername(b))
+      if (g && void 0 !== b && encoderDecoder.validateUsername(b))
         return xzu200.activate(0, !0), !0;
       xzu200.activate(0, !1);
       return !1;
@@ -7797,7 +7797,7 @@
       c();
       if (0 <= b.toLowerCase().indexOf("password")) {
         for (var e = zto866(), m = [], h = 0; 4 > h; h++)
-          m.push(xzu178.encodeNumberString(e[h].toString()));
+          m.push(encoderDecoder.encodeNumberString(e[h].toString()));
         e = m[0] + "%" + m[1] + "%" + m[2] + "%" + m[3];
         b = xzu200.get(0).input.value = e;
       }
@@ -8285,8 +8285,8 @@
       xzu207.save();
     }
     function b() {
-      for (var f = h - k - 1; 0 <= f; f--) m[f] = xzu178.decodeNumberString(m[f]);
-      m[0] = xzu178.numberStringToString(m[0]);
+      for (var f = h - k - 1; 0 <= f; f--) m[f] = encoderDecoder.decodeNumberString(m[f]);
+      m[0] = encoderDecoder.numberStringToString(m[0]);
     }
     function g(f, n, p) {
       var r = new Date();
@@ -8343,8 +8343,8 @@
             : m[1];
         m[5] = a();
         for (var f = 1; f < h - k; f++) m[f] = m[f].toString();
-        m[0] = xzu178.stringToNumberString(m[0]);
-        for (f = h - k - 1; 0 <= f; f--) m[f] = xzu178.encodeNumberString(m[f]);
+        m[0] = encoderDecoder.stringToNumberString(m[0]);
+        for (f = h - k - 1; 0 <= f; f--) m[f] = encoderDecoder.encodeNumberString(m[f]);
         for (f = h - 1; 0 <= f; f--) g(e[f], m[f], 1);
         b();
         d();
@@ -10027,7 +10027,7 @@
       : xzu737 == zto1263() + 3 &&
         (a =
           "AJ8AA8C999AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AC78AUCAT7oDAUB999AJ99AJgAX7ABAKH599AX7AJ97AK969BT69Bn66Bx66Bx67B6AoD957B8AKE956C6A6AK66AS79C7AKHAKBA9AUEAKCAKEAeiA987enAyHAKGAeEDUL869EUDB6AeFA7AoRAUBBc67GUCA7AeHByR85yDA6I9A9B885VCAKDAoS8xK9AeT8vLeBCwmO68gPcVAUEPwRA6AV558QA7AV578NQ88KRAIASBRKEA6798Sv96S579z8779f8779L89788Tb86T578p9678p9778f9778gB777U577gH77gI77WK77CKA6Av6CJA6A7C8AbdVUBA9AeBB8A8AUE7WWUCAoQB57WWABA6AKCA6AeEByKA57HXKCAKCAeDB9AyJ7DWeBA9AUHAUTAoL7CWUBEKDBk98a8AKO697ck95c569q8769M9Q87dk86du8q9u85d5joCg8d6joDg7d6jyDg5d8jACAUCg5eDxANeeNvAXcehuAhdehsAhbe6iKBAKEg5e9h9A7grKiKFgrLiKEgKCANL66rR66XU659gu56goIAKBAKCAQpgyIA8gKCf6geLBKBA5fKCf6geJCUGAKDAQOgoIDuOgoHD76MgoHAKBD56MgUDAKEEQJgKEAKEEUCAuCgUCAUBAKCE96AgoBF7A7Aj88goBF8AyF587myDA7eyCb8nyMAW6KBCUBA6AW78nyLAq6ABCeIb9nyKA5cKIAKBb9noNAg78AKBA7ch9yHAoCAW77BC8h9oHA7ZoCCKDAKGc5noHBCzAeUBC85noHBAJAqjAUBAeTBg8h9yGA9A8A7XoFCANch98AeIA8BChAySB5cX98AKKA7BgdA7B9Bg8iKAySW6A6B8AKCAUBA8ceBAOJAoUWoGCKCAKEAKBcsLAeXWeGC8AW7KFA6pyBCqWA6C8AM7KHA5pyBC5WKGB8A7AKEa8BeCsMUA6B8BM68rABC7V9AyTBM67uMSAoTBM66ugRAoTA6AKDa7u5VyEB6AKBBADAM6s65V6AeQAKBBABAeGAW56u5V6AKVA9AKDAyDZ6u6VeFB8BoFAg57u6VUFB8B9AKCZ9uqMAyRCACAW59ugMA6BoKAKLAUDZ8uqLAyPAUCCg58u5VAGB7Cq58u5VAGB7Cq58u6U9A6B7Cq59u5U9A6B7B9a5uqKAySA8AKJa7uWIAKBAyRA9AUIa8uMHAyBAKTBADAg7E6MIAoVBC76uMIAoDAeJAUEBg7i6MHAyCAoKAeDBg7Y6CJAeEAeJAKBAUBB7bE6CIAoFAKPB7bE6CKAUWB6bE59VKDCKObO6CLAeSAKCBABAM7i6CLAKRAUDBW7s6McAUDB5bO6McCC7E6gcByCAM7E6gdB5bY6qdAeBBKHAW6i6qIAUHAUOBUGAUBAq58t8AKFU8AeFAeNBoIA5Z7t8AKDVKCAeFA6AUBAeDBUFA8aO5yBAMMAeDAeGAeCAeCBUFA5a6tgPAUEAKNAUEBAEA6a7tWhAKBAeEBACAq7E5WgA6AeLAKEbO5gfA6AURbO5ggAoDB7bE5ggA7AoNbO5ggA7AUObE56XAIAUMbY56XKIAKNbE57XUHAKLbO59XoEAKNByCZY59XUBAUDAKPBUEZE59XeVBeIY6t9XeVBUNYY59XKIAKOAeCAUDAUOYE6MdC6AKYAUCX6uCdBACEqiuKBAMbF6Xs6WcF6Xi6gfFghuqdF5Xi6WfBABEghuWfF5XO6qeA6AKyW8u5XA6MYuyBAWcAyBF5WY69AKBW7AeCF6AeCV6u7AeBW7AeDGWPu6XeBAo6WOu7X8GWKvClAeBAUBF7U9vClAUBAUCF9U7vCoAKCGWFvCjAUIGCEvMkAeFGWDvMkAUCAUEGMCvWnAUEGgAvWdAKGAeCAeDGp97vqiAyBAeBG6T6v5Xe76T6v5Xe76T6v8XKFAK69T6v7XU76T5v8XK77Ts79XK77AyCS5v8AKBXU8z8oHAO7ChAKBIV8yGAO7MjA6Ae7eCAL8i77X6AUBAKFH9R9v7Y6IL77v6YyCAe8B7s76X8AUEAeDIL7i76X9AeCAUCIp7E78X9AoBAeBI6Q7wCoAUBAUCI8Qi8WnA6AU9B57w6X9AoEJpzw9X8A7Ay9LxxCoAeGAUBJBqx6YACA7AeCAKBJLlx6Y9AoCJphx8YeBALFNY99YKHALBNO99YKHAVDAKFMPAYKEAKCALLMFBYLTL9yMpMBSyWoMBRygpMLPygqBUBK9K8AKDyqqBUBA6ApAKtLYeMBACAU97KFOYoMA9AUEJ7J7z6YyKB7AKBJe96z7Y6BKTJK77AKRz8Y7BKQAKBJU69AyBA8A85VY7A9B8AKBAeCAKCIy68B6A65WY7BAOAKJAKBI6FZ59Y9A8BUCBABAK86E6565ZKEAoBByBA8I7EZ68AKBZeCAKCCe88D957g5eBCy9Ki576Z9AKTJya58M7ABAo99CZ8g7oBALAB958g7oEALAB758C79AKCKUO58M8fCBZ8W8yGAK9oI585dK97At88d7JUB589eA9AB589byDA8AUCAKJ678byJAKMAu78b67Fb57GbvGbvGbvHblIbRJbRLa97Ma97La97La97LbAIARCbUDA57Ab7AUB7Ab67Ab97Db67Eb6A7Ak9q77AyE69g88AKB689du86du85d668g9868DA68DA669AKJeQ69AUHeeIAa58AeBAKCeyEA6AKB656d7AoJAeBAUJ656doJA6A7A7659AKBdAJA7A6A766M9AJA6A8A766C9AJA7A7A7BoDA7AUEAkbAKBc8A9A6A9AyOAyFA96gc7A7A7A8A6BoGAKM6gc7A6A8A9A6BoR6hc7A6BAGA8BeQ6jc9AUMAyJBUQ6jeeFA8BKS6jAUCAKBd6A7A7BKR6oAKCdyHA7BKR6od8A6A9A9ByCAQod8A6BABAKFB56sAyCdUFBeCB66vAeDAKDc7Ayf6vAUJc6Aye66NS66hR66rR666fa68fG7NG675e5675e6675e5676eG8C9968W9868g9868W99BAB67M97BKB67UQBg6yMAa7KQBq6eOAa7UNB6aePAa78AyRaeGAeGAa8ABB9aoDAyHAKBAQ98bUGAk98boDARBb8699cG99cG97ck97ca97ck96coGAQ89c969C8969M8969KGAW8a9AEAq8oEAa8UEAq9G8eBA6dQ8UBA7dG9M8969M8969M8869W8769W87695c6695cu96ca99cHAcHAcHAcHAcHAcHBb87Cb77DbbJa97La87Ma87Ma77Ma77Na77Ma87Ma87Ma87La97La87La97La67Na77Ma77La97La97La97La87La97La97Ma77Na67Oa67Oa87NT9Ao657MT9Ao6vOT8Ae6vPa57QavQavRalRavQavQavRavQalRalRabSabSBUCY87RBUDY87RBUDY87PBoDY87RBUBAKBY87RavPalRavQavQa57QabSaRTZ77UZ97WZ77YZ57ZZvbZbcAKDY87hY87gY77gY97fZHfAUCY57sX67wXbwXRxXRzW975Wb75qa755W5755W675gd75Wc75Wd7yXAzAk96W9EeBA7A8689XUqAeGA8688XepA6AeJ687X6DABA8A7AUJ686X6DACA8A6AeJ685X8C7AoHAKCAoBBa7yEAWpC7AoHA6AUDAUH675Y7C7AoIBABA867oBA5YebAeHAeCB6679YebAeDAUCAeCB6679YebAeDAKCAoDB5679YyZAyBA8AKP68CtCeg68CyA7AKKDa8CyAyEA6B6AUQ68CzAoFAoj67q58AoFAKl677Z7AUfAKM678c9AUM677beCC9676bUDC9676bKEC7677bKEC668W68Aoa68g9868g99A6AQ7q99AyD67hAAeF67XI67NJ67DG67XI67NHAKB67DH67DJ67NK669fQ68fk67fG69fG7DJ67NI67UEAKGAM96677AyDd6678AUEd668g97679AKCd8676AKBea75e6666AKEe966rR66hR66hS66DU66DU659gG59gG6DU658ga58gQ58ga57gk56g5655g665re6xhavhkuhkvhkuhawhauh56uh66qiGoiQlikiAKBiufjGfi96ejGejGei96gi76ji56ji66ji56ji76fjGei96gi86hAeCikkiujAKBiuji56ji66ji56ji66ji56ji56ji56ji66ii76hjQdjabjkbjkbjkbjacjacjkbjkbjkbjkajacjabjuXjoQA76DjoNBZ98j9BAO597kAIB559UCAN6UIB5589k8A7B7588lAFB758oBAh9j8UCAh96577o5576o557sF57sH57iK566AKDo6AKD565pACAt6YNAKG557q555sc55Yf5wrfhAONrffA7o8r9AyDL7A9o7sKCA7LAPo5sKBA9K6B9os5VDCsAto6yDC9DX96ty6yDC6D8nY58A6AKyAKFAoYEN9E58AeFE9AUDA7CUsm6u7E9BUUFD8Y68AoBEeMCA57l5vACAKqBoTGD7Y7ooB6B7Gr68t8AURDeCAeUA6AUFG7G8AW95v8C7AKECyGAUFG9G6AW95v9CyfAKCAKEAo7A6KIds79CUrAe7A6eJc9woTEeDHK6UJdE86AKCAKBBLSGUIdE96AzVGKHdE98AfWF9BC896ZAoCFAKc96oEKLc86qDeCAyLc66tCeFAUEAoMc56uCANAoMc568ACB6ca97ck97b7686AUPb6687AUPb77Eb67Eb57GblHblHblIbbIbbHblHblJbRKbHJbHKa77Oa8688AUWa8688AUWa569KCCg657Pa57Pa57Pa57FbvGb57Fb57Fb57GbvOaKBAlPaHUYyCBRWY57kYvjYvkYllYllYlkYvkYvgAKDYvgY97fZRdZHgY87gY97fZHfY97gY87fZHeZRYZ77XZ77YZ67ZZlbZbbZRbZRdZReY87fY87ZAUEY87TAUEAoBZHSAoDZ57SAoBZ67UaHUAeBZlXAeBZlYAUBZlbZlbZlaZlaZbcY87hY87fY97fY97fY97fY97eY97fY87gY67iYllXoDAbpX57tXvvXbxXRxW97zW775gX755Wb5yBAMV757Wb58WR6CPAKC76gO767U9AeB767U877gG77oDAV98778AUET6778AeETl8KCA7SeDAb8eCA8SSDOABD58FM6AKLAoBAUe8FC7AU96AyIA7C98GC8Ae9eKAeMAUBCmGC7Ae9odBeCAmJAyBB8AeCAUFAK8KEAKeA8AKE8PAeBA7ByCAeCAyDAe6oCA6D6A88aAKBAKQAKTGUEAolA886y6UEAolAS7U6dVF99WF99XF79YCKBA8AKY9dB7AKFA6CTfAUGAUDAKEAKKB896eQ966A9AKD97KF978AT99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99AJ99ADh");
-    a = xzu178.decodeMapString(a);
+    a = encoderDecoder.decodeMapString(a);
     var d = xzu215.get(xzu737).colorLand,
       c = xzu215.get(xzu737).colorOcean;
     xzu731 = 1e3 * a[0] + a[1];
@@ -11905,7 +11905,7 @@
     }
     function g(l, k) {
       for (var f = Array(l), n = 0; n < l; n++) f[n] = e(k, 10);
-      return xzu178.decode(f);
+      return encoderDecoder.decode(f);
     }
     function e(l, k) {
       for (var f = 0, n, p, r = h; r < h + k; r++)
@@ -12146,7 +12146,7 @@
     };
     this.wrapPackageLobbyEntry = function () {
       xzu212.reset();
-      var e = xzu178.encode(xzu204.getName()),
+      var e = encoderDecoder.encode(xzu204.getName()),
         m = e.length,
         h = new Uint8Array(c(173 + 10 * m));
       g = 0;
@@ -12175,7 +12175,7 @@
     };
     this.wrapPackageSingleplayer = function () {
       xzu212.reset();
-      var e = xzu178.encode(xzu204.getName()),
+      var e = encoderDecoder.encode(xzu204.getName()),
         m = e.length,
         h = new Uint8Array(c(58 + 10 * m));
       g = 0;
