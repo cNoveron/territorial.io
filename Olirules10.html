@@ -273,8 +273,8 @@
     xzu20 = !1;
     zto888();
     zto889();
-    for (a = xzu208.getSize(xzu9) - 1; 0 <= a; a--)
-      0 == xzu208.getID(xzu9, a) && ((xzu8 = a), zto884());
+    for (a = getsStrengthsClearsErasesEnemyPlayersAddsShip.getSize(xzu9) - 1; 0 <= a; a--)
+      0 == getsStrengthsClearsErasesEnemyPlayersAddsShip.getID(xzu9, a) && ((xzu8 = a), zto884());
     xzu20 && zto883();
   }
   function zto883() {
@@ -282,8 +282,8 @@
     zto1352();
   }
   function zto884() {
-    xzu12 = xzu208.getEnemy(xzu9, xzu8);
-    xzu10 = xzu208.getStrength(xzu9, xzu8);
+    xzu12 = getsStrengthsClearsErasesEnemyPlayersAddsShip.getEnemy(xzu9, xzu8);
+    xzu10 = getsStrengthsClearsErasesEnemyPlayersAddsShip.getStrength(xzu9, xzu8);
     zto890();
     0 == xzu13 ? zto887() : (zto886(), zto885() ? zto893() : zto887());
   }
@@ -295,7 +295,7 @@
     for (var a = xzu13 - 1; 0 <= a; a--) xzu19[zto1304(xzu15[a], 4)] = 0;
   }
   function zto887() {
-    1 == xzu208.getSize(xzu9) && attackAdmin.clearAttack(xzu9);
+    1 == getsStrengthsClearsErasesEnemyPlayersAddsShip.getSize(xzu9) && attackAdmin.clearAttack(xzu9);
     if (xzu9 != xzu161) (xzu672[xzu9] += xzu10), xzu209.validateBalance(xzu9);
     else {
       var a = xzu672[xzu9];
@@ -303,7 +303,7 @@
       xzu209.validateBalance(xzu9);
       xzu717.values[12] -= xzu672[xzu9] - a;
     }
-    xzu208.removeIndex(xzu9, xzu8);
+    getsStrengthsClearsErasesEnemyPlayersAddsShip.removeIndex(xzu9, xzu8);
   }
   function zto888() {
     var a = xzu673[xzu9].length;
@@ -353,7 +353,7 @@
   }
   function zto895() {
     xzu20 = !0;
-    xzu208.setStrength(xzu9, xzu8, xzu10);
+    getsStrengthsClearsErasesEnemyPlayersAddsShip.setStrength(xzu9, xzu8, xzu10);
     xzu670[xzu9] += xzu13;
     zto1350();
     zto904();
@@ -374,16 +374,16 @@
   }
   function zto898(a, d) {
     if (0 < d)
-      if (a >= d) xzu208.setStrengthAt(xzu12, xzu9, 0), (a -= d);
+      if (a >= d) getsStrengthsClearsErasesEnemyPlayersAddsShip.setStrengthAt(xzu12, xzu9, 0), (a -= d);
       else {
-        xzu208.setStrengthAt(xzu12, xzu9, d - a);
+        getsStrengthsClearsErasesEnemyPlayersAddsShip.setStrengthAt(xzu12, xzu9, d - a);
         return;
       }
     a = zto1304(a, 2);
     xzu672[xzu12] = xzu672[xzu12] >= a ? xzu672[xzu12] - a : 0;
   }
   function zto899() {
-    return xzu208.getStrengthAt(xzu12, xzu9);
+    return getsStrengthsClearsErasesEnemyPlayersAddsShip.getStrengthAt(xzu12, xzu9);
   }
   function zto900() {
     return zto1304(xzu13 * xzu672[xzu12], 1 + zto901() * zto902());
@@ -501,7 +501,7 @@
     var g = zto1304(3 * xzu672[a], 256);
     b -= b >= zto1304(xzu672[a], 2) ? g : 0;
     zto909(c, a);
-    xzu208.add(a, xzu152 && 0 == d ? zto907(b) : b, d);
+    getsStrengthsClearsErasesEnemyPlayersAddsShip.add(a, xzu152 && 0 == d ? zto907(b) : b, d);
     xzu672[a] -= b + g;
     attackAdmin.newAttack(a, !1);
   }
@@ -758,7 +758,7 @@
           (d[k] = Math.abs(d[k] - c[k]) <= b[k] ? c[k] : d[k]));
         a[k] = zto1304(g[k], 10);
         var f = k + xzu146;
-        xzu208.isFree(f) &&
+        getsStrengthsClearsErasesEnemyPlayersAddsShip.isFree(f) &&
           (0 == xzu674[f].length ||
           (0 < xzu675[f].length &&
             xzu219.random() <
@@ -991,9 +991,9 @@
         ((xzu717.values[0] += l), xzu717.values[1]++, xzu717.values[2]++);
     };
     this.checkCancelAttack = function (h, l) {
-      if (xzu208.exists(h, l)) {
-        var k = xzu208.getStrengthAt(h, l);
-        xzu208.setStrengthAt(h, l, 0);
+      if (getsStrengthsClearsErasesEnemyPlayersAddsShip.exists(h, l)) {
+        var k = getsStrengthsClearsErasesEnemyPlayersAddsShip.getStrengthAt(h, l);
+        getsStrengthsClearsErasesEnemyPlayersAddsShip.setStrengthAt(h, l, 0);
         if (h != xzu161) (xzu672[h] += k), xzu209.validateBalance(h);
         else {
           var f = xzu672[h];
@@ -1690,7 +1690,7 @@
     attackAdmin.init();
     xzu173.init();
     zto881();
-    xzu208.init();
+    getsStrengthsClearsErasesEnemyPlayersAddsShip.init();
     xzu210.init();
     2 == xzu167 ? ((xzu169 = new zto967()), xzu169.init(b)) : (xzu169 = null);
     zto978();
@@ -1749,7 +1749,7 @@
     xzu205,
     PixelQualifierAndSquareDrawer,
     xzu207,
-    xzu208,
+    getsStrengthsClearsErasesEnemyPlayersAddsShip,
     xzu209,
     xzu210,
     xzu211,
@@ -1808,7 +1808,7 @@
     xzu205 = new zto1172();
     pixelQualifierAndSquareDrawer = new PixelQualifierAndSquareDrawer();
     xzu207 = new zto1193();
-    xzu208 = new zto1211();
+    getsStrengthsClearsErasesEnemyPlayersAddsShip = new GetsStrengthsClearsErasesEnemyPlayersAddsShip();
     xzu209 = new zto1214();
     xzu210 = new zto1219();
     xzu211 = new zto1241();
@@ -3294,13 +3294,13 @@
     };
     this.calculate = function () {
       if (2 != xzu154 && 0 != xzu665[xzu161] && !xzu153) {
-        var l = xzu208.getSize(xzu161);
+        var l = getsStrengthsClearsErasesEnemyPlayersAddsShip.getSize(xzu161);
         b: if (b.length != l) var k = !0;
         else {
           for (k = l - 1; 0 <= k; k--)
             if (
-              b[k].id != xzu208.getID(xzu161, k) ||
-              b[k].enemy != xzu208.getEnemy(xzu161, k)
+              b[k].id != getsStrengthsClearsErasesEnemyPlayersAddsShip.getID(xzu161, k) ||
+              b[k].enemy != getsStrengthsClearsErasesEnemyPlayersAddsShip.getEnemy(xzu161, k)
             ) {
               k = !0;
               break b;
@@ -3312,8 +3312,8 @@
           var f = 0;
           b: for (; f < l; f++) {
             for (
-              var n = xzu208.getID(xzu161, f),
-                p = xzu208.getEnemy(xzu161, f),
+              var n = getsStrengthsClearsErasesEnemyPlayersAddsShip.getID(xzu161, f),
+                p = getsStrengthsClearsErasesEnemyPlayersAddsShip.getEnemy(xzu161, f),
                 r = 0;
               r < b.length;
               r++
@@ -3322,7 +3322,7 @@
                 k.push(b.splice(r, 1)[0]);
                 continue b;
               }
-            r = xzu208.getStrength(xzu161, f);
+            r = getsStrengthsClearsErasesEnemyPlayersAddsShip.getStrength(xzu161, f);
             n = {
               enemy: p,
               strength: r,
@@ -3339,7 +3339,7 @@
           b = k;
         }
         for (--l; 0 <= l; l--)
-          (k = xzu208.getStrength(xzu161, l)),
+          (k = getsStrengthsClearsErasesEnemyPlayersAddsShip.getStrength(xzu161, l)),
             b[l].strength != k &&
               ((b[l].strength = k),
               (b[l].strengthMax = k > b[l].strengthMax ? k : b[l].strengthMax),
@@ -4933,7 +4933,7 @@
         var b = zto1304(3 * xzu672[a], 256),
           g = zto1304(c * xzu672[a], 1e3);
         g -= 500 <= c ? b : 0;
-        if (!(g <= xzu160) && xzu208.isFree(a)) {
+        if (!(g <= xzu160) && getsStrengthsClearsErasesEnemyPlayersAddsShip.isFree(a)) {
           var e = xzu673[a].length;
           d == xzu150 ? zto910(a) : zto908(a, d);
           if (0 != e || 0 != xzu673[a].length)
@@ -4944,20 +4944,20 @@
               (xzu717.values[12] += g),
               xzu166 && xzu152 && (xzu46[0] = 1)),
               zto909(e, a),
-              xzu208.add(a, g, d),
+              getsStrengthsClearsErasesEnemyPlayersAddsShip.add(a, g, d),
               (xzu672[a] -= g + b),
               attackAdmin.newAttack(a, !1);
         }
       }
   }
   function zto1099(a, d, c, b) {
-    if (b <= xzu160 || !xzu208.isFree(a)) return !1;
+    if (b <= xzu160 || !getsStrengthsClearsErasesEnemyPlayersAddsShip.isFree(a)) return !1;
     d = xzu175.newAttack(a, d, c);
     if (0 == d) return !1;
     c = zto1304(3 * xzu672[a], 128);
     b >= zto1304(xzu672[a], 2) && (b -= c);
     a == xzu161 && (xzu717.values[11] += c);
-    xzu208.addShip(a, b, d);
+    getsStrengthsClearsErasesEnemyPlayersAddsShip.addShip(a, b, d);
     xzu672[a] -= b + c;
     return !0;
   }
@@ -8369,17 +8369,17 @@
     zto1210(a);
     zto1209(a);
     attackAdmin.clearAttack(a);
-    xzu208.clear(a);
+    getsStrengthsClearsErasesEnemyPlayersAddsShip.clear(a);
   }
   function zto1205(a) {
     a < xzu146 && xzu149++;
-    var d = xzu208.findErasingPlayers(a);
+    var d = getsStrengthsClearsErasesEnemyPlayersAddsShip.findErasingPlayers(a);
     0 == d.length
       ? a == xzu161 && (xzu191.show(!1, !1), xzu190.moveUp())
       : (zto1206(a, d), zto1208(a, d));
   }
   function zto1206(a, d) {
-    for (var c = d.length - 1; 0 <= c; c--) xzu208.eraseEnemy(d[c], a);
+    for (var c = d.length - 1; 0 <= c; c--) getsStrengthsClearsErasesEnemyPlayersAddsShip.eraseEnemy(d[c], a);
   }
   function zto1207(a) {
     for (var d = 0, c = a.length - 1; 1 <= c; c--)
@@ -8411,7 +8411,7 @@
         (d = 4 * (b * xzu731 + c)),
           PixelQualifierAndSquareDrawer.isThisPlayer(a, d) && (PixelQualifierAndSquareDrawer.drawNeutralSquare(d), xzu670[a]--);
   }
-  function zto1211() {
+  function GetsStrengthsClearsErasesEnemyPlayersAddsShip() {
     function a(h) {
       return h < xzu146 ? d * h : d * xzu146 + c * (h - xzu146);
     }
@@ -8437,8 +8437,8 @@
       }
       if (k != e[h]) {
         var f = g[a(h) + k];
-        xzu208.removeIndex(h, k);
-        xzu208.add(h, f, xzu150);
+        getsStrengthsClearsErasesEnemyPlayersAddsShip.removeIndex(h, k);
+        getsStrengthsClearsErasesEnemyPlayersAddsShip.add(h, f, xzu150);
       }
     };
     this.exists = function (h, l) {
@@ -10787,7 +10787,7 @@
     function a(p) {
       xzu175.clearAttack(d, n);
       p ? (xzu672[d] += c) : d == xzu161 && (xzu717.values[14] += c);
-      xzu208.removeIndex(d, f);
+      getsStrengthsClearsErasesEnemyPlayersAddsShip.removeIndex(d, f);
     }
     var d, c, b, g, e, m, h, l, k, f, n;
     this.calculate = function (p, r, t, q, u) {
@@ -10799,13 +10799,13 @@
       h = PixelQualifierAndSquareDrawer.getX(u);
       l = PixelQualifierAndSquareDrawer.getY(u);
       g = b = PixelQualifierAndSquareDrawer.coordToPoint(e, m);
-      f = xzu208.getSeaIndex(d, n);
+      f = getsStrengthsClearsErasesEnemyPlayersAddsShip.getSeaIndex(d, n);
       -1 == f
         ? (PixelQualifierAndSquareDrawer.isThisShip(b, d) && PixelQualifierAndSquareDrawer.drawSeaSquare(b),
           (c = 0),
           a(!1),
           (p = !1))
-        : ((c = xzu208.getStrength(d, f)), (p = !0));
+        : ((c = getsStrengthsClearsErasesEnemyPlayersAddsShip.getStrength(d, f)), (p = !0));
       if (
         p &&
         (PixelQualifierAndSquareDrawer.isThisShip(b, d) && PixelQualifierAndSquareDrawer.drawSeaSquare(b),
@@ -10813,7 +10813,7 @@
         (p = 1 > p ? 1 : p),
         (c -= p),
         d == xzu161 && (xzu717.values[14] += p),
-        c <= xzu160 ? (a(!1), (p = !1)) : (xzu208.setStrength(d, f, c), (p = !0)),
+        c <= xzu160 ? (a(!1), (p = !1)) : (getsStrengthsClearsErasesEnemyPlayersAddsShip.setStrength(d, f, c), (p = !0)),
         p)
       )
         if (
@@ -10855,9 +10855,9 @@
             }
             d == xzu161 && (xzu717.values[12] += c);
             xzu175.clearAttack(d, n);
-            xzu208.removeIndex(d, f);
+            getsStrengthsClearsErasesEnemyPlayersAddsShip.removeIndex(d, f);
             xzu673[d].push(g);
-            xzu208.add(d, c, p);
+            getsStrengthsClearsErasesEnemyPlayersAddsShip.add(d, c, p);
             attackAdmin.newAttack(d, !0);
           }
     };
@@ -11415,7 +11415,7 @@
         0,
         (3 * c) / (b - 1)
       );
-      g = xzu717.values[12] - xzu208.getOverallStrength(xzu161);
+      g = xzu717.values[12] - getsStrengthsClearsErasesEnemyPlayersAddsShip.getOverallStrength(xzu161);
       xzu690.fillText(xzu183.createString(g), 0, (4 * c) / (b - 1));
       xzu690.fillText(
         xzu183.createString(xzu717.values[13]),
