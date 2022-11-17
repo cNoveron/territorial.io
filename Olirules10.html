@@ -2584,7 +2584,7 @@
         );
     };
   }
-  function zto1001() {
+  function CookiesModal() {
     this.fontSize = this.h1 = this.h0 = this.w0 = this.h = this.w = 0;
     this.index = -1;
     this.strs = ["Accept Cookies", "More Information", "Decline"];
@@ -6883,7 +6883,7 @@
       xzu196.init();
       xzu200.init();
       state = 0;
-      xzu719.init();
+      cookiesModal.init();
       xzu204.init(600);
     };
     this.zto1324 = function () {
@@ -6915,7 +6915,7 @@
     };
     this.mouseDown = function (c, b) {
       if (
-        !xzu719.mouseDown(c, b) &&
+        !cookiesModal.mouseDown(c, b) &&
         xzu739 &&
         !(
           xzu728.mouseDown(c, b) ||
@@ -6935,7 +6935,7 @@
     };
     this.mouseMove = function (c, b) {
       if (!xzu187.mousePressed) {
-        if (xzu719.mouseMove(c, b)) {
+        if (cookiesModal.mouseMove(c, b)) {
           xzu187.reset();
           return;
         }
@@ -7027,7 +7027,7 @@
           ? xzu197.draw()
           : 7 == state && xzu201.draw();
         xzu354.drawWindow();
-        xzu719.draw();
+        cookiesModal.draw();
         xzu725.draw();
         xzu728.draw();
       }
@@ -9412,7 +9412,7 @@
     xzu716,
     xzu717,
     xzu718,
-    xzu719,
+    cookiesModal,
     xzu720,
     xzu721,
     xzu722,
@@ -9487,7 +9487,7 @@
     xzu716 = new zto1345();
     xzu717 = new zto1347();
     xzu718 = new zto1348();
-    xzu719 = new zto1001();
+    cookiesModal = new CookiesModal();
     xzu720 = new zto1359();
     xzu720.initMainMenu();
     xzu720.init();
@@ -10717,7 +10717,7 @@
           xzu198.zto1324(),
           xzu182.zto1324(),
           xzu187.zto1324(),
-          xzu719.zto1324(),
+          cookiesModal.zto1324(),
           xzu725.zto1324(),
           1 <= xzu154
             ? (xzu189.zto1324(!1),
