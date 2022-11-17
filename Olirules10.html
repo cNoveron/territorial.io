@@ -295,7 +295,7 @@
     for (var a = xzu13 - 1; 0 <= a; a--) xzu19[zto1304(xzu15[a], 4)] = 0;
   }
   function zto887() {
-    1 == xzu208.getSize(xzu9) && xzu171.clearAttack(xzu9);
+    1 == xzu208.getSize(xzu9) && attackAdmin.clearAttack(xzu9);
     if (xzu9 != xzu161) (xzu672[xzu9] += xzu10), xzu209.validateBalance(xzu9);
     else {
       var a = xzu672[xzu9];
@@ -503,7 +503,7 @@
     zto909(c, a);
     xzu208.add(a, xzu152 && 0 == d ? zto907(b) : b, d);
     xzu672[a] -= b + g;
-    xzu171.newAttack(a, !1);
+    attackAdmin.newAttack(a, !1);
   }
   function zto907(a) {
     if (a < xzu672[0]) return a;
@@ -778,7 +778,7 @@
     xzu209.calculate();
     xzu174.calcuate();
     xzu173.calcuate();
-    xzu171.calculate();
+    attackAdmin.calculate();
     xzu175.calculate();
     zto1246();
     xzu189.calculate();
@@ -811,7 +811,7 @@
   function zto927() {
     xzu210.repaint() && (xzu720.requestRepaint = !0);
   }
-  function zto928() {
+  function AttackAdmin() {
     function a(h) {
       g[h] =
         10 == g[h]
@@ -854,6 +854,7 @@
       g[h] = l ? 2 : 10;
     };
   }
+
   function zto932() {
     function a() {
       b = 3;
@@ -1686,7 +1687,7 @@
     xzu191.init();
     xzu174.init();
     xzu175.init();
-    xzu171.init();
+    attackAdmin.init();
     xzu173.init();
     zto881();
     xzu208.init();
@@ -1711,7 +1712,7 @@
     zto878(0);
   }
   var strengths,
-    xzu171,
+    attackAdmin,
     xzu172,
     xzu173,
     xzu174,
@@ -1770,7 +1771,7 @@
     xzu227;
   function zto980() {
     strengths = new Strengths();
-    xzu171 = new zto928();
+    attackAdmin = new AttackAdmin();
     xzu172 = new zto932();
     xzu173 = new zto937();
     xzu174 = new zto940();
@@ -4945,7 +4946,7 @@
               zto909(e, a),
               xzu208.add(a, g, d),
               (xzu672[a] -= g + b),
-              xzu171.newAttack(a, !1);
+              attackAdmin.newAttack(a, !1);
         }
       }
   }
@@ -8367,7 +8368,7 @@
     zto1205(a);
     zto1210(a);
     zto1209(a);
-    xzu171.clearAttack(a);
+    attackAdmin.clearAttack(a);
     xzu208.clear(a);
   }
   function zto1205(a) {
@@ -10857,7 +10858,7 @@
             xzu208.removeIndex(d, f);
             xzu673[d].push(g);
             xzu208.add(d, c, p);
-            xzu171.newAttack(d, !0);
+            attackAdmin.newAttack(d, !0);
           }
     };
   }
