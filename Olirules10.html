@@ -1381,7 +1381,7 @@
       switchStateMouseMoveSurrenderPossibleDrawCross.draw(),
       xzu191.draw(),
       mouseObserver.draw(),
-      xzu718.draw(),
+      statsManager.draw(),
       xzu225.draw());
   }
   function zto967() {
@@ -1670,7 +1670,7 @@
     initsArrayConcatsStringsGivesBotsNames.create();
     xzu177.init();
     zto1245();
-    xzu718.init();
+    statsManager.init();
     strengths.init();
     xzu213.init();
     xzu769.putImageData(xzu770, 0, 0);
@@ -2163,8 +2163,8 @@
                   this.switchState()),
                 2)
               : 3 == n && 2 <= xzu717.filled
-                ? (xzu718.switchState(), (xzu720.requestRepaint = !0), 2)
-                : xzu718.isVisible || xzu189.mouseDown(k, f)
+                ? (statsManager.switchState(), (xzu720.requestRepaint = !0), 2)
+                : statsManager.isVisible || xzu189.mouseDown(k, f)
                   ? 1
                   : (this.switchState(), 2)
         : 0 == n
@@ -3047,7 +3047,7 @@
     if (0 == xzu154) xzu198.mouseDown(a, d);
     else if (
       !(
-        xzu718.mouseDown(a, d) ||
+        statsManager.mouseDown(a, d) ||
         mouseObserver.mouseDownSelected(a, d) ||
         xzu191.mouseDown(a, d) ||
         xzu183.mouseDown(a, d)
@@ -3077,7 +3077,7 @@
   function zto1015(a, d) {
     0 == xzu154
       ? xzu198.mouseMove(a, d)
-      : xzu718.mouseMove(a) ||
+      : statsManager.mouseMove(a) ||
         (mouseObserver.isVisible()
           ? mouseObserver.mouseMove(a, d)
           : switchStateMouseMoveSurrenderPossibleDrawCross.mouseMove(a, d) ||
@@ -3110,7 +3110,7 @@
   function zto1020(a, d) {
     0 == xzu154
       ? xzu198.click(a, d)
-      : (xzu718.mouseClick(),
+      : (statsManager.mouseClick(),
         xzu185.releaseMouse(),
         (xzu186.grMouseMoving = !1),
         mouseObserver.click(a, d) && (xzu720.requestRepaint = !0));
@@ -9408,7 +9408,7 @@
     xzu715,
     xzu716,
     xzu717,
-    xzu718,
+    statsManager,
     cookiesModal,
     xzu720,
     xzu721,
@@ -9483,7 +9483,7 @@
     xzu715 = new zto1006();
     xzu716 = new zto1345();
     xzu717 = new zto1347();
-    xzu718 = new zto1348();
+    statsManager = new StatsManager();
     cookiesModal = new CookiesModal();
     xzu720 = new zto1359();
     xzu720.initMainMenu();
@@ -9554,8 +9554,8 @@
       ? 1 <= xzu154
         ? xzu162
           ? ((xzu162 = !xzu162), (xzu720.requestRepaint = !0))
-          : xzu718.isVisible
-          ? xzu718.hide()
+          : statsManager.isVisible
+          ? statsManager.hide()
           : switchStateMouseMoveSurrenderPossibleDrawCross.switchState()
         : 7 == xzu198.getState()
         ? (xzu201.deinit(), xzu204.init(1e3), (xzu720.requestRepaint = !0))
@@ -10728,7 +10728,7 @@
               xzu184.zto1324(),
               mouseObserver.prepare(),
               xzu715.init(),
-              xzu718.zto1324(),
+              statsManager.zto1324(),
               xzu210.zto1324(),
               xzu191.zto1324(),
               xzu722.zto1324(),
@@ -11137,7 +11137,7 @@
         this.filled++,
         this.filled == this.size && this.crunch(),
         (this.c = this.interval - 1),
-        xzu718.refresh());
+        statsManager.refresh());
     };
     this.crunch = function () {
       this.resetMax();
@@ -11164,7 +11164,7 @@
         this.interest[a] > this.max[2] ? this.interest[a] : this.max[2];
     };
   }
-  function zto1348() {
+  function StatsManager() {
     this.index =
       this.lineWidth =
       this.fontSize1 =
