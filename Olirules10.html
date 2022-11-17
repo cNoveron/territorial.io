@@ -6876,31 +6876,31 @@
     };
   }
   function zto1144() {
-    var a, d;
+    var state, d;
     this.init = function () {
       this.zto1324();
       xzu196.init();
       xzu200.init();
-      a = 0;
+      state = 0;
       xzu719.init();
       xzu204.init(600);
     };
     this.zto1324 = function () {
       d = xzu332 + Math.floor((xzu706 ? 0.026 : 0.018) * xzu696) + xzu336;
     };
-    this.setState = function (c) {
-      a = c;
+    this.setState = function (newState) {
+      state = newState;
     };
     this.getState = function () {
-      return a;
+      return state;
     };
     this.keyUp = function (c) {
       if (!xzu739) return !1;
       if ("Enter" == c.key || "Escape" == c.key) {
-        if (this.hidePopups()) return 0 == a && xzu200.setVisible(0, !0), !0;
+        if (this.hidePopups()) return 0 == state && xzu200.setVisible(0, !0), !0;
         if ("Enter" == c.key) {
-          if (0 == a) return xzu204.pressEnter(), !0;
-          if (7 == a) return xzu201.pressEnter(), !0;
+          if (0 == state) return xzu204.pressEnter(), !0;
+          if (7 == state) return xzu201.pressEnter(), !0;
         }
       }
       return !1;
@@ -6924,11 +6924,11 @@
         )
       ) {
         xzu187.mouseDown(c, b);
-        if (0 == a) xzu204.mouseDown(c, b);
-        else if (2 == a) xzu203.mouseDown(c, b);
-        else if (3 == a) xzu199.mouseDown(c, b);
-        else if (5 == a) xzu202.mouseDown(c, b);
-        else if (7 == a && xzu201.mouseDown(c, b)) return;
+        if (0 == state) xzu204.mouseDown(c, b);
+        else if (2 == state) xzu203.mouseDown(c, b);
+        else if (3 == state) xzu199.mouseDown(c, b);
+        else if (5 == state) xzu202.mouseDown(c, b);
+        else if (7 == state && xzu201.mouseDown(c, b)) return;
         xzu723.mouseDown(c, b);
       }
     };
@@ -6949,34 +6949,34 @@
         if (xzu196.mouseMove(c, b, !0)) return;
       }
       xzu187.mouseMove(c, b);
-      7 == a && xzu195.mouseMove(c, b);
+      7 == state && xzu195.mouseMove(c, b);
     };
     this.click = function (c, b) {
       xzu354.mouseRelease() ||
         xzu727.mouseDown(c, b, !1) ||
         xzu354.mouseDown(c, b, !1) ||
-        (xzu187.mouseClick(), 7 == a && xzu195.click(c, b));
+        (xzu187.mouseClick(), 7 == state && xzu195.click(c, b));
     };
     this.wheel = function (c, b, g) {
       xzu354.objs[2].win.isVisible ||
-        (0 == a
+        (0 == state
           ? xzu187.wheel(c, g)
-          : 2 == a
+          : 2 == state
           ? xzu196.menuScrol(c, b, g)
-          : 7 == a && xzu195.wheel(c, b, g));
+          : 7 == state && xzu195.wheel(c, b, g));
     };
     this.refreshPositions = function () {
       xzu196.refreshPosition();
       xzu354.refreshPosition();
-      0 == a
+      0 == state
         ? (xzu200.refreshPosition(0), xzu187.refreshPosition())
-        : 7 == a && (xzu195.refreshPosition(), xzu193.refreshPosition());
+        : 7 == state && (xzu195.refreshPosition(), xzu193.refreshPosition());
       xzu720.requestRepaint = !0;
     };
     this.draw = function () {
-      if (8 != a) {
+      if (8 != state) {
         xzu690.imageSmoothingEnabled = !0;
-        if (7 == a) xzu201.drawMap();
+        if (7 == state) xzu201.drawMap();
         else if (xzu739) {
           var c = xzu694 / xzu731,
             b = xzu695 / xzu732;
@@ -7014,17 +7014,17 @@
         xzu727.draw();
         xzu723.draw();
         xzu354.draw();
-        0 == a
+        0 == state
           ? xzu204.draw()
-          : 2 == a
+          : 2 == state
           ? xzu203.draw()
-          : 3 == a
+          : 3 == state
           ? xzu199.draw()
-          : 5 == a
+          : 5 == state
           ? xzu202.draw()
-          : 6 == a
+          : 6 == state
           ? xzu197.draw()
-          : 7 == a && xzu201.draw();
+          : 7 == state && xzu201.draw();
         xzu354.drawWindow();
         xzu719.draw();
         xzu725.draw();
